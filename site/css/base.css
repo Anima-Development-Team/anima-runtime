@@ -39,7 +39,7 @@ body.hy {
 
 .big-banner::after {
 	width: 100%;
-	height: 20em;
+	height: 23em;
 	margin-top: -6em;
 	content: "AAAAAAA";
 	position: absolute;
