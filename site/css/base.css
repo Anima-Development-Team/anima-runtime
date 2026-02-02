@@ -37,11 +37,13 @@ body.hy {
 	background-color: var(--theme);
 }
 
-.big-banner::after {
+.big-banner::before {
 	width: 100%;
 	height: 23em;
 	margin-top: -6em;
-	content: "AAAAAAA";
+	content: "But first, we must talk about ~parallel universes~";
+	color: transparent;
+	font-family: monospace;
 	position: absolute;
 	background-color: var(--sub-color);
 	z-index: -10;
