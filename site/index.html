@@ -55,13 +55,17 @@
 			<div class="hy card flex vertical center override">
 				<div class="hy subcard flex horizontal center">
 					<code class="hy left-text">
-						<span style="color:lightblue;">import</span> core<span style="color: lightcoral">;</span>
-						<span style="color:lightblue;">using</span> core<span style="color: lightcoral">.</span>IO<span style="color: lightcoral">;</span>
-		
-						<span style="color: lightblue;">main</span> </span> <span style="color: lightcoral">{</span>
-							&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: lightgreen;">writeLine</span><span style="color: lightcoral">(</span><span style="color: gold">"Hello, World!"</span><span style="color: lightcoral">);</span>
+						<span style="color:lightblue;">import</span>
+						core<span style="color: lightcoral">;</span>
+						<br><br>
+						<span style="color:lightblue;">using</span>
+						core<span style="color: lightcoral">.</span>IO<span style="color: lightcoral">;</span>
+						<br><br>
+						<span style="color: lightblue;">main</span>
+						<span style="color: lightcoral">{</span><br>
+							&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: lightgreen;">writeLine</span><span style="color: lightcoral">(</span><span style="color: gold">"Hello, World!"</span><span style="color: lightcoral">);</span><br>
 						<span style="color: lightcoral">}</span>
-		
+	
 					</code>
 					<div class="hy description">
 						<p class="hy center-text" style="font-weight: bold;">
@@ -75,18 +79,61 @@
 				<div class="hy subcard flex horizontal center center-text">
 					<code class="hy left-text">
 						<span style="color:lightblue;">import</span> core<span style="color: lightcoral">;</span>
+						<br><br>
 						<span style="color:lightblue;">using</span> core<span style="color: lightcoral">.</span>Convert<span style="color: lightcoral">;</span>
+						<br>
 						<span style="color:lightblue;">using</span> core<span style="color: lightcoral">.</span>IO<span style="color: lightcoral">;</span>
-	
+						<br><br>
 						<span style="color:lightblue;">namespace</span> Hello <span style="color: lightcoral">{</span>
+							<br>
 							&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:lightblue;">macro</span> greet <span style="color: lightcoral">{</span>
-								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color: lightcoral">{ </span>$name<span style="color: lightcoral">:</span><span style="color: lightblue">str</span> <span style="color: lightcoral">}</span> <span style="color: lightcoral">=></span> <span style="color: lightcoral">{ (</span><span style="color: gold">"Hello, "</span> <span style="color: lightcoral">+</span> <span style="color: lightcoral">(</span>$name <span style="color: lightcoral">+</span> <span style="color: gold">"!"</span><span style="color: lightcoral">)) }</span>
-								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color: lightcoral">{ </span>$name<span style="color: lightcoral">:</span><span style="color: lightblue">expr</span> <span style="color: lightcoral">}</span> <span style="color: lightcoral">=></span> <span style="color: lightcoral">{ (</span><span style="color: gold">"Hello, "</span> <span style="color: lightcoral">+</span> <span style="color: lightcoral">(</span><span style="color: lightgreen;">toString</span><span style="color: lightcoral">(</span>$name<span style="color: lightcoral">) +</span> <span style="color: gold">"!"</span><span style="color: lightcoral">)) }</span>
+								<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<span style="color: lightcoral">{
+
+								</span>$name
+								<span style="color: lightcoral">:</span>
+								<span style="color: lightblue">str</span>
+								<span style="color: lightcoral">}</span>
+								<span style="color: lightcoral">=></span>
+								<span style="color: lightcoral">{
+									(</span><span style="color: gold">"Hello, "</span>
+									<span style="color: lightcoral">+</span>
+									<span style="color: lightcoral">(	
+									</span>$name
+									<span style="color: lightcoral">+</span>
+									<span style="color: gold">"!"</span>
+									<span style="color: lightcoral">))
+									}</span>
+								<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<span style="color: lightcoral">{
+								</span>$name
+								<span style="color: lightcoral">:</span>
+								<span style="color: lightblue">expr</span>
+								<span style="color: lightcoral">}</span>
+								<span style="color: lightcoral">=></span>
+								<span style="color: lightcoral">{
+									(</span><span style="color: gold">"Hello, "</span>
+									<span style="color: lightcoral">+</span>
+									<span style="color: lightcoral">(</span>
+									<span style="color: lightgreen;">toString</span><span style="color: lightcoral">(
+
+									</span>$name<span style="color: lightcoral">) +</span>
+									<span style="color: gold">"!"</span>
+									<span style="color: lightcoral">))
+									}</span>
 							&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: lightcoral">}</span>
+							<br>
 							<span style="color: lightcoral">}</span>
-	
-						<span style="color: lightblue;">main</span> </span> <span style="color: lightcoral">{</span>
-							&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: lightgreen;">writeLine</span><span style="color: lightcoral">(</span>Hello<span style="color: lightcoral">.</span>greet <span style="color: gold">"someone"</span><span style="color: lightcoral">);</span>
+							<br><br>
+						<span style="color: lightblue;">main</span> </span>
+						<span style="color: lightcoral">{</span>
+							<br>
+							&nbsp;&nbsp;&nbsp;
+							<span style="color: lightgreen;">writeLine</span><span style="color: lightcoral">(</span>Hello<span style="color: lightcoral">.</span>greet
+							<span style="color: gold">"someone"</span><span style="color: lightcoral">);</span>
+							<br>
 						<span style="color: lightcoral">}</span>
 					</code>
 					<div class="hy description">

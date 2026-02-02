@@ -58,13 +58,19 @@ body.hy {
 }
 
 code {
-	width: 60%!important;
+	width: 60% !important;
 	background-color: #222;
 	color: white !important;
 	padding: 0.3em 0.6em;
 	margin-inline: 0.3em;
 	border-radius: inherit;
 	box-shadow: 0px 3px 6px color-mix(in oklab, black, transparent);
+	flex-wrap: nowrap;
+	overflow-wrap: normal;
+	overflow-x: scroll;
+	word-wrap: normal;
+	white-space: nowrap !important;
+
 }
 
 .description {
