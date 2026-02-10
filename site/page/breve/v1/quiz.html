@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+    <script>
+        const query = decodeURIComponent(location.href.split("?::")[1]).replace(
+            /'/g,
+            '"',
+        );
+        console.log(query);
+        let data = JSON.parse(query);
+        let answer = 0;
+        function set(e) {
+            answer = e.target.value;
+            const display = document.getElementById("display");
+            display.hidden = true;
+            display.className = "";
+            display.className += " " + "hy";
+            display.className += " " + "card";
+            display.className += " " + "alert";
+            display.className += " " + "soft";
+            if (answer === data["correct"]) {
+                display.className += " " + "ok";
+            } else {
+                display.className += " " + "danger";
+            }
+            display.innerText = data[answer]["message"];
+        }
+        function verify() {
+            const display = document.getElementById("display");
+            display.hidden = false;
+        }
+        function build() {
+            const container = document.getElementById("quiz");
+            container.appendChild(
+                (() => {
+                    const question = document.createElement("p");
+                    question.appendChild(
+                        (() => {
+                            const blurb = document.createElement("strong");
+                            blurb.innerText = "Question: ";
+                            return blurb;
+                        })(),
+                    );
+                    question.appendChild(
+                        (() => {
+                            const content = document.createElement("span");
+                            content.innerText = decodeURIComponent(
+                                data["question"],
+                            );
+                            return content;
+                        })(),
+                    );
+                    return question;
+                })(),
+            );
+            let i = 0;
+            for (answer in data["answers"]) {
+                container.appendChild(
+                    (() => {
+                        const answer = document.createElement("label");
+                        answer.appendChild(
+                            (() => {
+                                const select = document.createElement("input");
+                                select.type = "radio";
+                                select.className += " " + "hy";
+                                select.className += " " + "input";
+                                select.name = "answer";
+                                select.value = i++;
+                                select.addEventListener("click", set);
+                                return select;
+                            })(),
+                        );
+                        answer.appendChild(
+                            (() => {
+                                const select = document.createElement("span");
+                                select.className += " " + "hy";
+                                select.className += " " + "input-view";
+                                select.innerText = answer["value"];
+                                return select;
+                            })(),
+                        );
+                        return answer;
+                    })(),
+                );
+            }
+            container.appendChild(
+                (() => {
+                    const act = document.createElement("input");
+                    act.type = "button";
+                    act.className += " " + "hy";
+                    act.className += " " + "button";
+                    act.className += " " + "action";
+                    act.value = "Verify";
+                    act.addEventListener("click", verify);
+                    return act;
+                })(),
+            );
+            container.appendChild(
+                (() => {
+                    const act = document.createElement("div");
+                    act.className += " " + "hy";
+                    act.className += " " + "card";
+                    act.className += " " + "alert";
+                    act.className += " " + "soft";
+                    act.hidden = true;
+                    act.id = "display";
+                    return act;
+                })(),
+            );
+        }
+    </script>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Breve</title>
+        <link rel="icon" href="res/icon/logo-v1b-small.png" />
+        <link rel="stylesheet" href="../../../css/style.css" />
+    </head>
+    <body class="hy" style="background-color: white" onload="build()">
+        <div class="hy flex vertical left" id="quiz"></div>
+    </body>
+</html>
