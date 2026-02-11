@@ -19,7 +19,12 @@
             <div class="hy card flex horizontal">
                 <table class="hy alternate">
                     <tr class="hy">
-                        <td class="hy">
+                        <th class="hy">Type</th>
+                        <th class="hy">Description</th>
+                        <th class="hy">Default Value</th>
+                    </tr>
+                    <tr class="hy">
+                        <td class="hy center-text">
                             <code class="hy inline"
                                 ><span class="kw">signed</span></code
                             >
@@ -29,9 +34,14 @@
                             >
                         </td>
                         <td class="hy">Signed 64-bit integer.</td>
+                        <td class="hy">
+                            <code class="hy inline"
+                                ><span class="num">0</span></code
+                            >
+                        </td>
                     </tr>
                     <tr class="hy">
-                        <td class="hy">
+                        <td class="hy center-text">
                             <code class="hy inline"
                                 ><span class="kw">unsigned</span></code
                             >
@@ -41,9 +51,14 @@
                             >
                         </td>
                         <td class="hy">Unsigned 64-bit integer.</td>
+                        <td class="hy">
+                            <code class="hy inline"
+                                ><span class="num">0</span></code
+                            >
+                        </td>
                     </tr>
                     <tr class="hy">
-                        <td class="hy">
+                        <td class="hy center-text">
                             <code class="hy inline"
                                 ><span class="kw">float</span></code
                             >
@@ -55,9 +70,14 @@
                         <td class="hy">
                             64-bit (double-precision) floating-point number.
                         </td>
+                        <td class="hy">
+                            <code class="hy inline"
+                                ><span class="num">0.0</span></code
+                            >
+                        </td>
                     </tr>
                     <tr class="hy">
-                        <td class="hy">
+                        <td class="hy center-text">
                             <code class="hy inline"
                                 ><span class="kw">string</span></code
                             >
@@ -67,9 +87,14 @@
                             >
                         </td>
                         <td class="hy">Text string.</td>
+                        <td class="hy">
+                            Empty string (<code class="hy inline"
+                                ><span class="str">""</span></code
+                            >).
+                        </td>
                     </tr>
                     <tr class="hy">
-                        <td class="hy">
+                        <td class="hy center-text">
                             <code class="hy inline"
                                 ><span class="kw">array</span></code
                             >
@@ -79,9 +104,14 @@
                             >
                         </td>
                         <td class="hy">Dynamic list of values.</td>
+                        <td class="hy">
+                            Empty array (<code class="hy inline"
+                                ><span class="op">[]</span></code
+                            >).
+                        </td>
                     </tr>
                     <tr class="hy">
-                        <td class="hy">
+                        <td class="hy center-text">
                             <code class="hy inline"
                                 ><span class="kw">object</span></code
                             >
@@ -91,6 +121,49 @@
                             >
                         </td>
                         <td class="hy">String-mapped collection of values.</td>
+                        <td class="hy">Empty object.</td>
+                    </tr>
+                    <tr class="hy">
+                        <td class="hy center-text">
+                            <code class="hy inline"
+                                ><span class="kw">null</span></code
+                            >
+                            or
+                            <code class="hy inline"
+                                ><span class="kw">nil</span></code
+                            >
+                        </td>
+                        <td class="hy">
+                            Null value. Indicates that the
+                            <strong>value does not exist</strong>.
+                        </td>
+                        <td class="hy">
+                            <code class="hy inline"
+                                ><span class="kw">null</span></code
+                            >
+                        </td>
+                    </tr>
+                    <tr class="hy">
+                        <td class="hy center-text">
+                            <code class="hy inline"
+                                ><span class="kw">undefined</span></code
+                            >
+                            or
+                            <code class="hy inline"
+                                ><span class="kw">void</span></code
+                            >
+                        </td>
+                        <td class="hy">
+                            Empty value. Different from null, as it indicates
+                            that the
+                            <strong>source itself does not exist</strong>
+                            whatsoever.
+                        </td>
+                        <td class="hy">
+                            <code class="hy inline"
+                                ><span class="kw">void</span></code
+                            >
+                        </td>
                     </tr>
                 </table>
             </div>
