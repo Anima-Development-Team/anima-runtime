@@ -22,13 +22,14 @@
                         <th class="hy">Type</th>
                         <th class="hy">Description</th>
                         <th class="hy">Default Value</th>
+                        <th class="hy">Range</th>
                     </tr>
                     <tr class="hy">
                         <td class="hy center-text">
                             <code class="hy inline"
                                 ><span class="kw">signed</span></code
-                            >
-                            or
+                            ><br />
+                            or<br />
                             <code class="hy inline"
                                 ><span class="kw">int</span></code
                             >
@@ -38,6 +39,19 @@
                             <code class="hy inline"
                                 ><span class="num">0</span></code
                             >
+                        </td>
+                        <td class="hy">
+                            <code class="hy inline"
+                                ><span class="num"
+                                    >-9,223,372,036,854,775,808</span
+                                ></code
+                            ><br />
+                            to<br />
+                            <code class="hy inline">
+                                <span class="num"
+                                    >9,223,372,036,854,775,807</span
+                                ></code
+                            >.
                         </td>
                     </tr>
                     <tr class="hy">
@@ -55,6 +69,17 @@
                             <code class="hy inline"
                                 ><span class="num">0</span></code
                             >
+                        </td>
+                        <td class="hy">
+                            <code class="hy inline"
+                                ><span class="num">0</span></code
+                            ><br />
+                            to<br />
+                            <code class="hy inline">
+                                <span class="num"
+                                    >18,446,744,073,709,551,615</span
+                                ></code
+                            >.
                         </td>
                     </tr>
                     <tr class="hy">
@@ -75,6 +100,7 @@
                                 ><span class="num">0.0</span></code
                             >
                         </td>
+                        <td class="hy">Unknown.</td>
                     </tr>
                     <tr class="hy">
                         <td class="hy center-text">
@@ -87,10 +113,14 @@
                             >
                         </td>
                         <td class="hy">Text string.</td>
+                        <td class="hy">Empty string.</td>
                         <td class="hy">
-                            Empty string (<code class="hy inline"
-                                ><span class="str">""</span></code
-                            >).
+                            <code class="hy inline"
+                                ><span class="num"
+                                    >18,446,744,073,709,551,615</span
+                                ></code
+                            >
+                            bytes.
                         </td>
                     </tr>
                     <tr class="hy">
@@ -104,10 +134,14 @@
                             >
                         </td>
                         <td class="hy">Dynamic list of values.</td>
+                        <td class="hy">Empty array..</td>
                         <td class="hy">
-                            Empty array (<code class="hy inline"
-                                ><span class="op">[]</span></code
-                            >).
+                            <code class="hy inline"
+                                ><span class="num"
+                                    >18,446,744,073,709,551,615</span
+                                ></code
+                            >
+                            entries.
                         </td>
                     </tr>
                     <tr class="hy">
@@ -122,6 +156,20 @@
                         </td>
                         <td class="hy">String-mapped collection of values.</td>
                         <td class="hy">Empty object.</td>
+                        <td class="hy">
+                            <code class="hy inline"
+                                ><span class="num"
+                                    >18,446,744,073,709,551,615</span
+                                ></code
+                            >
+                            entries, with each key having a maximum of
+                            <code class="hy inline"
+                                ><span class="num"
+                                    >18,446,744,073,709,551,615</span
+                                ></code
+                            >
+                            bytes.
+                        </td>
                     </tr>
                     <tr class="hy">
                         <td class="hy center-text">
@@ -141,6 +189,11 @@
                             <code class="hy inline"
                                 ><span class="kw">null</span></code
                             >
+                        </td>
+                        <td class="hy">
+                            <code class="hy inline"
+                                ><span class="num">null</span></code
+                            >.
                         </td>
                     </tr>
                     <tr class="hy">
@@ -163,6 +216,11 @@
                             <code class="hy inline"
                                 ><span class="kw">void</span></code
                             >
+                        </td>
+                        <td class="hy">
+                            <code class="hy inline"
+                                ><span class="num">void</span></code
+                            >.
                         </td>
                     </tr>
                 </table>
