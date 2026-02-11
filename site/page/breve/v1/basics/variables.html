@@ -144,6 +144,23 @@
                 ><span class="op">;</span>
             </code>
             <p class="hy">And many other ways.</p>
+            <div class="hy card" style="min-height: 30em">
+                <h3 class="hy">Quiz Time!</h3>
+                <iframe
+                    class="hy"
+                    style="height: 25em"
+                    src="../../../component/quiz.html?::{
+                    `question`: `Which of the following statements is true?`,
+                    `answers`: [
+                    {`value`:`If the variable's location is not set, it defaults to <code class='hy inline'><span class='kw'>global</span></code>.`, `message`:`Wrong! It defaults to <code class='hy inline'><span class='kw'>local</span></code>.`},
+                        {`value`:`The variable's type can always be ommitted.`, `message`:`Wrong! The type can only be ommitted when the variable is assigned a value.`},
+                        {`value`:`The variable must always have a value.`, `message`:`Wrong! The variable is not required to have a value, if and only if it has a type.`},
+                        {`value`:`The variable must always have a name.`, `message`:`Correct! How else are you going to use it?`}
+                    ],
+                    `correct`: 3
+                }"
+                ></iframe>
+            </div>
         </div>
     </body>
 </html>
