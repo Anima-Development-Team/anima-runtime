@@ -126,7 +126,11 @@
                             >
                         </td>
                         <td class="hy">Text string.</td>
-                        <td class="hy">Empty string.</td>
+                        <td class="hy">
+                            Empty string (<code class="hy inline"
+                                ><span class="str">""</span></code
+                            >).
+                        </td>
                         <td class="hy">18,446,744,073,709,551,615 bytes.</td>
                     </tr>
                     <tr class="hy">
@@ -140,7 +144,11 @@
                             >
                         </td>
                         <td class="hy">Dynamic list of values.</td>
-                        <td class="hy">Empty array.</td>
+                        <td class="hy">
+                            Empty array (<code class="hy inline"
+                                ><span class="op">[]</span></code
+                            >).
+                        </td>
                         <td class="hy">18,446,744,073,709,551,615 entries.</td>
                     </tr>
                     <tr class="hy">
@@ -221,6 +229,27 @@
                     </tr>
                 </table>
             </div>
+            <p class="hy">
+                All types in Breve are checked at compile-time. Numeric types
+                are automatically converted between each other on any operation.
+            </p>
+            <p class="hy">
+                To assign the default value for a given basic type, you can use
+                the provided value in the "Default Value" column, or you can
+                simply assign the type itself:
+            </p>
+            <code class="hy block">
+                <span class="memo"
+                    >// Assigns an unsigned integer of value 0</span
+                ><br />
+                var1 <span class="op">=</span> <span class="num">0</span
+                ><span class="op">;</span><br /><br />
+                <span class="memo"
+                    >// Also assigns an unsigned integer of value 0</span
+                ><br />
+                var1 <span class="op">=</span> <span class="kw">uint</span
+                ><span class="op">;</span><br />
+            </code>
         </div>
     </body>
 </html>
