@@ -272,8 +272,8 @@
             <p class="hy">
                 The
                 <code class="hy inline"><span class="kw">any</span></code> type
-                is a special compiler-only type, that indicates that the data
-                <strong>can map to any other type</strong>.
+                is a special compiler type that indicates that the data
+                <strong>can map to the value of any other type</strong>.
             </p>
             <p class="hy">
                 While it can <em>receive</em> any value, only
@@ -296,13 +296,19 @@
                 ><span class="num">2.08</span> <span class="kw">as</span>
                 <span class="kw">int</span><span class="op">);</span>
             </code>
+            <p class="hy">
+                Both the source and destination types are checked if they are
+                compatible.
+                <code class="hy inline"><span class="kw">any</span></code>
+                is automatically assumed to be castable.
+            </p>
             <div class="hy card alert soft danger pop">
                 <h3 class="hy alert loud danger pop center-text">Caution!</h3>
                 <p class="hy">
                     Be careful when casting from
                     <code class="hy inline"><span class="kw">any</span></code>
-                    to any type! Make sure you check that the destination type
-                    is the expected type!
+                    to any type! Make sure you check at runtime that the
+                    destination type is the expected type!
                 </p>
             </div>
         </div>
