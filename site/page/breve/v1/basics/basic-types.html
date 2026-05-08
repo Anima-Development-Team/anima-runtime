@@ -13,8 +13,8 @@
         <div class="hy app wide flex vertical center left-text">
             <h2 class="hy">Basic Types</h2>
             <p class="hy">
-                Breve possesses a few basic types that map directly to Anima's
-                underlying value types:
+                Breve's standard library possesses a few types that map directly
+                to Anima's underlying basic types:
             </p>
             <div class="hy card flex horizontal">
                 <table class="hy alternate">
@@ -27,10 +27,6 @@
                     <tr class="hy">
                         <td class="hy center-text">
                             <code class="hy inline"
-                                ><span class="kw">undefined</span></code
-                            >
-                            or
-                            <code class="hy inline"
                                 ><span class="kw">void</span></code
                             >
                         </td>
@@ -38,6 +34,7 @@
                             Empty. Different from null, as it indicates that the
                             <strong>source itself does not exist</strong>
                             whatsoever.
+                            <strong>Cannot be used as a value directly.</strong>
                         </td>
                         <td class="hy">
                             <code class="hy inline"
@@ -55,14 +52,15 @@
                             <code class="hy inline"
                                 ><span class="kw">null</span></code
                             >
-                            or
-                            <code class="hy inline"
-                                ><span class="kw">nil</span></code
-                            >
                         </td>
                         <td class="hy">
                             Null value. Indicates that the
-                            <strong>value does not exist</strong>.
+                            <strong>value does not exist</strong>. All
+                            <code class="hy inline"
+                                ><span class="macro">@Nullable</span></code
+                            >
+                            types can accept it as a value.
+                            <strong>Cannot be used as a type directly.</strong>
                         </td>
                         <td class="hy">
                             <code class="hy inline"
@@ -100,12 +98,74 @@
                     <tr class="hy">
                         <td class="hy center-text">
                             <code class="hy inline"
-                                ><span class="kw">signed</span></code
+                                ><span class="kw">int8</span></code
                             ><br />
-                            or<br />
+                        </td>
+                        <td class="hy">Signed 8-bit integer.</td>
+                        <td class="hy">
                             <code class="hy inline"
-                                ><span class="kw">int</span></code
+                                ><span class="num">0</span></code
                             >
+                        </td>
+                        <td class="hy">
+                            <code class="hy inline"
+                                ><span class="num">-128</span></code
+                            ><br />
+                            to<br />
+                            <code class="hy inline">
+                                <span class="num">127</span></code
+                            >, inclusive.
+                        </td>
+                    </tr>
+                    <tr class="hy">
+                        <td class="hy center-text">
+                            <code class="hy inline"
+                                ><span class="kw">int16</span></code
+                            ><br />
+                        </td>
+                        <td class="hy">Signed 16-bit integer.</td>
+                        <td class="hy">
+                            <code class="hy inline"
+                                ><span class="num">0</span></code
+                            >
+                        </td>
+                        <td class="hy">
+                            <code class="hy inline"
+                                ><span class="num">-32,768</span></code
+                            ><br />
+                            to<br />
+                            <code class="hy inline">
+                                <span class="num">32,767</span></code
+                            >, inclusive.
+                        </td>
+                    </tr>
+                    <tr class="hy">
+                        <td class="hy center-text">
+                            <code class="hy inline"
+                                ><span class="kw">int32</span></code
+                            ><br />
+                        </td>
+                        <td class="hy">Signed 32-bit integer.</td>
+                        <td class="hy">
+                            <code class="hy inline"
+                                ><span class="num">0</span></code
+                            >
+                        </td>
+                        <td class="hy">
+                            <code class="hy inline"
+                                ><span class="num">-2,147,483,648</span></code
+                            ><br />
+                            to<br />
+                            <code class="hy inline">
+                                <span class="num">2,147,483,647</span></code
+                            >, inclusive.
+                        </td>
+                    </tr>
+                    <tr class="hy">
+                        <td class="hy center-text">
+                            <code class="hy inline"
+                                ><span class="kw">int64</span></code
+                            ><br />
                         </td>
                         <td class="hy">Signed 64-bit integer.</td>
                         <td class="hy">
@@ -130,12 +190,74 @@
                     <tr class="hy">
                         <td class="hy center-text">
                             <code class="hy inline"
-                                ><span class="kw">unsigned</span></code
-                            >
-                            or
+                                ><span class="kw">uint8</span></code
+                            ><br />
+                        </td>
+                        <td class="hy">Unsigned 8-bit integer.</td>
+                        <td class="hy">
                             <code class="hy inline"
-                                ><span class="kw">uint</span></code
+                                ><span class="num">0</span></code
                             >
+                        </td>
+                        <td class="hy">
+                            <code class="hy inline"
+                                ><span class="num">0</span></code
+                            ><br />
+                            to<br />
+                            <code class="hy inline">
+                                <span class="num">255</span></code
+                            >, inclusive.
+                        </td>
+                    </tr>
+                    <tr class="hy">
+                        <td class="hy center-text">
+                            <code class="hy inline"
+                                ><span class="kw">uint16</span></code
+                            ><br />
+                        </td>
+                        <td class="hy">Unsigned 16-bit integer.</td>
+                        <td class="hy">
+                            <code class="hy inline"
+                                ><span class="num">0</span></code
+                            >
+                        </td>
+                        <td class="hy">
+                            <code class="hy inline"
+                                ><span class="num">0</span></code
+                            ><br />
+                            to<br />
+                            <code class="hy inline">
+                                <span class="num">65,535</span></code
+                            >, inclusive.
+                        </td>
+                    </tr>
+                    <tr class="hy">
+                        <td class="hy center-text">
+                            <code class="hy inline"
+                                ><span class="kw">uint32</span></code
+                            ><br />
+                        </td>
+                        <td class="hy">Unsigned 32-bit integer.</td>
+                        <td class="hy">
+                            <code class="hy inline"
+                                ><span class="num">0</span></code
+                            >
+                        </td>
+                        <td class="hy">
+                            <code class="hy inline"
+                                ><span class="num">0</span></code
+                            ><br />
+                            to<br />
+                            <code class="hy inline">
+                                <span class="num">4,294,967,295</span></code
+                            >, inclusive.
+                        </td>
+                    </tr>
+                    <tr class="hy">
+                        <td class="hy center-text">
+                            <code class="hy inline"
+                                ><span class="kw">uint64</span></code
+                            ><br />
                         </td>
                         <td class="hy">Unsigned 64-bit integer.</td>
                         <td class="hy">
@@ -158,11 +280,36 @@
                     <tr class="hy">
                         <td class="hy center-text">
                             <code class="hy inline"
-                                ><span class="kw">float</span></code
+                                ><span class="kw">float32</span></code
                             >
-                            or
+                        </td>
+                        <td class="hy">
+                            32-bit (single-precision) floating-point number.
+                        </td>
+                        <td class="hy">
                             <code class="hy inline"
-                                ><span class="kw">real</span></code
+                                ><span class="num">0.0</span></code
+                            >
+                        </td>
+                        <td class="hy">
+                            <span
+                                style="
+                                    font-family:
+                                        Cambria, Cochin, Georgia, Times,
+                                        &quot;Times New Roman&quot;, serif;
+                                "
+                                ><em
+                                    >&PlusMinus;1.7 &times; 10<sup
+                                        >&PlusMinus;38</sup
+                                    ></em
+                                ></span
+                            >.
+                        </td>
+                    </tr>
+                    <tr class="hy">
+                        <td class="hy center-text">
+                            <code class="hy inline"
+                                ><span class="kw">float64</span></code
                             >
                         </td>
                         <td class="hy">
@@ -191,29 +338,68 @@
                     <tr class="hy">
                         <td class="hy center-text">
                             <code class="hy inline"
-                                ><span class="kw">string</span></code
-                            >
-                            or
-                            <code class="hy inline"
-                                ><span class="kw">str</span></code
+                                ><span class="kw">float128</span></code
                             >
                         </td>
-                        <td class="hy">Text string.</td>
+                        <td class="hy">
+                            128-bit (extended-precision) floating-point number.
+                        </td>
+                        <td class="hy">
+                            <code class="hy inline"
+                                ><span class="num">0.0</span></code
+                            >
+                        </td>
+                        <td class="hy">
+                            <span
+                                style="
+                                    font-family:
+                                        Cambria, Cochin, Georgia, Times,
+                                        &quot;Times New Roman&quot;, serif;
+                                "
+                                ><em
+                                    >&PlusMinus;1.1897&times; 10<sup
+                                        >&PlusMinus;4932</sup
+                                    ></em
+                                ></span
+                            >.
+                        </td>
+                    </tr>
+                    <tr class="hy">
+                        <td class="hy center-text">
+                            <code class="hy inline"
+                                ><span class="kw">char</span></code
+                            >
+                        </td>
+                        <td class="hy">
+                            UTF-8 text character. Effectively an unicode
+                            codepoint.
+                        </td>
+                        <td class="hy">Same as a 32-bit signed integer.</td>
+                        <td class="hy">Same as a 32-bit signed integer.</td>
+                    </tr>
+                    <tr class="hy">
+                        <td class="hy center-text">
+                            <code class="hy inline"
+                                ><span class="kw">string</span></code
+                            >
+                        </td>
+                        <td class="hy">
+                            UTF-8 string. Stores each character individually as
+                            an unicode codepoint.
+                        </td>
                         <td class="hy">
                             Empty string (<code class="hy inline"
                                 ><span class="str">""</span></code
                             >).
                         </td>
-                        <td class="hy">18,446,744,073,709,551,615 bytes.</td>
+                        <td class="hy">
+                            18,446,744,073,709,551,615 characters.
+                        </td>
                     </tr>
                     <tr class="hy">
                         <td class="hy center-text">
                             <code class="hy inline"
                                 ><span class="kw">bytes</span></code
-                            >
-                            or
-                            <code class="hy inline"
-                                ><span class="kw">bin</span></code
                             >
                         </td>
                         <td class="hy">Binary data.</td>
@@ -223,57 +409,12 @@
                     <tr class="hy">
                         <td class="hy center-text">
                             <code class="hy inline"
-                                ><span class="kw">array</span></code
-                            >
-                            or
-                            <code class="hy inline"
-                                ><span class="kw">arr</span></code
-                            >
-                        </td>
-                        <td class="hy">Dynamic list of values.</td>
-                        <td class="hy">
-                            Empty array (<code class="hy inline"
-                                ><span class="op">[]</span></code
-                            >).
-                        </td>
-                        <td class="hy">18,446,744,073,709,551,615 elements.</td>
-                    </tr>
-                    <tr class="hy">
-                        <td class="hy center-text">
-                            <code class="hy inline"
-                                ><span class="kw">object</span></code
-                            >
-                            or
-                            <code class="hy inline"
-                                ><span class="kw">obj</span></code
-                            >
-                        </td>
-                        <td class="hy">
-                            <code class="hy inline"
-                                ><span class="kw">string</span></code
-                            >&mdash;mapped collection of values.
-                        </td>
-                        <td class="hy">Empty object.</td>
-                        <td class="hy">
-                            18,446,744,073,709,551,615 entries, with each key
-                            being a
-                            <code class="hy inline"
-                                ><span class="kw">string</span></code
-                            >.
-                        </td>
-                    </tr>
-                    <tr class="hy">
-                        <td class="hy center-text">
-                            <code class="hy inline"
                                 ><span class="kw">vector</span></code
                             >
-                            or
-                            <code class="hy inline"
-                                ><span class="kw">vec</span></code
-                            >
                         </td>
                         <td class="hy">
-                            Four-component (X, Y, Z and W) vector.
+                            Four-component (X, Y, Z and W) vector of 32-bit
+                            floating point values.
                         </td>
                         <td class="hy">
                             A vector with all components set to <br />
@@ -297,6 +438,32 @@
                             for each component.
                         </td>
                     </tr>
+                    <tr class="hy">
+                        <td class="hy center-text">
+                            <code class="hy inline"
+                                ><span class="kw">matrix</span></code
+                            >
+                        </td>
+                        <td class="hy">
+                            4x4 square matrix of 32-bit floating point values.
+                        </td>
+                        <td class="hy">A matrix set to its identity.</td>
+                        <td class="hy">
+                            <span
+                                style="
+                                    font-family:
+                                        Cambria, Cochin, Georgia, Times,
+                                        &quot;Times New Roman&quot;, serif;
+                                "
+                                ><em
+                                    >&PlusMinus;1.7 &times; 10<sup
+                                        >&PlusMinus;38</sup
+                                    ></em
+                                ></span
+                            >
+                            for each cell.
+                        </td>
+                    </tr>
                 </table>
             </div>
             <p class="hy">
@@ -306,21 +473,9 @@
             </p>
             <p class="hy">
                 To assign the default value for a given basic type, you can use
-                the provided value in the "Default Value" column, or you can
-                simply assign the type itself:
+                the provided value in the "Default Value" column. Variables are
+                automatically initialized to their default values.
             </p>
-            <code class="hy block">
-                <span class="memo"
-                    >// Assigns an unsigned integer of value 0</span
-                ><br />
-                var1 <span class="op">=</span> <span class="num">0</span
-                ><span class="op">;</span><br /><br />
-                <span class="memo"
-                    >// Also assigns an unsigned integer of value 0</span
-                ><br />
-                var1 <span class="op">=</span> <span class="kw">uint</span
-                ><span class="op">;</span><br />
-            </code>
             <hr class="hy" />
             <h2 class="hy">
                 The
@@ -329,8 +484,14 @@
             <p class="hy">
                 The
                 <code class="hy inline"><span class="kw">any</span></code> type
-                is a special compiler type that indicates that the data
-                <strong>can map to the value of any other type</strong>.
+                is a special type that indicates that the data
+                <strong>can map to the value of any other type</strong>. All
+                basic types (except
+                <code class="hy inline"><span class="kw">void</span></code
+                >,
+                <code class="hy inline"><span class="kw">null</span></code> and
+                <code class="hy inline"><span class="kw">type</span></code
+                >) derive from it.
             </p>
             <p class="hy">
                 While it can <em>receive</em> any value, only
@@ -338,6 +499,24 @@
                 can assign to other
                 <code class="hy inline"><span class="kw">any</span></code> types
                 without casting.
+            </p>
+            <hr class="hy" />
+            <h2 class="hy">
+                The
+                <code class="hy inline"><span class="kw">type</span></code> Type
+            </h2>
+            <p class="hy">
+                The
+                <code class="hy inline"><span class="kw">type</span></code> type
+                is what is considered a <strong>metatype</strong>, since it
+                holds a <em>type</em>, instead of a conventional value.
+            </p>
+            <p class="hy">
+                Due to its nature, it can only accept other
+                <code class="hy inline"><span class="kw">type</span></code
+                >s as value, and cannot be casted to and from
+                <code class="hy inline"><span class="kw">any</span></code
+                >.
             </p>
             <hr class="hy" />
             <h2 class="hy">Casting</h2>
@@ -377,7 +556,7 @@
                     `question`: `Which type can be casted to, and from, any type?`,
                     `answers`: [
                         {`value`:`<code class='hy inline'><span class='kw'>any</span></code>.`, `message`:`Correct! <code class='hy inline'><span class='kw'>any</span></code> can be casted-to and casted-from <em>any</em> type.`},
-                        {`value`:`<code class='hy inline'><span class='kw'>object</span></code>.`, `message`:`Wrong!`},
+                        {`value`:`<code class='hy inline'><span class='kw'>object</span></code>.`, `message`:`Wrong! This type does not exist!`},
                         {`value`:`<code class='hy inline'><span class='kw'>null</span></code>.`, `message`:`Wrong!`},
                         {`value`:`<code class='hy inline'><span class='kw'>string</span></code>.`, `message`:`Wrong!`}
                     ],
