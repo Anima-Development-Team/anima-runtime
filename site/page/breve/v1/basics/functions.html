@@ -22,7 +22,7 @@
                     >,</span
                 >
                 <span class="memo">...</span
-                ><span class="op">): </span> &lt;type&gt;</code
+                ><span class="op">) -> </span> &lt;type&gt;</code
             >
             <p class="hy">
                 And can be followed by
@@ -63,12 +63,13 @@
                 <span class="memo"
                     >// Declaring the function here, code comes later</span
                 ><br />
-                <span class="fn">doNothing</span><span class="op"> :: ():</span>
-                <span class="kw">void</span><span class="op"></span><br /><br />
+                <span class="fn">doNothing</span
+                ><span class="op"> :: () -></span> <span class="kw">void</span
+                ><span class="op"></span><br /><br />
                 <span class="memo">// Declaring a single-line function</span
                 ><br /><span class="fn">square</span
                 ><span class="op"> :: (</span>num<span class="op">:</span>
-                <span class="kw">float32</span><span class="op">):</span>
+                <span class="kw">float32</span><span class="op">) -></span>
                 <span class="kw">float32</span>
                 <span class="op">=&gt; </span>num
                 <span class="op">*</span> num<span class="op"></span
@@ -76,7 +77,7 @@
                 <span class="memo">// Declaring a full function</span><br />
                 <span class="fn">factorial</span
                 ><span class="op"> :: (</span>num<span class="op">:</span>
-                <span class="kw">uint64</span><span class="op">):</span>
+                <span class="kw">uint64</span><span class="op">) -></span>
                 <span class="kw">uint64</span>
                 <span class="op">{</span><br />
                 &nbsp;&nbsp;&nbsp;&nbsp;out <span class="op">=</span>
