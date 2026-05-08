@@ -14,17 +14,13 @@
             <h2 class="hy">Functions</h2>
             <p class="hy">
                 Functions are one way of creating reusable code in Breve. They
-                are declared with the
-                <code class="hy inline"><span class="kw">function</span></code
-                >,
-                <code class="hy inline"><span class="kw">func</span></code> or
-                <code class="hy inline"><span class="kw">fn</span></code>
-                keywords (up to your taste), as follows:
+                are declared as follows:
             </p>
             <code class="hy block">
-                <span class="kw">func</span> &lt;name&gt;<span class="op"
-                    >(</span
-                >&lt;arg&gt;<span class="op">,</span>
+                &lt;name&gt;<span class="op"> :: (</span>&lt;arg&gt;<span
+                    class="op"
+                    >,</span
+                >
                 <span class="memo">...</span
                 ><span class="op">): </span> &lt;type&gt;</code
             >
@@ -36,9 +32,8 @@
                     ><span class="op">{</span> <span class="memo">...</span>
                     <span class="op">}</span></code
                 >
-                for a code block, or
-                <code class="hy inline"><span class="op">;</span></code> for
-                forward declarations. For each part:
+                for a code block, or nothing, for forward declarations. For each
+                part:
             </p>
             <p class="hy">
                 <code class="hy inline">&lt;name&gt;</code> the function's name,
@@ -47,12 +42,10 @@
             </p>
             <p class="hy">
                 <code class="hy inline">&lt;arg&gt;</code> is a function
-                argument. These are declared like variables, but
-                <strong>without the location specifier</strong>, and can have up
-                to 255 arguments. If more than one, each argument must be
-                separated by a comma. If an argument has a default value, that
-                argument <strong>must</strong> be placed after all required
-                arguments.
+                argument. These are declared like variables. If more than one,
+                each argument must be separated by a comma. If an argument has a
+                default value, that argument <strong>must</strong> be placed
+                after all required arguments.
                 <strong>Optional.</strong>
             </p>
             <p class="hy">
@@ -70,36 +63,35 @@
                 <span class="memo"
                     >// Declaring the function here, code comes later</span
                 ><br />
-                <span class="kw">function</span>
-                <span class="fn">doNothing</span><span class="op">():</span>
-                <span class="kw">void</span><span class="op">;</span
-                ><br /><br />
+                <span class="fn">doNothing</span><span class="op"> :: ():</span>
+                <span class="kw">void</span><span class="op"></span><br /><br />
                 <span class="memo">// Declaring a single-line function</span
-                ><br />
-                <span class="kw">func</span> <span class="fn">square</span
-                ><span class="op">(</span>num<span class="op">:</span>
-                <span class="kw">real</span><span class="op">):</span>
-                <span class="kw">real</span> <span class="op">=&gt; (</span>num
-                <span class="op">*</span> num<span class="op">);</span
+                ><br /><span class="fn">square</span
+                ><span class="op"> :: (</span>num<span class="op">:</span>
+                <span class="kw">float32</span><span class="op">):</span>
+                <span class="kw">float32</span>
+                <span class="op">=&gt; </span>num
+                <span class="op">*</span> num<span class="op"></span
                 ><br /><br />
                 <span class="memo">// Declaring a full function</span><br />
-                <span class="kw">fn</span> <span class="fn">factorial</span
-                ><span class="op">(</span>num<span class="op">:</span>
-                <span class="kw">uint</span><span class="op">):</span>
-                <span class="kw">uint</span>
+                <span class="fn">factorial</span
+                ><span class="op"> :: (</span>num<span class="op">:</span>
+                <span class="kw">uint64</span><span class="op">):</span>
+                <span class="kw">uint64</span>
                 <span class="op">{</span><br />
                 &nbsp;&nbsp;&nbsp;&nbsp;out <span class="op">=</span>
-                <span class="num">0</span><span class="op">;</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">repeat</span> i
-                <span class="op">:</span> num
+                <span class="num">0</span><span class="op"></span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">for</span> i
+                <span class="op">:</span> <span class="num">0</span>
+                <span class="op">...</span> num
                 <br />
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;out
-                <span class="op">+=</span> <span class="op">(</span>i
+                <span class="op">+=</span> <span class="op"></span>i
                 <span class="op">+</span> <span class="num">1</span
-                ><span class="op">);</span><br />
+                ><span class="op"></span><br />
                 &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">return</span> out<span
                     class="op"
-                    >;</span
+                ></span
                 ><br />
                 <span class="op">}</span>
             </code>
@@ -112,17 +104,22 @@
                 <strong>Shared Functions</strong>.
             </p>
             <p class="hy">
-                <strong>Out Functions</strong> are one way of calling
-                cross-language code. Out functions execute code that is
+                <strong>ART Functions</strong> are one way of calling
+                cross-language code. ART functions execute code that is
                 <strong>defined by the ARTE implementation</strong>.
             </p>
             <p class="hy">
                 Declared via the
-                <code class="hy inline"><span class="kw">out</span></code>
-                keyword, followed by how one would forward declare a function.
+                <code class="hy inline"
+                    ><span class="macro">@ARTCall</span
+                    ><span class="op">(</span>name<span class="op"> = </span
+                    ><span class="str">"&lt;addr&gt;"</span
+                    ><span class="op">)</span></code
+                >
+                attribute, followed by how one would forward declare a function.
             </p>
             <p class="hy">
-                <strong>Shared Functions</strong>, much like out functions, are
+                <strong>Shared Functions</strong>, much like ART functions, are
                 also for calling cross-language code. Unlike their siblings,
                 however, shared functions
                 <strong
@@ -131,13 +128,15 @@
                 >.
             </p>
             <p class="hy">
-                Declared via
+                Declared via the
                 <code class="hy inline"
-                    ><span class="kw">out shared</span><span class="op">[</span
-                    ><span class="str">"&lt;LIBRARY NAME&gt;"</span>
-                    <span class="op">:</span>
-                    <span class="str">"&lt;FUNCTION NAME&gt;"</span
-                    ><span class="op">]</span></code
+                    ><span class="macro">@Shared</span
+                    ><span class="op">(</span>lib<span class="op"> = </span
+                    >&lt;libpath&gt;<span class="op"
+                        ><span class="op">, </span></span
+                    >name<span class="op"> = </span
+                    ><span class="str">"&lt;addr&gt;"</span
+                    ><span class="op">)</span></code
                 >
                 , followed by how one would forward declare a function.
             </p>

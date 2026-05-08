@@ -17,63 +17,50 @@
                 different flavours:
             </p>
             <p class="hy">
-                <code class="hy inline"><span class="kw">local</span></code>
-                <strong>variables</strong>: These are stored in the
+                <strong>Local variables</strong>: These are stored in the
                 <strong>stack</strong>, and can only be utilized in the scope
                 they are declared in.
             </p>
             <p class="hy">
-                <code class="hy inline"><span class="kw">global</span></code>
-                <strong>variables</strong>: These are stored in the
+                <strong>Global variables</strong>: These are stored in the
                 <strong>global space</strong>. While their declarations are
                 scoped, their value can be accessed from any scope, by using the
-                same <strong>address name</strong>.<br />Declared as
+                same <strong>address name</strong>.<br />Declared with the
                 <code class="hy inline">
-                    <span class="kw">global</span><span class="op">[</span
-                    ><span class="str">"&lt;address name&gt;"</span
-                    ><span class="op">]</span></code
-                >.
+                    <span class="macro">@Global</span
+                    ><span class="op">(</span>name<span class="op"> = </span
+                    ><span class="str">"&lt;addr&gt;"</span
+                    ><span class="op">)</span></code
+                >
+                attribute.
             </p>
             <p class="hy">
-                <code class="hy inline"><span class="kw">register</span></code>
-                <strong>variables</strong>: These are stored in the
-                <strong>register space</strong>. There are 32 general-purpose
-                registers in the ARTE, and these are used by internal functions.
-                <br />Declared as
+                <strong>Static variables</strong>: hese are stored in a hidden
+                section of the <strong>global space</strong>. While their
+                declarations are scoped, their value can be accessed from any
+                scope, by using the same
+                <strong>address name</strong>.<br />Declared with the
                 <code class="hy inline">
-                    <span class="kw">global</span><span class="op">[</span
-                    ><span class="num">&lt;register index&gt;</span
-                    ><span class="op">]</span></code
-                >.
+                    <span class="macro">@Static</span></code
+                >
+                attribute.
             </p>
             <p class="hy">
-                <code class="hy inline"><span class="kw">temporary</span></code>
-                <strong>variables</strong>: These are stored in the
-                <strong>temporary space</strong>. This space is also used for
-                storing results (be it functions, expressions, operators, etc.),
-                so it is not guaranteed its value will be consistent to what you
-                set.
-            </p>
-            <p class="hy">
-                <code class="hy inline"><span class="kw">out</span></code>
-                <strong>variables</strong>: These variables are stored in an
-                implementation-defined place. This behaviour varies from one
-                ARTE implementation to another, as it is intended to be one way
-                for cross-language communication.
+                <strong>External variables</strong>: These variables are stored
+                in an implementation-defined place. This behaviour varies from
+                one ARTE implementation to another, as it is intended to be one
+                way for cross-language communication.
                 <strong>This variable location can only be read from.</strong>
-                <br />Declared as
+                <br />Declared with the
                 <code class="hy inline">
-                    <span class="kw">out</span><span class="op">[</span
-                    ><span class="str">"&lt;source name&gt;"</span
-                    ><span class="op">]</span></code
-                >.
+                    <span class="macro">@Out</span
+                    ><span class="op">(</span>source<span class="op"> = </span
+                    ><span class="str">"&lt;addr&gt;"</span
+                    ><span class="op">)</span></code
+                >
+                attribute.
             </p>
-            <p class="hy">
-                If a location is not defined in a variable declaration, the
-                default is
-                <code class="hy inline"><span class="kw">local</span></code
-                >.
-            </p>
+            <!-- --TODO: Make a new quiz (this one is outdated)
             <div class="hy card" style="min-height: 30em">
                 <h3 class="hy">Quiz Time!</h3>
                 <iframe
@@ -90,20 +77,17 @@
                     `correct`: 1
                 }"
                 ></iframe>
-            </div>
+                </div>
+                -->
             <hr class="hy" />
             <h2 class="hy">Declarations</h2>
             <p class="hy">Variables are declared as such:</p>
             <code class="hy block">
-                &lt;location&gt; &lt;name&gt;
+                &lt;name&gt;
                 <span class="op">:</span> &lt;type&gt;
                 <span class="op">=</span> &lt;value&gt;</code
             >
             <p class="hy">Where:</p>
-            <p class="hy">
-                <code class="hy inline">&lt;location&gt;</code> is one of the
-                previously-mentioned locations. <strong>Optional.</strong>
-            </p>
             <p class="hy">
                 <code class="hy inline">&lt;name&gt;</code> is the variable's
                 name. Follows the same rules as variable names in other
@@ -127,23 +111,15 @@
             </p>
             <p class="hy">Thusly, variables can be declared as:</p>
             <code class="hy block">
-                var1<span class="op">:</span> <span class="kw">int</span
-                ><span class="op">;</span><br />var2 <span class="op">=</span>
-                <span class="num">0.2f</span><span class="op">;</span>
-                <br />var3<span class="op">:</span> <span class="kw">uint</span>
-                <span class="op">=</span> <span class="num">5</span
-                ><span class="op">;</span> <br /><span class="kw">local</span>
-                var4<span class="op">:</span> <span class="kw">string</span
-                ><span class="op">;</span><br /><span class="kw">local</span>
-                var5 <span class="op">=</span>
-                <span class="str">"This is a variable!"</span
-                ><span class="op">;</span><br /><span class="kw">local</span>
-                var6<span class="op">:</span> <span class="kw">string</span>
-                <span class="op">=</span>
-                <span class="str">"This is another variable!"</span
-                ><span class="op">;</span>
+                var1<span class="op">:</span> <span class="kw">int64</span
+                ><span class="op"></span><br />var2 <span class="op">:=</span>
+                <span class="num">0.2f</span><span class="op"></span>
+                <br />var3<span class="op">:</span>
+                <span class="kw">uint16</span> <span class="op">=</span>
+                <span class="num">5</span><span class="op"></span>
             </code>
             <p class="hy">And many other ways.</p>
+            <!-- --TODO: Make a new quiz (this one is outdated)
             <div class="hy card" style="min-height: 30em">
                 <h3 class="hy">Quiz Time!</h3>
                 <iframe
@@ -161,6 +137,7 @@
                 }"
                 ></iframe>
             </div>
+            -->
         </div>
     </body>
 </html>

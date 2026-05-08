@@ -18,42 +18,39 @@
                 you should see the following:
             </p>
             <code class="hy block">
-                <span class="kw">import</span>
-                core<span class="op">;</span> <br /><br />
-                <span class="kw">main</span>
-                <span class="op">{</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="memo"
-                    >// Main code goes here...</span
-                ><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;core<span class="op">.</span>IO<span
-                    class="op"
-                    >.</span
-                ><span class="macro">writeLine</span><span class="op">(</span
-                ><span class="str">"Hello, World!"</span
-                ><span class="op">);</span><br />
-                <span class="op">}</span>
+                <span class="kw">using import</span>
+				core
+				<br><br>
+				<span class="macro">@Main</span><br>
+				<span class="fn">main</span>
+				<span class="op">:: () {</span><br>
+				    &nbsp;&nbsp;&nbsp;&nbsp;<span class="memo">// Main code goes here...</span><br>
+					&nbsp;&nbsp;&nbsp;&nbsp;IO</span><span class="op">.</span><span class="fn">writeLine</span><span class="op">(</span><span class="str">"Hello, World!"</span><span class="op">)</span><br>
+				<span class="op">}</span>
             </code>
             <p class="hy">
                 Let`s break the code down and explore it, line-by-line.
             </p>
             <p class="hy">
                 <code class="hy inline"
-                    ><span class="kw">import</span> core<span class="op"
-                        >;</span
-                    ></code
-                >: An <em>import</em> statement. These will be discussed later,
+                    ><span class="kw">using import</span> core</code
+                >: An <em>using import</em> statement. These will be discussed later,
                 but essentially &RightArrow; this is how you import modules and
                 files.
             </p>
             <p class="hy">
+                <code class="hy inline"><span class="macro">@Main</span></code>: An <em>attribute</em>. What these are and what they do will be explained further ahead.
+                In this case, this one designates that the given function is the main entypoint for the program.
+            </p>
+            <p class="hy">
                 <code class="hy inline">
-                    <span class="kw">main</span>
-                    <span class="op">{</span></code
-                >: The <em>Main Block</em>. Where your code actually runs. It is
-                <strong>required</strong> for programs, and
-                <strong>ignored</strong> in modules. All the code within the
-                brackets gets executed (and these brackets are
-                <strong>mandatory</strong>).
+    				<span class="fn">main</span>
+    				<span class="op">:: () {</span></code>: A <em>function</em>. Where code actually gets run.
+                Since this function has the
+                <code class="hy inline"><span class="macro">@Main</span></code>
+                attribute, it is considered the entrypoint for the program.
+                An entrypoint is <strong>required</strong> for programs, and
+                <strong>ignored</strong> for modules.
             </p>
             <p class="hy">
                 <code class="hy inline">
@@ -67,17 +64,16 @@
             </p>
             <p class="hy">
                 <code class="hy inline">
-                    core<span class="op">.</span>IO<span class="op">.</span
-                    ><span class="macro">writeLine</span><span class="op">(</span
+                    IO<span class="op">.</span
+                    ><span class="fn">writeLine</span><span class="op">(</span
                     ><span class="str">"Hello, World!"</span
-                    ><span class="op">);</span></code
+                    ><span class="op">)</span></code
                 >: An <em>expression</em>. Expressions are the building blocks
-                of your program. In this case, this expression calls the macro
+                of your program. In this case, this expression calls the function
                 <code class="hy inline"
-                    ><span class="macro">writeLine</span></code
+                    ><span class="fn">writeLine</span></code
                 >, that lives in the namespace
-                <code class="hy inline">IO</code> in the module
-                <code class="hy inline">core</code>, with the string<code
+                <code class="hy inline">IO</code>, with the string<code
                     class="hy inline"
                     ><span class="str">"Hello, World!"</span></code
                 >. All of these concepts will be explained later.
