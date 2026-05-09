@@ -1,0 +1,11 @@
+{
+	type "doc"
+	build ["pages"]
+	pack ["res"]
+	url "https://animart.dev/"
+	recursive true
+	output "output/www2"
+	vars {
+		makai_url "https://github.com/LasagnaCake/Makai"
+	}
+}
