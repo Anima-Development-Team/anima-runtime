@@ -31,7 +31,7 @@ html `
 		<<kw>>using import<</kw>> core
 		<br><br>
 		<<attr text="Main"/>><br>
-		<<fn text="main"/>> <<op text="() :: {"/>>
+		<<fn text="main"/>> <<op text=":: () {"/>>
 			<<tab/>><<memo text="// Main code goes here..."/>><br>
 			<<tab/>>IO<<op text=".">><<call name="writeLine">><<dqstr>>Hello, World!<</dqstr>><</call>><br>
 		<<op text="}"/>>
@@ -50,7 +50,7 @@ html `
         the main entypoint for the program.
 	<</p>>
 	<<p>>
-		<<code-inline>><<fn text="main"/>> <<op text="() :: {"/>><</code-inline>>: A <<i>>function<</i>>.
+		<<code-inline>><<fn text="main"/>> <<op text=":: () {"/>><</code-inline>>: A <<i>>function<</i>>.
 		Where code actually gets run. Since this function has the <<code-inline>><<attr text="Main"/>><</code-inline>>
         attribute, it is considered the entrypoint for the program. An entrypoint is <<b>>required<</b>> for programs,
         and <<b>>ignored<</b>> for modules.
