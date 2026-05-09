@@ -12,13 +12,13 @@ html_begin `
 	<<nav-sidebar>>
 		<<section title="Basic">>
             <ol class="hy">
-                <li class="hy"><<link to="{{@url:breve/v1/basic/start}}">>Start<</link>></li>
-                <li class="hy"><<link to="{{@url:breve/v1/basic/structure}}">>Structure<</link>></li>
-                <li class="hy"><<link to="{{@url:breve/v1/basic/expressions}}">>Expressions<</link>></li>
-                <li class="hy"><<link to="{{@url:breve/v1/basic/transfer-semantics}}">>Transfer Semantics<</link>></li>
-                <li class="hy"><<link to="{{@url:breve/v1/basic/variables}}">>Variables<</link>></li>
-                <li class="hy"><<link to="{{@url:breve/v1/basic/basic-types}}">>Basic Types<</link>></li>
-                <li class="hy"><<link to="{{@url:breve/v1/basic/functions}}">>Functions<</link>></li>
+                <li class="hy"><<link to="{{@page:breve/v1/basic/start}}">>Start<</link>></li>
+                <li class="hy"><<link to="{{@page:breve/v1/basic/structure}}">>Structure<</link>></li>
+                <li class="hy"><<link to="{{@page:breve/v1/basic/expressions}}">>Expressions<</link>></li>
+                <li class="hy"><<link to="{{@page:breve/v1/basic/transfer-semantics}}">>Transfer Semantics<</link>></li>
+                <li class="hy"><<link to="{{@page:breve/v1/basic/variables}}">>Variables<</link>></li>
+                <li class="hy"><<link to="{{@page:breve/v1/basic/basic-types}}">>Basic Types<</link>></li>
+                <li class="hy"><<link to="{{@page:breve/v1/basic/functions}}">>Functions<</link>></li>
                 <li class="hy">Modules</li>
                 <li class="hy">Branches</li>
                 <li class="hy">Loops</li>

@@ -2,7 +2,7 @@ name "banner"
 html `
 <div class="hy flex horizontal center center-text banner" style="margin-top: 6em;">
 	<div style="width: max-content; height: max-content;">
-		<img src="{{@image:res/img/logo-v1b.png}}" width="40%" style="min-width: 12em; max-width: 18em; aspect-ratio: 1;">
+		<img src="{{@url:res/img/logo-v1b.png}}" width="40%" style="min-width: 12em; max-width: 18em; aspect-ratio: 1;">
 	</div>
 	<div style="width: 4em;"></div>
 	<div class="hy flex vertical center center-text">

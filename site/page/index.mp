@@ -38,7 +38,7 @@ html `
 			<p>More information coming soon!</p>
 		</div>
 	</div>
-	<<title>>Meet <<link to="{{@url:breve/v1/breve}}" text="Breve"/>>: the Flagship Language of Anima<</title>>
+	<<title>>Meet <<link to="{{@page:breve/v1/breve}}" text="Breve"/>>: the Flagship Language of Anima<</title>>
 	<<card>>
 		<<subcard>>
 			<<two-thirds>>
@@ -60,7 +60,7 @@ html `
 			<</one-third>>
 		<</subcard>>
 	<</card>>
-	<<title>>Need to go to a Lower Level? <<link to="{{@url:minima/v1/minima}}" text="Minima"/>> is There for You<</title>>
+	<<title>>Need to go to a Lower Level? <<link to="{{@page:minima/v1/minima}}" text="Minima"/>> is There for You<</title>>
 	<<card>>
 		<<subcard>>
 			<<two-thirds>>
