@@ -19,7 +19,7 @@ html_begin `
                 <li class="hy"><<link to="{{@url:breve/v1/basic/variables}}">>Variables<</link>></li>
                 <li class="hy"><<link to="{{@url:breve/v1/basic/basic-types}}">>Basic Types<</link>></li>
                 <li class="hy"><<link to="{{@url:breve/v1/basic/functions}}">>Functions<</link>></li>
-                <li class="hy">Namespaces</li>
+                <li class="hy">Modules</li>
                 <li class="hy">Branches</li>
                 <li class="hy">Loops</li>
                 <li class="hy">Operators</li>

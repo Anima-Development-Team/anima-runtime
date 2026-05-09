@@ -2,5 +2,6 @@ name name
 
 import ["bits/code/token"]
 
-html_begin `<<token type="name">>`
+html `<<token type="{{$$NAME}}" text="{{text}}"/>>`
+html_begin `<<token type="{{$$NAME}}">>`
 html_end `<</token>>`
