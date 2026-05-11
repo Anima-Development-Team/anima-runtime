@@ -46,7 +46,7 @@ html `
 	<</code-block>>
 	<<p>>
 		And can be followed by
-		<<code-inline>><<op text="->"/>><</code-inline>>
+		<<code-inline>><<op text="=>"/>><</code-inline>>
 		and an expression,
 		<<code-inline>><<op text="{"/>>
 			<<memo text="..."/>>
