@@ -4,6 +4,9 @@ import [
 	"bits/banner"
 	"bits/title"
 	"bits/code"
+	"bits/spacer"
+	"bits/card"
+	"bits/subcard"
 	"bits/layout/two-thirds"
 	"bits/layout/one-third"
 	"bits/code/attr"
@@ -41,15 +44,13 @@ html `
 	<<title>>Meet <<link to="{{@page:breve/v1/breve}}" text="Breve"/>>: the Flagship Language of Anima<</title>>
 	<<card>>
 		<<subcard>>
-			<<two-thirds>>
-				<<code>>
-					<<kw>>using import<</kw>> core
-					<br><br>
-					<<attr>>@Main<</attr>> <<fn>>main<</fn>> <<op>>:: () -><</op>> <<kw>>void<</kw>> <<op>>{<</op>><br>
-					<<tab/>>IO<<op>>.<</op>><<fn>>writeLine<</fn>><<op>>(<</op>><<str>>"Hello, World!"<</str>><<op>>)<</op>><br>
-					<<op>>}<</op>>
-				<</code>>
-			<</two-thirds>>
+			<<code>>
+				<<kw>>using import<</kw>> core
+				<br><br>
+				<<attr>>Main<</attr>> <<fn>>main<</fn>> <<op>>:: () -><</op>> <<kw>>void<</kw>> <<op>>{<</op>><br>
+				<<tab/>>IO<<op>>.<</op>><<fn>>writeLine<</fn>><<op>>(<</op>><<str>>"Hello, World!"<</str>><<op>>)<</op>><br>
+				<<op>>}<</op>>
+			<</code>>
 			<<one-third>>
 				<p class="hy center-text" style="font-weight: bold;">
 					Simplicity meets modernity.
@@ -63,8 +64,8 @@ html `
 	<<title>>Need to go to a Lower Level? <<link to="{{@page:minima/v1/minima}}" text="Minima"/>> is There for You<</title>>
 	<<card>>
 		<<subcard>>
-			<<two-thirds>>
-			<</two-thirds>>
+			<<code>>
+			<</code>>
 			<<one-third>>
 			<</one-third>>
 		<</subcard>>

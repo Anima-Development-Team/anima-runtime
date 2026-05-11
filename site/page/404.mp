@@ -1,4 +1,8 @@
-import ["bits/main"]
+import [
+	"bits/main"
+	"bits/title"
+	"bits/card"
+]
 
 html `
 <<main>>

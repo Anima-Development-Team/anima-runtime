@@ -1,4 +1,4 @@
-name nav-section
+name "nav-section"
 
 import [
 	"bits/text/b"

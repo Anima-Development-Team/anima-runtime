@@ -6,8 +6,8 @@ html_begin `
 	<head>
 	    <meta charset="UTF-8" />
 	    <title>{{title}}</title>
-	   	<link rel="icon" href="{{@url:res/img/logo-v1b-small.png}}">
-	    <style>{{@embed:res/css/styles.css}}</style>
+	   	<link rel="icon" href="{{@file:res/img/logo-v1b-small.png}}">
+	    <style>{{@embed:res/css/style.css}}</style>
 	</head>
 	<body class="hy" style="background-color: white">
 `

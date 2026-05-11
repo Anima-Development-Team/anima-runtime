@@ -1,4 +1,4 @@
-name sqstr
+name dqstr
 
 import ["bits/code/str"]
 

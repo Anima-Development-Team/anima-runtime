@@ -1,4 +1,4 @@
-name code-block
+name "code-block"
 
 html_begin `<code class="hy block">`
 

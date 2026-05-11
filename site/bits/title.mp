@@ -2,7 +2,7 @@ name "title"
 
 html `
     <h1
-        class="hy flex vertical center center-text no-color"
+        class="hy center-text no-color"
         style="box-shadow: none; margin-top: 3em"
     >
         {{text}}
@@ -11,7 +11,7 @@ html `
 
 html_begin `
     <h1
-        class="hy flex vertical center center-text no-color"
+        class="hy center-text no-color"
         style="box-shadow: none; margin-top: 3em"
     >
 `

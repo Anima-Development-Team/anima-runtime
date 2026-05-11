@@ -1,8 +1,10 @@
 import [
-	"bits/header"
-	"bits/navbar"
 	"bits/link"
 	"bits/mono"
+	"bits/title"
+	"bits/main"
+	"bits/card"
+	"bits/subcard"
 ]
 
 html `

@@ -9,7 +9,7 @@ html `
             class="hy link flex vertical center no-color"
             href="{{@page:index}}"
         >
-            <img src="{{@image:res/img/logo-v1b-small.png}}" height="32px" />
+            <img src="{{@file:res/img/icon/logo-v1b-small.png}}" height="32px" />
         </a>
     </div>
     <<navlink to="{{@page:index}}" text="Home"/>>

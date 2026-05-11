@@ -5,12 +5,13 @@ import [
 	"bits/docs/nav/sidebar"
 	"bits/docs/content"
 	"bits/docs/page"
+	"bits/link"
 ]
 
 html_begin `
-<<page>>
-	<<nav-sidebar>>
-		<<section title="Basic">>
+<<page title="Breve">>
+	<<nav-sidebar root="{{@page:breve/v1/breve}}" title="Breve">>
+		<<nav-section title="Basic">>
             <ol class="hy">
                 <li class="hy"><<link to="{{@page:breve/v1/basic/start}}">>Start<</link>></li>
                 <li class="hy"><<link to="{{@page:breve/v1/basic/structure}}">>Structure<</link>></li>
@@ -24,8 +25,10 @@ html_begin `
                 <li class="hy">Loops</li>
                 <li class="hy">Operators</li>
                 <li class="hy">Importing Files & Libraries</li>
-		<</section>>
-		<<section title="Advanced">>
+            </ol>
+		<</nav-section>>
+		<<nav-section title="Advanced">>
+            <ol class="hy">
                 <li class="hy">Extending Types</li>
                 <li class="hy">Anonymous Blocks</li>
                 <li class="hy">Attributes</li>
@@ -33,7 +36,8 @@ html_begin `
                 <li class="hy">Signals</li>
                 <li class="hy">Shared Libraries</li>
                 <li class="hy">Internal Calls</li>
-		<</section>>
+            </ol>
+		<</nav-section>>
 	<</nav-sidebar>>
 	<<content>>
 `

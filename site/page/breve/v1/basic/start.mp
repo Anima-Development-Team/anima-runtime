@@ -14,6 +14,11 @@ import [
 	"bits/code/token"
 	"bits/code/tab"
 	"bits/code/str"
+	"bits/code/expr"
+	"bits/code/memo"
+	"bits/code/call"
+	"bits/code/sqstr"
+	"bits/code/dqstr"
 ]
 
 html `

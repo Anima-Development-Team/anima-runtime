@@ -16,6 +16,11 @@ import [
 	"bits/code/token"
 	"bits/code/tab"
 	"bits/code/str"
+	"bits/code/sqstr"
+	"bits/code/dqstr"
+	"bits/code/expr"
+	"bits/code/memo"
+	"bits/code/call"
 ]
 
 html `
@@ -23,7 +28,7 @@ html `
 <<section>>
 	<<title>>Code Structure<</title>>
 	<<p>>
-	    If you open a new project`s
+	    If you open a new project\`s
         <<code-inline>>main.bv<</code-inline>> file in your text editor,
         you should see the following:
 	<</p>>
@@ -37,7 +42,7 @@ html `
 		<<op text="}"/>>
 	<</code-block>>
 	<<p>>
-		Let`s break the code down and explore it, line-by-line.
+		Let\`s break the code down and explore it, line-by-line.
 	<</p>>
 	<<p>>
 		<<code-inline>><<kw>>using import<</kw>> core<</code-inline>>: An <<i>>using import<</i>> statement.

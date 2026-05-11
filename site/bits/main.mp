@@ -5,7 +5,7 @@ import [
 	"bits/navbar"
 ]
 
-html_start `
+html_begin `
 <!DOCTYPE html>
 <<header/>>
 <body class="hy" style="background-color: white">

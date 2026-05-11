@@ -1,5 +1,5 @@
 name code
 
-html_begin `<code class="hy left-text">`
+html_begin `<code class="hy left-text two-thirds">`
 
 html_end `</code>`

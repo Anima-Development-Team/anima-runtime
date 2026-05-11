@@ -1,4 +1,8 @@
-name nav-sidebar
+name "nav-sidebar"
+
+import [
+	"bits/link"
+]
 
 html_begin `
 <div class="hy sidebar">
@@ -7,7 +11,7 @@ html_begin `
     class="hy flex vertical center no-color"
     style="box-shadow: none; margin: -0.6em 0.3em"
 >
-    <<link to={{root}}>>
+    <<link to="{{root}}">>
     <h1
         class="hy flex vertical center no-color"
         style="box-shadow: none; margin: -0.6em 0.3em"

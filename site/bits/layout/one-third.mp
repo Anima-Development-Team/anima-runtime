@@ -1,4 +1,4 @@
-name one-third
+name "one-third"
 
 html_begin `
 <div class="hy one-third">
