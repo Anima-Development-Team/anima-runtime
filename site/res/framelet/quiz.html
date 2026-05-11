@@ -6,7 +6,7 @@
 			.replace(/-/g, "+")
 			.replace(/_/g, "/");
 		console.log(query);
-		query = window.atob(query);
+		query = window.atob(unescape(query));
 		console.log(query);
 		let data = JSON.parse(query);
 		console.log(data);
