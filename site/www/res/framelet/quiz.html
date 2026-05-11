@@ -5,6 +5,7 @@
 		let query = decodeURIComponent(location.href.split("?::")[1])
 			.replace(/-/g, "+")
 			.replace(/_/g, "/");
+		console.log(query);
 		query = window.atob(query);
 		console.log(query);
 		let data = JSON.parse(query);
