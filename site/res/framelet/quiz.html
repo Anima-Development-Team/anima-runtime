@@ -4,7 +4,8 @@
 		console.log("Preparing quiz...");
 		let query = decodeURIComponent(location.href.split("?::")[1])
 			.replace(/-/g, "+")
-			.replace(/_/g, "/");
+			.replace(/_/g, "/")
+			.replace(/\s/g, "");
 		console.log(query);
 		query = window.atob(unescape(query));
 		console.log(query);
