@@ -70,6 +70,85 @@ html `
 	<<p>>As for each class of operation:<</p>>
 	<<topic>>Arithmetic<</topic>>
 	<<expr-table>>
+		<<expr-item name="Addition" type="Binary">>
+			<<code-inline>>
+				<<expr text="lhs"/>>
+				<<op text="+"/>>
+				<<expr text="rhs"/>>
+			<</code-inline>>
+		<</expr-item>>
+		<<expr-item name="Subtraction" type="Binary">>
+			<<code-inline>>
+				<<expr text="lhs"/>>
+				<<op text="-"/>>
+				<<expr text="rhs"/>>
+			<</code-inline>>
+		<</expr-item>>
+		<<expr-item name="Multiplier" type="Binary">>
+			<<code-inline>>
+				<<expr text="lhs"/>>
+				<<op text="*"/>>
+				<<expr text="rhs"/>>
+			<</code-inline>>
+		<</expr-item>>
+		<<expr-item name="Division" type="Binary">>
+			<<code-inline>>
+				<<expr text="lhs"/>>
+				<<op text="/"/>>
+				<<expr text="rhs"/>>
+			<</code-inline>>
+		<</expr-item>>
+		<<expr-item name="Modulo (Remainder)" type="Binary">>
+			<<code-inline>>
+				<<expr text="lhs"/>>
+				<<op text="%"/>>
+				<<expr text="rhs"/>>
+			<</code-inline>>
+		<</expr-item>>
+		<<expr-item name="Exponentiation" type="Binary">>
+			<<code-inline>>
+				<<expr text="lhs"/>>
+				<<kw text="pow"/>>
+				<<expr text="rhs"/>>
+			<</code-inline>>
+		<</expr-item>>
+		<<expr-item name="Arc tangent of X over Y (lhs over rhs)" type="Binary">>
+			<<code-inline>>
+				<<expr text="lhs"/>>
+				<<kw text="atan2"/>>
+				<<expr text="rhs"/>>
+			<</code-inline>>
+		<</expr-item>>
+		<<expr-item name="Inversion" type="Unary">>
+			<<code-inline>>
+				<<op text="-"/>><<expr text="expr"/>>
+			<</code-inline>>
+		<</expr-item>>
+		<<expr-item name="Positration" type="Unary">>
+			<<code-inline>>
+				<<op text="+"/>><<expr text="expr"/>>
+			<</code-inline>>
+		<</expr-item>>
+		<<expr-item name="Pre-Incrementation" type="Unary">>
+			<<code-inline>>
+				<<op text="++"/>><<expr text="expr"/>>
+			<</code-inline>>
+		<</expr-item>>
+		<<expr-item name="Pre-Decrementation" type="Unary">>
+			<<code-inline>>
+				<<op text="--"/>><<expr text="expr"/>>
+			<</code-inline>>
+		<</expr-item>>
+		<<expr-item name="Post-Incrementation" type="Unary">>
+			<<code-inline>>
+				<<expr text="expr"/>><<op text="++"/>>
+			<</code-inline>>
+		<</expr-item>>
+		<<expr-item name="Post-Decrementation" type="Unary">>
+			<<code-inline>>
+				<<expr text="expr"/>><<op text="--"/>>
+			<</code-inline>>
+		<</expr-item>>
 	<</expr-table>>
 	<<topic>>Logic<</topic>>
 	<<expr-table>>
