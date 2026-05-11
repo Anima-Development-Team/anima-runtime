@@ -1,0 +1,107 @@
+
+
+<!DOCTYPE html>
+
+<head>
+   	<meta charset="UTF-8" />
+   	<title>Anima Runtime</title>
+   	<link rel="icon" href="https://animart.dev//res/img/icon/logo-v1b-small.png">
+   	<style>@import url("https://hy.purplecheshire.net/hy.css");
+@import url("https://hy.purplecheshire.net/hyacinth/fonts/ibm-plex-sans.css");
+
+.hy {
+    --main-color: #04f;
+}
+
+header.hy {
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+
+@media (prefers-color-scheme: light) {
+    .hy {
+        --sub-color: color-mix(in oklab, var(--main-color), white);
+        --theme: white;
+        --inverse: black;
+        --text: black;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .hy {
+        --sub-color: color-mix(in oklab, var(--main-color), black);
+        --theme: color-mix(in oklab, black, var(--main-color) 20%);
+        --inverse: white;
+        --text: white;
+    }
+
+    .hy.button.action:hover {
+        background-color: color-mix(
+            in oklab,
+            var(--main-color),
+            var(--inverse)
+        );
+        color: var(--theme);
+    }
+
+    .hy.button.action:active {
+        color: color-mix(in oklab, var(--main-color), var(--inverse));
+        background-color: color-mix(in oklab, var(--theme), var(--main-color));
+    }
+}
+</style>
+</head>
+
+<body class="hy" style="background-color: white">
+    
+<header class="hy navbar">
+    <div class="hy navbar-item">
+        <a
+            class="hy link flex vertical center no-color"
+            href="https://animart.dev//index.html"
+        >
+            <img src="https://animart.dev//res/img/icon/logo-v1b-small.png" height="32px" />
+        </a>
+    </div>
+    
+<div class="hy navbar-item">
+    <a
+        class="hy link flex vertical center no-color"
+        href="https://animart.dev//index.html"
+    >Home</a>
+</div>
+
+    
+<div class="hy navbar-item">
+    <a
+        class="hy link flex vertical center no-color"
+        href="https://animart.dev//languages.html"
+    >Languages</a>
+</div>
+
+    
+<div class="hy navbar-item">
+    <a
+        class="hy link flex vertical center no-color"
+        href="https://animart.dev//download.html"
+    >Download</a>
+</div>
+
+</header>
+
+    <div class="hy app wide flex vertical center center-text">
+
+	
+    <h1
+        class="hy center-text no-color"
+        style="box-shadow: none; margin-top: 3em"
+    >
+        page does not exist :/
+    </h1>
+
+    <p>Either page has not been created, or you mis-typed the URL.</p>
+
+	</div>
+</body>
+

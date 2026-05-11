@@ -1,0 +1,915 @@
+
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+	    <meta charset="UTF-8" />
+	    <title>Basic Types</title>
+	   	<link rel="icon" href="https://animart.dev//res/img/logo-v1b-small.png">
+	    <style>@import url("https://hy.purplecheshire.net/hy.css");
+@import url("https://hy.purplecheshire.net/hyacinth/fonts/ibm-plex-sans.css");
+
+.hy {
+    --main-color: #04f;
+}
+
+header.hy {
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+
+@media (prefers-color-scheme: light) {
+    .hy {
+        --sub-color: color-mix(in oklab, var(--main-color), white);
+        --theme: white;
+        --inverse: black;
+        --text: black;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .hy {
+        --sub-color: color-mix(in oklab, var(--main-color), black);
+        --theme: color-mix(in oklab, black, var(--main-color) 20%);
+        --inverse: white;
+        --text: white;
+    }
+
+    .hy.button.action:hover {
+        background-color: color-mix(
+            in oklab,
+            var(--main-color),
+            var(--inverse)
+        );
+        color: var(--theme);
+    }
+
+    .hy.button.action:active {
+        color: color-mix(in oklab, var(--main-color), var(--inverse));
+        background-color: color-mix(in oklab, var(--theme), var(--main-color));
+    }
+}
+</style>
+	</head>
+	<body class="hy" style="background-color: white">
+
+	
+<div class="hy sidebar">
+<div class="hy display">
+<h1
+    class="hy flex vertical center no-color"
+    style="box-shadow: none; margin: -0.6em 0.3em"
+>
+    <a href="https://animart.dev//breve/v1/breve.html" class="hy link" style="font-size: inherit;">
+    <h1
+        class="hy flex vertical center no-color"
+        style="box-shadow: none; margin: -0.6em 0.3em"
+    >
+        Breve
+    </h1>
+    </a>
+</h1>
+<hr class="hy" />
+<div class="hy">
+
+		
+<div class="hy">
+<strong>Basic</strong>
+
+            <ol class="hy">
+                <li class="hy"><a href="https://animart.dev//breve/v1/basic/start.html" class="hy link" style="font-size: inherit;">Start</a></li>
+                <li class="hy"><a href="https://animart.dev//breve/v1/basic/structure.html" class="hy link" style="font-size: inherit;">Structure</a></li>
+                <li class="hy"><a href="https://animart.dev//breve/v1/basic/expressions.html" class="hy link" style="font-size: inherit;">Expressions</a></li>
+                <li class="hy"><a href="https://animart.dev//breve/v1/basic/transfer-semantics.html" class="hy link" style="font-size: inherit;">Transfer Semantics</a></li>
+                <li class="hy"><a href="https://animart.dev//breve/v1/basic/variables.html" class="hy link" style="font-size: inherit;">Variables</a></li>
+                <li class="hy"><a href="https://animart.dev//breve/v1/basic/basic-types.html" class="hy link" style="font-size: inherit;">Basic Types</a></li>
+                <li class="hy"><a href="https://animart.dev//breve/v1/basic/functions.html" class="hy link" style="font-size: inherit;">Functions</a></li>
+                <li class="hy">Modules</li>
+                <li class="hy">Branches</li>
+                <li class="hy">Loops</li>
+                <li class="hy">Operators</li>
+                <li class="hy">Importing Files & Libraries</li>
+            </ol>
+		
+</div>
+
+		
+<div class="hy">
+<strong>Advanced</strong>
+
+            <ol class="hy">
+                <li class="hy">Extending Types</li>
+                <li class="hy">Anonymous Blocks</li>
+                <li class="hy">Attributes</li>
+                <li class="hy">Inline Assembly (Minima)</li>
+                <li class="hy">Signals</li>
+                <li class="hy">Shared Libraries</li>
+                <li class="hy">Internal Calls</li>
+            </ol>
+		
+</div>
+
+	
+</div>
+</div>
+</div>
+
+	
+<div class="hy app wide flex vertical center left-text" style="max-width: calc(100% - 10% * 2); margin-left: calc(10%);">
+
+
+
+	<h2 class="hy">Basic Types</h2>
+	<p class="hy">
+		Breve's standard library possesses a few types that map directly
+        to Anima's underlying basic types:
+	</p>
+	
+<div class="hy card flex horizontal">
+	<table class="hy alternate">
+	    <tr class="hy">
+	        <th class="hy">Type</th>
+	        <th class="hy">Description</th>
+	        <th class="hy">Default Value</th>
+	        <th class="hy">Range</th>
+	    </tr>
+
+		
+<tr class="hy">
+    <td class="hy center-text">
+        <code class="hy inline"
+            ><span class="kw">void</span></code
+        >
+    </td>
+
+			
+    <td class="hy">
+
+				Empty. Different from null, as it indicates that the
+				<strong>source itself does not exist</strong>
+				whatsoever.
+				<strong>Cannot be used as a value directly.</strong>
+			
+    </td>
+
+			
+    <td class="hy">
+
+				<code class="hy inline"><span class="num">void</span></code>
+			
+    </td>
+
+			
+    <td class="hy">
+
+				<code class="hy inline"><span class="num">void</span></code>
+			
+    </td>
+
+		
+</tr>
+
+		
+<tr class="hy">
+    <td class="hy center-text">
+        <code class="hy inline"
+            ><span class="kw">null</span></code
+        >
+    </td>
+
+			
+    <td class="hy">
+
+				Null value. Indicates that the
+				<strong>value does not exist</strong>
+				All <code class="hy inline"><span class="macro">@Nullable</span></code>
+				types can accept it as a value.
+				<strong>Cannot be used as a type directly.</strong>
+			
+    </td>
+
+			
+    <td class="hy">
+
+				<code class="hy inline"><span class="num">null</span></code>
+			
+    </td>
+
+			
+    <td class="hy">
+
+				<code class="hy inline"><span class="num">null</span></code>
+			
+    </td>
+
+		
+</tr>
+
+		
+<tr class="hy">
+    <td class="hy center-text">
+        <code class="hy inline"
+            ><span class="kw">bool</span></code
+        >
+    </td>
+
+			
+    <td class="hy">
+
+				Boolean value.
+			
+    </td>
+
+			
+    <td class="hy">
+
+				<code class="hy inline"><span class="num">false</span></code>
+			
+    </td>
+
+			
+    <td class="hy">
+
+				<code class="hy inline"><span class="num">true</span></code>
+				or
+				<code class="hy inline"><span class="num">false</span></code>
+			
+    </td>
+
+		
+</tr>
+
+		
+<tr class="hy">
+    <td class="hy center-text">
+        <code class="hy inline"
+            ><span class="kw">int8</span></code
+        >
+    </td>
+
+			
+    <td class="hy">
+
+				Signed 8-bit integer.
+			
+    </td>
+
+			
+    <td class="hy">
+
+				<code class="hy inline"><span class="num">0</span></code>
+			
+    </td>
+
+			
+    <td class="hy">
+
+				<code class="hy inline"><span class="num">-128</span></code>
+				to
+				<code class="hy inline"><span class="num">127</span></code>,
+				inclusive.
+			
+    </td>
+
+		
+<tr class="hy">
+    <td class="hy center-text">
+        <code class="hy inline"
+            ><span class="kw">int16</span></code
+        >
+    </td>
+
+			
+    <td class="hy">
+
+				Signed 16-bit integer.
+			
+    </td>
+
+			
+    <td class="hy">
+
+				<code class="hy inline"><span class="num">0</span></code>
+			
+    </td>
+
+			
+    <td class="hy">
+
+				<code class="hy inline"><span class="num">-32,768</span></code>
+				to
+				<code class="hy inline"><span class="num">32,767</span></code>,
+				inclusive.
+			
+    </td>
+
+		
+</tr>
+
+		
+<tr class="hy">
+    <td class="hy center-text">
+        <code class="hy inline"
+            ><span class="kw">int32</span></code
+        >
+    </td>
+
+			
+    <td class="hy">
+
+				Signed 32-bit integer.
+			
+    </td>
+
+			
+    <td class="hy">
+
+				<code class="hy inline"><span class="num">0</span></code>
+			
+    </td>
+
+			
+    <td class="hy">
+
+				<code class="hy inline"><span class="num">-2,147,483,648</span></code>
+				to
+				<code class="hy inline"><span class="num">2,147,483,647</span></code>,
+				inclusive.
+			
+    </td>
+
+		
+</tr>
+
+		
+<tr class="hy">
+    <td class="hy center-text">
+        <code class="hy inline"
+            ><span class="kw">int64</span></code
+        >
+    </td>
+
+			
+    <td class="hy">
+
+				Signed 64-bit integer.
+			
+    </td>
+
+			
+    <td class="hy">
+
+				<code class="hy inline"><span class="num">0</span></code>
+			
+    </td>
+
+			
+    <td class="hy">
+
+				<code class="hy inline"><span class="num">-9,223,372,036,854,775,808</span></code>
+				to
+				<code class="hy inline"><span class="num">9,223,372,036,854,775,807</span></code>,
+				inclusive.
+			
+    </td>
+
+		
+</tr>
+
+		
+<tr class="hy">
+    <td class="hy center-text">
+        <code class="hy inline"
+            ><span class="kw">uint8</span></code
+        >
+    </td>
+
+			
+    <td class="hy">
+
+				Unsigned 8-bit integer.
+			
+    </td>
+
+			
+    <td class="hy">
+
+				<code class="hy inline"><span class="num">0</span></code>
+			
+    </td>
+
+			
+    <td class="hy">
+
+				<code class="hy inline"><span class="num">0</span></code>
+				to
+				<code class="hy inline"><span class="num">255</span></code>,
+				inclusive.
+			
+    </td>
+
+		
+</tr>
+
+		
+<tr class="hy">
+    <td class="hy center-text">
+        <code class="hy inline"
+            ><span class="kw">uint16</span></code
+        >
+    </td>
+
+			
+    <td class="hy">
+
+				Unsigned 16-bit integer.
+			
+    </td>
+
+			
+    <td class="hy">
+
+				<code class="hy inline"><span class="num">0</span></code>
+			
+    </td>
+
+			
+    <td class="hy">
+
+				<code class="hy inline"><span class="num">0</span></code>
+				to
+				<code class="hy inline"><span class="num">65,535</span></code>,
+				inclusive.
+			
+    </td>
+
+		
+</tr>
+
+		
+<tr class="hy">
+    <td class="hy center-text">
+        <code class="hy inline"
+            ><span class="kw">uint32</span></code
+        >
+    </td>
+
+			
+    <td class="hy">
+
+				Unsigned 32-bit integer.
+			
+    </td>
+
+			
+    <td class="hy">
+
+				<code class="hy inline"><span class="num">0</span></code>
+			
+    </td>
+
+			
+    <td class="hy">
+
+				<code class="hy inline"><span class="num">0</span></code>
+				to
+				<code class="hy inline"><span class="num">4,294,967,295</span></code>,
+				inclusive.
+			
+    </td>
+
+		
+</tr>
+
+		
+<tr class="hy">
+    <td class="hy center-text">
+        <code class="hy inline"
+            ><span class="kw">uint64</span></code
+        >
+    </td>
+
+			
+    <td class="hy">
+
+				Unsigned 64-bit integer.
+			
+    </td>
+
+			
+    <td class="hy">
+
+				<code class="hy inline"><span class="num">0</span></code>
+			
+    </td>
+
+			
+    <td class="hy">
+
+				<code class="hy inline"><span class="num">0</span></code>
+				to
+				<code class="hy inline"><span class="num">18,446,744,073,709,551,615</span></code>,
+				inclusive.
+			
+    </td>
+
+		
+</tr>
+
+		
+<tr class="hy">
+    <td class="hy center-text">
+        <code class="hy inline"
+            ><span class="kw">float32</span></code
+        >
+    </td>
+
+			
+    <td class="hy">
+
+				32-bit (single-precision) floating-point number.
+			
+    </td>
+
+			
+    <td class="hy">
+
+				<code class="hy inline"><span class="num">0.0</span></code>
+			
+    </td>
+
+			
+    <td class="hy">
+
+				
+<span
+    style="
+        font-family:
+            Cambria, Cochin, Georgia, Times,
+            &quot;Times New Roman&quot;, serif;
+    "
+    ><em>
+					&PlusMinus;1.7 &times; 10<sup>&PlusMinus;38</sup>
+				</em></span>,
+				inclusive.
+			
+    </td>
+
+		
+</tr>
+
+		
+<tr class="hy">
+    <td class="hy center-text">
+        <code class="hy inline"
+            ><span class="kw">float64</span></code
+        >
+    </td>
+
+			
+    <td class="hy">
+
+				64-bit (double-precision) floating-point number.
+			
+    </td>
+
+			
+    <td class="hy">
+
+				<code class="hy inline"><span class="num">0.0</span></code>
+			
+    </td>
+
+			
+    <td class="hy">
+
+				
+<span
+    style="
+        font-family:
+            Cambria, Cochin, Georgia, Times,
+            &quot;Times New Roman&quot;, serif;
+    "
+    ><em>
+					&PlusMinus;1.7 &times; 10<sup>&PlusMinus;308</sup>
+				</em></span>,
+				inclusive.
+			
+    </td>
+
+		
+</tr>
+
+		
+<tr class="hy">
+    <td class="hy center-text">
+        <code class="hy inline"
+            ><span class="kw">float128</span></code
+        >
+    </td>
+
+			
+    <td class="hy">
+
+				128-bit (extended-precision) floating-point number.
+			
+    </td>
+
+			
+    <td class="hy">
+
+				<code class="hy inline"><span class="num">0.0</span></code>
+			
+    </td>
+
+			
+    <td class="hy">
+
+				
+<span
+    style="
+        font-family:
+            Cambria, Cochin, Georgia, Times,
+            &quot;Times New Roman&quot;, serif;
+    "
+    ><em>
+					&PlusMinus;1.1897 &times; 10<sup>&PlusMinus;4932</sup>
+				</em></span>,
+				inclusive.
+			
+    </td>
+
+		
+</tr>
+
+		
+<tr class="hy">
+    <td class="hy center-text">
+        <code class="hy inline"
+            ><span class="kw">char</span></code
+        >
+    </td>
+
+			
+    <td class="hy">
+
+				UTF-8 text character. Effectively an unicode
+				codepoint.
+			
+    </td>
+
+			
+    <td class="hy">
+
+				Same as a 32-bit signed integer.
+			
+    </td>
+
+			
+    <td class="hy">
+
+				Same as a 32-bit signed integer.
+			
+    </td>
+
+		
+</tr>
+
+		
+<tr class="hy">
+    <td class="hy center-text">
+        <code class="hy inline"
+            ><span class="kw">string</span></code
+        >
+    </td>
+
+			
+    <td class="hy">
+
+				UTF-8 string. Stores each character individually as
+				an unicode codepoint.
+			
+    </td>
+
+			
+    <td class="hy">
+
+				Empty string (<code class="hy inline"><span class="str">""</span></code>).
+			
+    </td>
+
+			
+    <td class="hy">
+
+				18,446,744,073,709,551,615 characters.
+			
+    </td>
+
+		
+</tr>
+
+		
+<tr class="hy">
+    <td class="hy center-text">
+        <code class="hy inline"
+            ><span class="kw">bytes</span></code
+        >
+    </td>
+
+			
+    <td class="hy">
+
+				Binary data.
+			
+    </td>
+
+			
+    <td class="hy">
+
+				No bytes.
+			
+    </td>
+
+			
+    <td class="hy">
+
+				18,446,744,073,709,551,615 bytes.
+			
+    </td>
+
+		
+</tr>
+
+		
+<tr class="hy">
+    <td class="hy center-text">
+        <code class="hy inline"
+            ><span class="kw">vector</span></code
+        >
+    </td>
+
+			
+    <td class="hy">
+
+				Four-component (X, Y, Z and W) vector of 32-bit
+				floating point values.
+			
+    </td>
+
+			
+    <td class="hy">
+
+				A vector with all components set to
+				<code class="hy inline"><span class="num">0</span></code>.
+			
+    </td>
+
+			
+    <td class="hy">
+
+				Same as <code class="hy inline"><span class="kw">float</span></code>
+				for each component.
+			
+    </td>
+
+		
+</tr>
+
+		
+<tr class="hy">
+    <td class="hy center-text">
+        <code class="hy inline"
+            ><span class="kw">matrix</span></code
+        >
+    </td>
+
+			
+    <td class="hy">
+
+				4x4 square matrix of 32-bit floating point values.
+			
+    </td>
+
+			
+    <td class="hy">
+
+				A matrix set to its identity.
+			
+    </td>
+
+			
+    <td class="hy">
+
+				Same as <code class="hy inline"><span class="kw">float</span></code>
+				for each cell.
+			
+    </td>
+
+		
+</tr>
+
+	
+    </table>
+</div>
+
+	<p class="hy">
+		All types in Breve are checked at compile-time for type safety.
+		Numeric types are automatically converted between each other on
+		any operation.
+	</p>
+	<p class="hy">
+		Variables are automatically initialized to their default values.
+	</p>
+<hr class="hy" />
+
+	<h2 class="hy">The <code class="hy inline"><span class="kw">any</span></code> Type</h2>
+	<p class="hy">
+		The
+		<code class="hy inline"><span class="kw">any</span></code>
+		type is a special type that indicates that the reciever <strong>
+		can accept the value of (almost) any other type
+		</strong>.
+		All basic types (except
+		<code class="hy inline"><span class="kw">void</span></code>,
+		<code class="hy inline"><span class="kw">null</span></code> and
+		<code class="hy inline"><span class="kw">type</span></code>)
+		derive from it.
+	</p>
+	<p class="hy">
+		While it can <em>receive</em> any value, only
+		<code class="hy inline"><span class="kw">any</span></code> types
+		can assign to other
+		<code class="hy inline"><span class="kw">any</span></code> types
+		without casting.
+	</p>
+<hr class="hy" />
+
+	<h2 class="hy">The <code class="hy inline"><span class="kw">type</span></code> Type</h2>
+	<p class="hy">
+		The <code class="hy inline"><span class="kw">type</span></code> type
+		is what is considered a <strong>metatype</strong>, since it
+		holds a <em>type</em>, instead of a conventional value.
+	</p>
+	<p class="hy">
+		Due to its nature, it can only accept other
+		<code class="hy inline"><span class="kw">type</span></code>s as value,
+		and cannot be casted to and from
+		<code class="hy inline"><span class="kw">any</span></code>.
+	</p>
+<hr class="hy" />
+
+	<h2 class="hy">Casting</h2>
+	<p class="hy">
+		Casting allows the programmer to convert a value of a given type
+		to another. it is done with the
+		<code class="hy inline"><span class="kw">as</span></code>
+		operator.
+	</p>
+	<code class="hy block">
+		<span class="memo">// Casts the float as an int (= truncates to 2)</span><br>
+		var <span class="op">:</span> <span class="kw">int</span>
+		<span class="op">= (</span><span class="num">2.08</span>
+		<span class="kw">as</span>
+		<span class="kw">int</span><span class="op">)</span>
+	</code>
+	<p class="hy">
+		Both the source and destination types are checked if they are
+		compatible.
+		<code class="hy inline"><span class="kw">any</span></code>
+		is automatically assumed to be castable.
+	</p>
+	
+	<div class="hy alert danger soft subcard">
+	<h3 class="hy alert danger loud">Caution!</h3>
+
+		<p class="hy">
+			Be careful when casting from
+			<code class="hy inline"><span class="kw">any</span></code>
+			to any type! Make sure you check at runtime that the
+			destination type is the expected type!
+		</p>
+	
+    </div>
+
+<hr class="hy" />
+
+<div class="hy card" style="min-height: 30em">
+    <h3 class="hy">Quiz Time!</h3>
+    <iframe
+        class="hy"
+        style="height: 25em"
+        src="https://animart.dev//res/framelet/quiz.html?::ewoJInF1ZXN0aW9uIjogIldoaWNoIHR5cGUgY2FuIGJlIGNhc3RlZCB0bywgYW5kIGZyb20sIGFueSB0eXBlPyIsCgkiYW5zd2VycyI6IFsKCQl7CgkJCSJ2YWx1ZSI6ICI8Y29kZSBjbGFzcz0naHkgaW5saW5lJz48c3BhbiBjbGFzcz0na3cnPmFueTwvc3Bhbj48L2NvZGU-LiIsCgkJCSJtZXNzYWdlIjogIkNvcnJlY3QhIDxjb2RlIGNsYXNzPSdoeSBpbmxpbmUnPjxzcGFuIGNsYXNzPSdrdyc-YW55PC9zcGFuPjwvY29kZT4gY2FuIGJlIGNhc3RlZC10byBhbmQgY2FzdGVkLWZyb20gPGVtPmFueTwvZW0-IHR5cGUuIgoJCX0sCgkJewoJCQkidmFsdWUiOiAiPGNvZGUgY2xhc3M9J2h5IGlubGluZSc-PHNwYW4gY2xhc3M9J2t3Jz5vYmplY3Q8L3NwYW4-PC9jb2RlPi4iLAoJCQkibWVzc2FnZSI6ICJXcm9uZyEgVGhpcyB0eXBlIGRvZXMgbm90IGV4aXN0ISIKCQl9LAoJCXsKCQkJInZhbHVlIjogIjxjb2RlIGNsYXNzPSdoeSBpbmxpbmUnPjxzcGFuIGNsYXNzPSdrdyc-bnVsbDwvc3Bhbj48L2NvZGU-LiIsCgkJCSJtZXNzYWdlIjogIldyb25nISIKCQl9LAoJCXsKCQkJInZhbHVlIjogIjxjb2RlIGNsYXNzPSdoeSBpbmxpbmUnPjxzcGFuIGNsYXNzPSdrdyc-c3RyaW5nPC9zcGFuPjwvY29kZT4uIiwKCQkJIm1lc3NhZ2UiOiAiV3JvbmchIgoJCX0KCV0sCgkiY29ycmVjdCI6IDAKfQqrfQ=="
+    ></iframe>
+</div>
+
+
+	
+</div>
+
+
+	</body>
+</html>
+
+

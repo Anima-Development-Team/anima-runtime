@@ -1,0 +1,189 @@
+
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+	    <meta charset="UTF-8" />
+	    <title>Structure</title>
+	   	<link rel="icon" href="https://animart.dev//res/img/logo-v1b-small.png">
+	    <style>@import url("https://hy.purplecheshire.net/hy.css");
+@import url("https://hy.purplecheshire.net/hyacinth/fonts/ibm-plex-sans.css");
+
+.hy {
+    --main-color: #04f;
+}
+
+header.hy {
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+
+@media (prefers-color-scheme: light) {
+    .hy {
+        --sub-color: color-mix(in oklab, var(--main-color), white);
+        --theme: white;
+        --inverse: black;
+        --text: black;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .hy {
+        --sub-color: color-mix(in oklab, var(--main-color), black);
+        --theme: color-mix(in oklab, black, var(--main-color) 20%);
+        --inverse: white;
+        --text: white;
+    }
+
+    .hy.button.action:hover {
+        background-color: color-mix(
+            in oklab,
+            var(--main-color),
+            var(--inverse)
+        );
+        color: var(--theme);
+    }
+
+    .hy.button.action:active {
+        color: color-mix(in oklab, var(--main-color), var(--inverse));
+        background-color: color-mix(in oklab, var(--theme), var(--main-color));
+    }
+}
+</style>
+	</head>
+	<body class="hy" style="background-color: white">
+
+	
+<div class="hy sidebar">
+<div class="hy display">
+<h1
+    class="hy flex vertical center no-color"
+    style="box-shadow: none; margin: -0.6em 0.3em"
+>
+    <a href="https://animart.dev//breve/v1/breve.html" class="hy link" style="font-size: inherit;">
+    <h1
+        class="hy flex vertical center no-color"
+        style="box-shadow: none; margin: -0.6em 0.3em"
+    >
+        Breve
+    </h1>
+    </a>
+</h1>
+<hr class="hy" />
+<div class="hy">
+
+		
+<div class="hy">
+<strong>Basic</strong>
+
+            <ol class="hy">
+                <li class="hy"><a href="https://animart.dev//breve/v1/basic/start.html" class="hy link" style="font-size: inherit;">Start</a></li>
+                <li class="hy"><a href="https://animart.dev//breve/v1/basic/structure.html" class="hy link" style="font-size: inherit;">Structure</a></li>
+                <li class="hy"><a href="https://animart.dev//breve/v1/basic/expressions.html" class="hy link" style="font-size: inherit;">Expressions</a></li>
+                <li class="hy"><a href="https://animart.dev//breve/v1/basic/transfer-semantics.html" class="hy link" style="font-size: inherit;">Transfer Semantics</a></li>
+                <li class="hy"><a href="https://animart.dev//breve/v1/basic/variables.html" class="hy link" style="font-size: inherit;">Variables</a></li>
+                <li class="hy"><a href="https://animart.dev//breve/v1/basic/basic-types.html" class="hy link" style="font-size: inherit;">Basic Types</a></li>
+                <li class="hy"><a href="https://animart.dev//breve/v1/basic/functions.html" class="hy link" style="font-size: inherit;">Functions</a></li>
+                <li class="hy">Modules</li>
+                <li class="hy">Branches</li>
+                <li class="hy">Loops</li>
+                <li class="hy">Operators</li>
+                <li class="hy">Importing Files & Libraries</li>
+            </ol>
+		
+</div>
+
+		
+<div class="hy">
+<strong>Advanced</strong>
+
+            <ol class="hy">
+                <li class="hy">Extending Types</li>
+                <li class="hy">Anonymous Blocks</li>
+                <li class="hy">Attributes</li>
+                <li class="hy">Inline Assembly (Minima)</li>
+                <li class="hy">Signals</li>
+                <li class="hy">Shared Libraries</li>
+                <li class="hy">Internal Calls</li>
+            </ol>
+		
+</div>
+
+	
+</div>
+</div>
+</div>
+
+	
+<div class="hy app wide flex vertical center left-text" style="max-width: calc(100% - 10% * 2); margin-left: calc(10%);">
+
+
+
+	<h2 class="hy">Code Structure</h2>
+	<p class="hy">
+	    If you open a new project`s
+        <code class="hy inline">main.bv</code> file in your text editor,
+        you should see the following:
+	</p>
+	<code class="hy block">
+		<span class="kw">using import</span> core
+		<br><br>
+		<span class="macro">@Main</span><br>
+		<span class="fn">main</span> <span class="op">:: () {</span>
+			&nbsp;&nbsp;&nbsp;&nbsp;<span class="memo">// Main code goes here...</span><br>
+			&nbsp;&nbsp;&nbsp;&nbsp;IO<span class="op">.</span><span class="fn">writeLine</span><span class="op">(</span><span class="str">"Hello, World!"</span><span class="op">)</span><br>
+		<span class="op">}</span>
+	</code>
+	<p class="hy">
+		Let`s break the code down and explore it, line-by-line.
+	</p>
+	<p class="hy">
+		<code class="hy inline"><span class="kw">using import</span> core</code>: An <em>using import</em> statement.
+		These will be discussed later, but essentially &RightArrow; this is how you import modules and
+        files.
+	</p>
+	<p class="hy">
+        <code class="hy inline"><span class="macro">@Main</span></code> An <em>attribute</em>. What these are and what they do
+        will be explained further ahead in its own section. In this case, this one designates that the given function is
+        the main entypoint for the program.
+	</p>
+	<p class="hy">
+		<code class="hy inline"><span class="fn">main</span> <span class="op">:: () {</span></code>: A <em>function</em>.
+		Where code actually gets run. Since this function has the <code class="hy inline"><span class="macro">@Main</span></code>
+        attribute, it is considered the entrypoint for the program. An entrypoint is <strong>required</strong> for programs,
+        and <strong>ignored</strong> for modules.
+	</p>
+	<p class="hy">
+		<code class="hy inline"><span class="memo">// Main code goes here...</span></code>: A line comment.
+		Does not get executed, and only serves for documentation, or little notes. Block comments can be declared
+        via <code class="hy inline"><span class="memo">/* ... */</span></code>.
+	</p>
+	<p class="hy">
+		<code class="hy inline">IO<span class="op">.</span><span class="fn">writeLine</span><span class="op">(</span><span class="str">"Hello, World!"</span><span class="op">)</span></code>:
+		An <em>expression</em>. Expressions are the building blocks of your program. In this case, this expression
+		calls the function <code class="hy inline"><span class="fn">writeLine</span></code>, that lives in the module
+		<code class="hy inline">IO</code>, with the string <code class="hy inline"><span class="str">"Hello, World!"</span></code>.
+		All of these concepts will be explained in further chapters.
+	</p>
+<hr class="hy" />
+
+<div class="hy card" style="min-height: 30em">
+    <h3 class="hy">Quiz Time!</h3>
+    <iframe
+        class="hy"
+        style="height: 25em"
+        src="https://animart.dev//res/framelet/quiz.html?::ewoJIiI6ICJJZiB3ZSB3ZXJlIHRvIGNvbXBpbGUgYW5kIHJ1biB0aGlzIGNvZGUsIHdoYXQgd291bGQgaXQgZG8_IiwKCSJhbnN3ZXJzIjogWwoJCXsKCQkJInZhbHVlIjogIkl0IHdvdWxkIGdpdmUgYSBjb21waWxlciBlcnJvci4iLAoJCQkibWVzc2FnZSI6ICJXcm9uZyEgVGhlIGNvZGUgZG9lcyBjb21waWxlIHdpdGhvdXQgZXJyb3JzLiIKCQl9LAoJCXsKCQkJInZhbHVlIjogIkl0IHdvdWxkIGNvbXBpbGUsIGJ1dCBpdCBkb2VzIG5vdGhpbmcuIiwKCQkJIm1lc3NhZ2UiOiAiV3JvbmchIFRoZSBjb2RlIGRvZXMgb3V0cHV0IHNvbWV0aGluZy4iCgkJfSwKCQl7CgkJCSJ2YWx1ZSI6ICJJdCBwcmludHMgPGNvZGUgY2xhc3M9J2h5IGlubGluZSc-SGVsbG8sIFdvcmxkITwvY29kZT4gdG8gdGhlIGNvbnNvbGUuIiwKCQkJIm1lc3NhZ2UiOiAiQ29ycmVjdCEiCgkJfSwKCQl7CgkJCSJ2YWx1ZSI6ICJJdCBkaXNwbGF5cyA8Y29kZSBjbGFzcz0naHkgaW5saW5lJz5IZWxsbywgV29ybGQhPC9jb2RlPiBpbiBhIHBvcHVwLiIsCgkJCSJtZXNzYWdlIjogIldyb25nISBXaGlsZSB0aGUgY29kZSBkaXNwbGF5cyB0aGF0LCBpdCBpcyBub3QgaW4gYSBwb3B1cCB3aW5kb3cuIgoJCX0KCV0sCgkiY29ycmVjdCI6IDIKfQqrfQ=="
+    ></iframe>
+</div>
+
+
+	
+</div>
+
+
+	</body>
+</html>
+
+
