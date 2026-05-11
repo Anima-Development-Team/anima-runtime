@@ -13,7 +13,7 @@ html `
 	<p>The official languages of Anima are:</p>
 	<<subcard>>
 		<<link-button to="{{@page:breve/v1/breve}}" text="Breve"/>>
-		<<link-button to="{{@page:minima/v1/minima}}" text="Breve"/>>
+		<<link-button to="{{@page:minima/v1/minima}}" text="Minima"/>>
 	<</subcard>>
 <</card>>
 <</main>>
