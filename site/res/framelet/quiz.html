@@ -2,10 +2,9 @@
 <html>
 	<script>
 		console.log("Preparing quiz...");
-		let query = decodeURIComponent(location.href.split("?::")[1]).replace(
-			/`/g,
-			'"',
-		);
+		let query = decodeURIComponent(location.href.split("?::")[1])
+			.replace(/-/g, "+")
+			.replace(/_/g, "/");
 		query = new TextDecoder().decode(window.atob(query));
 		console.log(query);
 		let data = JSON.parse(query);
