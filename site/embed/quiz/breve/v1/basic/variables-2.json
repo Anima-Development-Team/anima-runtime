@@ -1,0 +1,22 @@
+{
+	"question": "Which of the following statements is true?",
+	"answers": [
+		{
+			"value": "If the variable's type is not set, it defaults to <code class='hy inline'><span class='kw'>void</span></code>.",
+			"message": "Wrong! It gets deduced from the assignment expression."
+		},
+		{
+			"value": "The variable's type can always be ommitted.",
+			"message": "Wrong! The type can only be ommitted when the variable is assigned a value."
+		},
+		{
+			"value": "The variable must always have a value.",
+			"message": "Wrong! The variable is not required to have a value, if and only if it has a type."
+		},
+		{
+			"value": "The variable must always have a name.",
+			"message": "Correct! How else are you going to use it?"
+		}
+	],
+	"correct": 3
+}

@@ -1,66 +1,64 @@
 <!doctype html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>Breve</title>
-        <link rel="icon" href="res/icon/logo-v1b-small.png" />
-        <link rel="stylesheet" href="../../../../css/style.css" />
-    </head>
-    <body class="hy" style="background-color: white">
-        <div class="hy sidebar">
-            <iframe class="hy display" src="../nav.html">The fuck?</iframe>
-        </div>
-        <div class="hy app wide flex vertical center left-text">
-            <h2 class="hy">Variables</h2>
-            <p class="hy">
-                Variables are a way to store data in Breve. These come in many
-                different flavours:
-            </p>
-            <p class="hy">
-                <strong>Local variables</strong>: These are stored in the
-                <strong>stack</strong>, and can only be utilized in the scope
-                they are declared in.
-            </p>
-            <p class="hy">
-                <strong>Global variables</strong>: These are stored in the
-                <strong>global space</strong>. While their declarations are
-                scoped, their value can be accessed from any scope, by using the
-                same <strong>address name</strong>.<br />Declared with the
-                <code class="hy inline">
-                    <span class="macro">@Global</span
-                    ><span class="op">(</span>name<span class="op"> = </span
-                    ><span class="str">"&lt;addr&gt;"</span
-                    ><span class="op">)</span></code
-                >
-                attribute.
-            </p>
-            <p class="hy">
-                <strong>Static variables</strong>: hese are stored in a hidden
-                section of the <strong>global space</strong>. While their
-                declarations are scoped, their value can be accessed from any
-                scope, by using the same
-                <strong>address name</strong>.<br />Declared with the
-                <code class="hy inline">
-                    <span class="macro">@Static</span></code
-                >
-                attribute.
-            </p>
-            <p class="hy">
-                <strong>External variables</strong>: These variables are stored
-                in an implementation-defined place. This behaviour varies from
-                one ARTE implementation to another, as it is intended to be one
-                way for cross-language communication.
-                <strong>This variable location can only be read from.</strong>
-                <br />Declared with the
-                <code class="hy inline">
-                    <span class="macro">@Out</span
-                    ><span class="op">(</span>source<span class="op"> = </span
-                    ><span class="str">"&lt;addr&gt;"</span
-                    ><span class="op">)</span></code
-                >
-                attribute.
-            </p>
-            <!-- --TODO: Make a new quiz (this one is outdated)
+	<head>
+		<meta charset="UTF-8" />
+		<title>Breve</title>
+		<link rel="icon" href="res/icon/logo-v1b-small.png" />
+		<link rel="stylesheet" href="../../../../css/style.css" />
+	</head>
+	<body class="hy" style="background-color: white">
+		<div class="hy sidebar">
+			<iframe class="hy display" src="../nav.html">The fuck?</iframe>
+		</div>
+		<div class="hy app wide flex vertical center left-text">
+			<h2 class="hy">Variables</h2>
+			<p class="hy">
+				Variables are a way to store data in Breve. These come in many
+				different flavours:
+			</p>
+			<p class="hy">
+				<strong>Local variables</strong>: These are stored in the
+				<strong>stack</strong>, and can only be utilized in the scope
+				they are declared in.
+			</p>
+			<p class="hy">
+				<strong>Global variables</strong>: These are stored in the
+				<strong>global space</strong>. While their declarations are
+				scoped, their value can be accessed from any scope, by using the
+				same <strong>address name</strong>.<br />Declared with the
+				<code class="hy inline">
+					<span class="macro">@Global</span
+					><span class="op">(</span>name<span class="op"> = </span
+					><span class="str">"&lt;addr&gt;"</span
+					><span class="op">)</span></code
+				>
+				attribute.
+			</p>
+			<p class="hy">
+				<strong>Static variables</strong>: These are stored in a hidden
+				section of the <strong>global space</strong>.<br />Declared with
+				the
+				<code class="hy inline">
+					<span class="macro">@Static</span></code
+				>
+				attribute.
+			</p>
+			<p class="hy">
+				<strong>External variables</strong>: These variables are stored
+				in an implementation-defined place. This behaviour varies from
+				one ARTE implementation to another, as it is intended to be one
+				way for cross-language communication.
+				<strong>This variable location can only be read from.</strong>
+				<br />Declared with the
+				<code class="hy inline">
+					<span class="macro">@Out</span
+					><span class="op">(</span>source<span class="op"> = </span
+					><span class="str">"&lt;addr&gt;"</span
+					><span class="op">)</span></code
+				>
+				attribute.
+			</p>
+			<!-- --TODO: Make a new quiz (this one is outdated)
             <div class="hy card" style="min-height: 30em">
                 <h3 class="hy">Quiz Time!</h3>
                 <iframe
@@ -79,47 +77,47 @@
                 ></iframe>
                 </div>
                 -->
-            <hr class="hy" />
-            <h2 class="hy">Declarations</h2>
-            <p class="hy">Variables are declared as such:</p>
-            <code class="hy block">
-                &lt;name&gt;
-                <span class="op">:</span> &lt;type&gt;
-                <span class="op">=</span> &lt;value&gt;</code
-            >
-            <p class="hy">Where:</p>
-            <p class="hy">
-                <code class="hy inline">&lt;name&gt;</code> is the variable's
-                name. Follows the same rules as variable names in other
-                languages. <strong>Required.</strong>
-            </p>
-            <p class="hy">
-                <code class="hy inline">&lt;type&gt;</code> is the variable's
-                type. These can be basic types, or classes.
-                <strong
-                    >Optional if <code class="hy inline">&lt;value&gt;</code> is
-                    set.</strong
-                >
-            </p>
-            <p class="hy">
-                <code class="hy inline">&lt;value&gt;</code> is the variable's
-                value.
-                <strong
-                    >Optional if <code class="hy inline">&lt;type&gt;</code> is
-                    set.</strong
-                >
-            </p>
-            <p class="hy">Thusly, variables can be declared as:</p>
-            <code class="hy block">
-                var1<span class="op">:</span> <span class="kw">int64</span
-                ><span class="op"></span><br />var2 <span class="op">:=</span>
-                <span class="num">0.2f</span><span class="op"></span>
-                <br />var3<span class="op">:</span>
-                <span class="kw">uint16</span> <span class="op">=</span>
-                <span class="num">5</span><span class="op"></span>
-            </code>
-            <p class="hy">And many other ways.</p>
-            <!-- --TODO: Make a new quiz (this one is outdated)
+			<hr class="hy" />
+			<h2 class="hy">Declarations</h2>
+			<p class="hy">Variables are declared as such:</p>
+			<code class="hy block">
+				&lt;name&gt;
+				<span class="op">:</span> &lt;type&gt;
+				<span class="op">=</span> &lt;value&gt;</code
+			>
+			<p class="hy">Where:</p>
+			<p class="hy">
+				<code class="hy inline">&lt;name&gt;</code> is the variable's
+				name. Follows the same rules as variable names in other
+				languages. <strong>Required.</strong>
+			</p>
+			<p class="hy">
+				<code class="hy inline">&lt;type&gt;</code> is the variable's
+				type. These can be basic types, or classes.
+				<strong
+					>Optional if <code class="hy inline">&lt;value&gt;</code> is
+					set.</strong
+				>
+			</p>
+			<p class="hy">
+				<code class="hy inline">&lt;value&gt;</code> is the variable's
+				value.
+				<strong
+					>Optional if <code class="hy inline">&lt;type&gt;</code> is
+					set.</strong
+				>
+			</p>
+			<p class="hy">Thusly, variables can be declared as:</p>
+			<code class="hy block">
+				var1<span class="op">:</span> <span class="kw">int64</span
+				><span class="op"></span><br />var2 <span class="op">:=</span>
+				<span class="num">0.2f</span><span class="op"></span>
+				<br />var3<span class="op">:</span>
+				<span class="kw">uint16</span> <span class="op">=</span>
+				<span class="num">5</span><span class="op"></span>
+			</code>
+			<p class="hy">And many other ways.</p>
+			<!-- --TODO: Make a new quiz (this one is outdated)
             <div class="hy card" style="min-height: 30em">
                 <h3 class="hy">Quiz Time!</h3>
                 <iframe
@@ -138,6 +136,6 @@
                 ></iframe>
             </div>
             -->
-        </div>
-    </body>
+		</div>
+	</body>
 </html>
