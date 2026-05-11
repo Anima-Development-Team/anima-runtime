@@ -89,6 +89,47 @@ html `
 		<<expr text="value"/>>
 	<</code-block>>
 	<<p>>Where:<</p>>
+	<<p>>
+		<<code-inline>><<expr text="name"/>><</code-inline>> is the
+		variable's name. Follows the same rules as variables in most
+		conventional languages.
+	<</p>>
+	<<p>>
+		<<code-inline>><<expr text="type"/>><</code-inline>> is the
+		variable's type. These can be basic types, or classes.
+		<<b>>
+			Optional if
+			<<code-inline>><<expr text="value"/>><</code-inline>>
+			exists.
+		<</b>>
+	<</p>>
+	<<p>>
+		<<code-inline>><<expr text="value"/>><</code-inline>> is the
+		variable's value.
+		<<b>>
+			Optional if
+			<<code-inline>><<expr text="type"/>><</code-inline>>
+			exists.
+		<</b>>
+	<</p>>
+	<<p>>
+		Thusly, variables can be declared as:
+	<</p>>
+	<<code-block>>
+		var1
+		<<op text=":"/>> <<kw text="int64"/>>
+		<br><br>
+		var2
+		<<op text=":"/>><<op text="="/>>
+		<<num text="0.2f"/>>
+		<br><br>
+		var3
+		<<op text=":"/>> <<kw text="uint16"/>>
+		<<op text="="/>> <<num text="5"/>>
+	<</code-block>>
+	<<p>>
+		And many other ways.
+	<</p>>
 <</section>>
 <<quiz question="{{@base64:embed/quiz/breve/v1/basic/variables-2.json}}"/>>
 <</main>>
