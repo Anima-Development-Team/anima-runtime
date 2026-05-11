@@ -120,6 +120,31 @@ html `
 	<</p>>
 	<<p>>
 		Declared via the
+		<<code-inline>>
+			<<attr>>ARTCall<</attr>><<op text="("/>>
+			name <<op text="="/>>
+			<<dqstr>><<expr text="art-name"/>><</dqstr>>
+			<<op text=")"/>>
+		<</code-inline>> attribute, followed by how
+		one would forward declare a function.
+	<</p>>
+	<<p>>
+		<<b>>Shared Functions<</b>>, much like ART functions, are
+		also for calling cross-language code. Unlike their siblings,
+		however, shared functions <<b>>execute code defined in an
+		Anima-compatible shared library<</b>>.
+	<</p>>
+	<<p>>
+		Declared via the
+		<<code-inline>>
+			<<attr>>Shared<</attr>><<op text="("/>>
+			lib <<op text="="/>>
+			<<expr text="dynlib-path"/>><<op text=","/>>
+			name <<op text="="/>>
+			<<dqstr>><<expr text="fn-name"/>><</dqstr>>
+			<<op text=")"/>>
+		<</code-inline>> attribute, followed by how
+		one would forward declare a function.
 	<</p>>
 <</section>>
 <</main>>
