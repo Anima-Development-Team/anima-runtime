@@ -1,11 +1,12 @@
 <!doctype html>
 <html>
 	<script>
+		console.log("Preparing quiz...");
 		let query = decodeURIComponent(location.href.split("?::")[1]).replace(
 			/`/g,
 			'"',
 		);
-		query = new TextDecoder().decode(Window.atob(query));
+		query = new TextDecoder().decode(window.atob(query));
 		console.log(query);
 		let data = JSON.parse(query);
 		console.log(data);
