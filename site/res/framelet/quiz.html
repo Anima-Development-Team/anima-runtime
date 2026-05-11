@@ -5,7 +5,7 @@
 			/`/g,
 			'"',
 		);
-		query = new TextDecoder().decode(Window.atob(query));
+		query = new TextDecoder().decode(window.atob(query));
 		console.log(query);
 		let data = JSON.parse(query);
 		console.log(data);
