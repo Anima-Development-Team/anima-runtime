@@ -22,7 +22,7 @@ import [
 ]
 
 html `
-<<main>>
+<<main title="Start">>
 <<section>>
 	<<title>>First Steps<</title>>
 	<<p>>

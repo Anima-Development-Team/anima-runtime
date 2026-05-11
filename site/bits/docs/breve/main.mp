@@ -8,8 +8,12 @@ import [
 	"bits/link"
 ]
 
+default {
+	title Breve
+}
+
 html_begin `
-<<page title="Breve">>
+<<page title="{{title}}">>
 	<<nav-sidebar root="{{@page:breve/v1/breve}}" title="Breve">>
 		<<nav-section title="Basic">>
             <ol class="hy">

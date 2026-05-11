@@ -25,7 +25,7 @@ import [
 ]
 
 html `
-<<main>>
+<<main title="Structure">>
 <<section>>
 	<<title>>Code Structure<</title>>
 	<<p>>
