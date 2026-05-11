@@ -76,6 +76,35 @@ html `
 	<<p>>
         Thusly, a function can be declared like the following:
 	<</p>>
+	<<code-block>>
+		<<memo text="// Declaring the function here, code comes later"/>><br>
+		<<fn text="doNothing"/>>
+		<<op text=":: () ->"/>>
+		<<kw text="void"/>>
+		<br><br>
+		<<memo text="// Declaring a single-line function"/>><br>
+		<<fn text="square"/>>
+		<<op text=":: ("/>>
+		num <<op text=":"/>> <<kw text="float32"/>>
+		<<op text=") =>"/>>
+		num <<op text="*"/>> num
+		<br><br>
+		<<memo text="// Declaring a full-body function"/>><br>
+		<<fn text="factorial"/>>
+		<<op text=":: ("/>>
+		num <<op text=":"/>> <<kw text="uint64"/>>
+		<<op text=") ->"/>> <<kw text="uint64"/>>
+		<<op text="{"/>><br>
+		<<tab/>> out <<op text=":="/>> <<num text="0"/>><br>
+		<<tab/>> <<kw text="for"/>>
+		i <<op text=":"/>> <<num text="0"/>> <<op text="..."/>> num <br>
+		<<tab/>> <<tab/>> out <<op text="+="/>> i <<op text="+"/>> 1 <br>
+		<<tab/>> <<kw text="return"/>> out <br>
+		<<op text="}"/>>
+	<</code-block>>
+	<<p>>
+		And many other possible ways.
+	<</p>>
 <</section>>
 <</main>>
 `
