@@ -3,7 +3,7 @@
 	build ["page"]
 	pack ["res"]
 	url "https://animart.dev/"
-	output "output/www2"
+	output "www"
 	vars {
 		makai_url "https://github.com/LasagnaCake/Makai"
 	}
