@@ -47,7 +47,8 @@ html `
 			<<code>>
 				<<kw>>using import<</kw>> core
 				<br><br>
-				<<attr>>Main<</attr>> <<fn>>main<</fn>> <<op>>:: () -><</op>> <<kw>>void<</kw>> <<op>>{<</op>><br>
+				<<attr>>Main<</attr>><br>
+				<<fn>>main<</fn>> <<op>>:: () -><</op>> <<kw>>void<</kw>> <<op>>{<</op>><br>
 				<<tab/>>IO<<op>>.<</op>><<fn>>writeLine<</fn>><<op>>(<</op>><<str>>"Hello, World!"<</str>><<op>>)<</op>><br>
 				<<op>>}<</op>>
 			<</code>>

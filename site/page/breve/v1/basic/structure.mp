@@ -21,6 +21,7 @@ import [
 	"bits/code/expr"
 	"bits/code/memo"
 	"bits/code/call"
+	"bits/docs/quiz"
 ]
 
 html `
@@ -38,7 +39,7 @@ html `
 		<<attr text="Main"/>><br>
 		<<fn text="main"/>> <<op text=":: () {"/>>
 			<<tab/>><<memo text="// Main code goes here..."/>><br>
-			<<tab/>>IO<<op text=".">><<call name="writeLine">><<dqstr>>Hello, World!<</dqstr>><</call>><br>
+			<<tab/>>IO<<op text="."/>><<call name="writeLine">><<dqstr>>Hello, World!<</dqstr>><</call>><br>
 		<<op text="}"/>>
 	<</code-block>>
 	<<p>>
@@ -66,12 +67,13 @@ html `
         via <<code-inline>><<memo text="/* ... */"/>><</code-inline>>.
 	<</p>>
 	<<p>>
-		<<code-inline>>IO<<op text=".">><<call name="writeLine">><<dqstr>>Hello, World!<</dqstr>><</call>><</code-inline>>:
+		<<code-inline>>IO<<op text="."/>><<call name="writeLine">><<dqstr>>Hello, World!<</dqstr>><</call>><</code-inline>>:
 		An <<i>>expression<</i>>. Expressions are the building blocks of your program. In this case, this expression
 		calls the function <<code-inline>><<fn text="writeLine"/>><</code-inline>>, that lives in the module
 		<<code-inline>>IO<</code-inline>>, with the string <<code-inline>><<dqstr>>Hello, World!<</dqstr>><</code-inline>>.
 		All of these concepts will be explained in further chapters.
 	<</p>>
 <</section>>
+<<quiz question="{{@base64:embed/quiz/breve/v1/basic/structure.json}}"/>>
 <</main>>
 `
