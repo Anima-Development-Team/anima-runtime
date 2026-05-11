@@ -54,7 +54,28 @@ html `
 		for a code block, or nothing, for forward declarations.
 		For each part:
 	<</p>>
-	<<p>><</p>>
+	<<p>>
+		<<code-inline>><<expr text="name"/>><</code-inline>> is the
+		function's name, and follows the same rule as the variable's name.
+		<<b>>Required.<</b>>
+	<</p>>
+	<<p>>
+		<<code-inline>><<expr text="arg"/>><</code-inline>> is a
+		function argument. These are declared like variables. If more
+		than one, each argument must be separated by a comma. If
+		an argument has a default value, that argument <<b>>must<</b>>
+		be placed after all non-defaulted arguments.
+		<<b>>Optional.<</b>>
+	<</p>>
+	<<p>>
+		<<code-inline>><<expr text="type"/>><</code-inline>> is the
+		function's return type.
+		<<b>>Optional for non-forward declarations, defaults to
+		auto-deducing the type.<</b>>
+	<</p>>
+	<<p>>
+        Thusly, a function can be declared like the following:
+	<</p>>
 <</section>>
 <</main>>
 `
