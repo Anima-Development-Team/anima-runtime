@@ -106,5 +106,21 @@ html `
 		And many other possible ways.
 	<</p>>
 <</section>>
+<<section>>
+	<<title>>External Functions<</title>>
+	<<p>>
+		External functions are your way of calling cross-language code.
+        They come in two types: <<b>>ART Functions<</b>> and
+        <<b>>Shared Functions<</b>>.
+	<</p>>
+	<<p>>
+		<<b>>ART Functions<</b>> are one way of calling cross-language
+		code. ART functions execute code that is <<b>>defined
+		by the ART implementation.<</b>>
+	<</p>>
+	<<p>>
+		Declared via the
+	<</p>>
+<</section>>
 <</main>>
 `
