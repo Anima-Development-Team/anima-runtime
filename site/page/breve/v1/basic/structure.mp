@@ -37,7 +37,7 @@ html `
 		<<kw>>using import<</kw>> core
 		<br><br>
 		<<attr text="Main"/>><br>
-		<<fn text="main"/>> <<op text=":: () {"/>>
+		<<fn text="main"/>> <<op text=":: () {"/>><br>
 			<<tab/>><<memo text="// Main code goes here..."/>><br>
 			<<tab/>>IO<<op text="."/>><<call name="writeLine">><<dqstr>>Hello, World!<</dqstr>><</call>><br>
 		<<op text="}"/>>
