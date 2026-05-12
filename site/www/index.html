@@ -1,0 +1,221 @@
+
+
+<!DOCTYPE html>
+
+<head>
+   	<meta charset="UTF-8" />
+   	<title>Anima Runtime</title>
+   	<link rel="icon" href="https://animart.dev//res/img/icon/logo-v1b-small.png">
+   	<style>@import url("https://hy.purplecheshire.net/hy.css");
+@import url("https://hy.purplecheshire.net/hyacinth/fonts/ibm-plex-sans.css");
+
+.hy {
+    --main-color: #04f;
+}
+
+header.hy {
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+
+@media (prefers-color-scheme: light) {
+    .hy {
+        --sub-color: color-mix(in oklab, var(--main-color), white);
+        --theme: white;
+        --inverse: black;
+        --text: black;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .hy {
+        --sub-color: color-mix(in oklab, var(--main-color), black);
+        --theme: color-mix(in oklab, black, var(--main-color) 20%);
+        --inverse: white;
+        --text: white;
+    }
+
+    .hy.button.action:hover {
+        background-color: color-mix(
+            in oklab,
+            var(--main-color),
+            var(--inverse)
+        );
+        color: var(--theme);
+    }
+
+    .hy.button.action:active {
+        color: color-mix(in oklab, var(--main-color), var(--inverse));
+        background-color: color-mix(in oklab, var(--theme), var(--main-color));
+    }
+}
+</style>
+</head>
+
+<body class="hy" style="background-color: white">
+    
+<header class="hy navbar">
+    <div class="hy navbar-item">
+        <a
+            class="hy link flex vertical center no-color"
+            href="https://animart.dev//index.html"
+        >
+            <img src="https://animart.dev//res/img/icon/logo-v1b-small.png" height="32px" />
+        </a>
+    </div>
+    
+<div class="hy navbar-item">
+    <a
+        class="hy link flex vertical center no-color"
+        href="https://animart.dev//index.html"
+    >Home</a>
+</div>
+
+    
+<div class="hy navbar-item">
+    <a
+        class="hy link flex vertical center no-color"
+        href="https://animart.dev//languages.html"
+    >Languages</a>
+</div>
+
+    
+<div class="hy navbar-item">
+    <a
+        class="hy link flex vertical center no-color"
+        href="https://animart.dev//download.html"
+    >Download</a>
+</div>
+
+</header>
+
+    <div class="hy app wide flex vertical center center-text">
+
+	
+<div class="hy flex horizontal center center-text banner" style="margin-top: 6em;">
+	<div style="width: max-content; height: max-content;">
+		<img src="https://animart.dev//res/img/icon/logo-v1b.png" width="40%" style="min-width: 12em; max-width: 18em; aspect-ratio: 1;">
+	</div>
+	<div style="width: 4em;"></div>
+	<div class="hy flex vertical center center-text">
+		<h1 class="hy flex vertical center center-text no-color" style="box-shadow: none;">
+			Anima Runtime
+		</h1>
+		<span class="hy flex vertical center center-text no-color" style="box-shadow: none; margin-top: -2em; margin-bottom: 1em; font-weight: normal; font-size: 1.2em;">
+			A modern virtual machine for modern languages
+		</span>
+		<div class="hy flex horizontal center center-text" style="height: 3em;">
+			<a class="hy button action" href="tutorial.html" style="width: 60%;">
+				Getting Started
+			</a>
+		</div>
+	</div>
+</div>
+
+	
+	<div style="width: 0em; height: 2em;"></div>
+
+	
+    <h1
+        class="hy center-text no-color"
+        style="box-shadow: none; margin-top: 3em"
+    >
+A Fresh Way to Develop Your Programs
+    </h1>
+
+	
+    <h1
+        class="hy center-text no-color"
+        style="box-shadow: none; margin-top: 3em"
+    >
+But Why Anima?
+    </h1>
+
+	<div class="hy card flex horizontal center override">
+		<div class="hy subcard">
+			<h2 class="hy" style="font-size: larger;">Designed to Easily Work With Modern C++</h2>
+			<p>Easily call C++ from inside the ART, and vice-versa.</p>
+			<p>Shared libraries are even easier than before.</p>
+		</div>
+		<div class="hy subcard">
+			<h2 class="hy" style="font-size: larger;"></h2>
+			<p>More information coming soon!</p>
+		</div>
+		<div class="hy subcard">
+			<h2 class="hy" style="font-size: larger;"></h2>
+			<p>More information coming soon!</p>
+		</div>
+	</div>
+	
+    <h1
+        class="hy center-text no-color"
+        style="box-shadow: none; margin-top: 3em"
+    >
+Meet <a href="https://animart.dev//breve/v1/breve.html" class="hy link" style="font-size: inherit;">Breve</a>: the Flagship Language of Anima
+    </h1>
+
+	
+<div class="hy card flex vertical center">
+
+		
+<div class="hy subcard flex horizontal center">
+
+			<code class="hy left-text two-thirds">
+				<span class="kw">using import</span> core
+				<br><br>
+				<span class="macro">@Main</span><br>
+				<span class="fn">main</span> <span class="op">:: () -></span> <span class="kw">void</span> <span class="op">{</span><br>
+				&nbsp;&nbsp;&nbsp;&nbsp;IO<span class="op">.</span><span class="fn">writeLine</span><span class="op">(</span><span class="str">"Hello, World!"</span><span class="op">)</span><br>
+				<span class="op">}</span>
+			</code>
+			
+<div class="hy one-third">
+
+				<p class="hy center-text" style="font-weight: bold;">
+					Simplicity meets modernity.
+				</p>
+				<p class="hy center-text">
+					Write less, and make more.
+				</p>
+			
+</div>
+
+		
+</div>
+
+	
+</div>
+
+	
+    <h1
+        class="hy center-text no-color"
+        style="box-shadow: none; margin-top: 3em"
+    >
+Need to go to a Lower Level? <a href="https://animart.dev//minima/v1/minima.html" class="hy link" style="font-size: inherit;">Minima</a> is There for You
+    </h1>
+
+	
+<div class="hy card flex vertical center">
+
+		
+<div class="hy subcard flex horizontal center">
+
+			<code class="hy left-text two-thirds">
+			</code>
+			
+<div class="hy one-third">
+
+			
+</div>
+
+		
+</div>
+
+	
+</div>
+
+
+	</div>
+</body>
+

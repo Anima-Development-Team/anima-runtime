@@ -1,0 +1,247 @@
+
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+	    <meta charset="UTF-8" />
+	    <title>Functions</title>
+	   	<link rel="icon" href="https://animart.dev//res/img/logo-v1b-small.png">
+	    <style>@import url("https://hy.purplecheshire.net/hy.css");
+@import url("https://hy.purplecheshire.net/hyacinth/fonts/ibm-plex-sans.css");
+
+.hy {
+    --main-color: #04f;
+}
+
+header.hy {
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+
+@media (prefers-color-scheme: light) {
+    .hy {
+        --sub-color: color-mix(in oklab, var(--main-color), white);
+        --theme: white;
+        --inverse: black;
+        --text: black;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .hy {
+        --sub-color: color-mix(in oklab, var(--main-color), black);
+        --theme: color-mix(in oklab, black, var(--main-color) 20%);
+        --inverse: white;
+        --text: white;
+    }
+
+    .hy.button.action:hover {
+        background-color: color-mix(
+            in oklab,
+            var(--main-color),
+            var(--inverse)
+        );
+        color: var(--theme);
+    }
+
+    .hy.button.action:active {
+        color: color-mix(in oklab, var(--main-color), var(--inverse));
+        background-color: color-mix(in oklab, var(--theme), var(--main-color));
+    }
+}
+</style>
+	</head>
+	<body class="hy" style="background-color: white">
+
+	
+<div class="hy sidebar">
+<div class="hy display">
+<h1
+    class="hy flex vertical center no-color"
+    style="box-shadow: none; margin: -0.6em 0.3em"
+>
+    <a href="https://animart.dev//breve/v1/breve.html" class="hy link" style="font-size: inherit;">
+    <h1
+        class="hy flex vertical center no-color"
+        style="box-shadow: none; margin: -0.6em 0.3em"
+    >
+        Breve
+    </h1>
+    </a>
+</h1>
+<hr class="hy" />
+<div class="hy">
+
+		
+<div class="hy">
+<strong>Basic</strong>
+
+            <ol class="hy">
+                <li class="hy"><a href="https://animart.dev//breve/v1/basic/start.html" class="hy link" style="font-size: inherit;">Start</a></li>
+                <li class="hy"><a href="https://animart.dev//breve/v1/basic/structure.html" class="hy link" style="font-size: inherit;">Structure</a></li>
+                <li class="hy"><a href="https://animart.dev//breve/v1/basic/expressions.html" class="hy link" style="font-size: inherit;">Expressions</a></li>
+                <li class="hy"><a href="https://animart.dev//breve/v1/basic/transfer-semantics.html" class="hy link" style="font-size: inherit;">Transfer Semantics</a></li>
+                <li class="hy"><a href="https://animart.dev//breve/v1/basic/variables.html" class="hy link" style="font-size: inherit;">Variables</a></li>
+                <li class="hy"><a href="https://animart.dev//breve/v1/basic/basic-types.html" class="hy link" style="font-size: inherit;">Basic Types</a></li>
+                <li class="hy"><a href="https://animart.dev//breve/v1/basic/functions.html" class="hy link" style="font-size: inherit;">Functions</a></li>
+                <li class="hy">Modules</li>
+                <li class="hy">Branches</li>
+                <li class="hy">Loops</li>
+                <li class="hy">Operators</li>
+                <li class="hy">Importing Files & Libraries</li>
+            </ol>
+		
+</div>
+
+		
+<div class="hy">
+<strong>Advanced</strong>
+
+            <ol class="hy">
+                <li class="hy">Extending Types</li>
+                <li class="hy">Anonymous Blocks</li>
+                <li class="hy">Attributes</li>
+                <li class="hy">Inline Assembly (Minima)</li>
+                <li class="hy">Signals</li>
+                <li class="hy">Shared Libraries</li>
+                <li class="hy">Internal Calls</li>
+            </ol>
+		
+</div>
+
+	
+</div>
+</div>
+</div>
+
+	
+<div class="hy app wide flex vertical center left-text" style="max-width: calc(100% - 10% * 2); margin-left: calc(10%);">
+
+
+
+	<h2 class="hy">Functions</h2>
+	<p class="hy">
+        Functions are one way of creating reusable code in Breve. They
+        are declared as follows:
+	</p>
+	<code class="hy block">
+		&lt;name&gt;
+		<span class="op">:: (</span>&lt;arg&gt;<span class="memo">[</span><span class="op">,</span>
+		<span class="memo"> ...]</span><span class="op">)</span>
+		<span class="op">-></span>
+		&lt;type&gt;
+	</code>
+	<p class="hy">
+		And can be followed by
+		<code class="hy inline"><span class="op">=></span></code>
+		and an expression,
+		<code class="hy inline"><span class="op">{</span>
+			<span class="memo">...</span>
+		<span class="op">}</span></code>
+		for a code block, or nothing, for forward declarations.
+		For each part:
+	</p>
+	<p class="hy">
+		<code class="hy inline">&lt;name&gt;</code> is the
+		function's name, and follows the same rule as the variable's name.
+		<strong>Required.</strong>
+	</p>
+	<p class="hy">
+		<code class="hy inline">&lt;arg&gt;</code> is a
+		function argument. These are declared like variables. If more
+		than one, each argument must be separated by a comma. If
+		an argument has a default value, that argument <strong>must</strong>
+		be placed after all non-defaulted arguments.
+		<strong>Optional.</strong>
+	</p>
+	<p class="hy">
+		<code class="hy inline">&lt;type&gt;</code> is the
+		function's return type.
+		<strong>Optional for non-forward declarations, defaults to
+		auto-deducing the type.</strong>
+	</p>
+	<p class="hy">
+        Thusly, a function can be declared like the following:
+	</p>
+	<code class="hy block">
+		<span class="memo">// Declaring the function here, code comes later</span><br>
+		<span class="fn">doNothing</span>
+		<span class="op">:: () -></span>
+		<span class="kw">void</span>
+		<br><br>
+		<span class="memo">// Declaring a single-line function</span><br>
+		<span class="fn">square</span>
+		<span class="op">:: (</span>
+		num <span class="op">:</span> <span class="kw">float32</span>
+		<span class="op">) =></span>
+		num <span class="op">*</span> num
+		<br><br>
+		<span class="memo">// Declaring a full-body function</span><br>
+		<span class="fn">factorial</span>
+		<span class="op">:: (</span>
+		num <span class="op">:</span> <span class="kw">uint64</span>
+		<span class="op">) -></span> <span class="kw">uint64</span>
+		<span class="op">{</span><br>
+		&nbsp;&nbsp;&nbsp;&nbsp; out <span class="op">:=</span> <span class="num">0</span><br>
+		&nbsp;&nbsp;&nbsp;&nbsp; <span class="kw">for</span>
+		i <span class="op">:</span> <span class="num">0</span> <span class="op">...</span> num <br>
+		&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; out <span class="op">+=</span> i <span class="op">+</span> 1 <br>
+		&nbsp;&nbsp;&nbsp;&nbsp; <span class="kw">return</span> out <br>
+		<span class="op">}</span>
+	</code>
+	<p class="hy">
+		And many other possible ways.
+	</p>
+<hr class="hy" />
+
+	<h2 class="hy">External Functions</h2>
+	<p class="hy">
+		External functions are your way of calling cross-language code.
+        They come in two types: <strong>ART Functions</strong> and
+        <strong>Shared Functions</strong>.
+	</p>
+	<p class="hy">
+		<strong>ART Functions</strong> are one way of calling cross-language
+		code. ART functions execute code that is <strong>defined
+		by the ART implementation.</strong>
+	</p>
+	<p class="hy">
+		Declared via the
+		<code class="hy inline">
+			<span class="macro">@ARTCall</span><span class="op">(</span>
+			name <span class="op">=</span>
+			<span class="str">"&lt;art-name&gt;"</span>
+			<span class="op">)</span>
+		</code> attribute, followed by how
+		one would forward declare a function.
+	</p>
+	<p class="hy">
+		<strong>Shared Functions</strong>, much like ART functions, are
+		also for calling cross-language code. Unlike their siblings,
+		however, shared functions <strong>execute code defined in an
+		Anima-compatible shared library</strong>.
+	</p>
+	<p class="hy">
+		Declared via the
+		<code class="hy inline">
+			<span class="macro">@Shared</span><span class="op">(</span>
+			lib <span class="op">=</span>
+			&lt;dynlib-path&gt;<span class="op">,</span>
+			name <span class="op">=</span>
+			<span class="str">"&lt;fn-name&gt;"</span>
+			<span class="op">)</span>
+		</code> attribute, followed by how
+		one would forward declare a function.
+	</p>
+<hr class="hy" />
+
+	
+</div>
+
+
+	</body>
+</html>
+
+

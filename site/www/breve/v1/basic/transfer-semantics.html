@@ -1,0 +1,198 @@
+
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+	    <meta charset="UTF-8" />
+	    <title>Transfer Semantics</title>
+	   	<link rel="icon" href="https://animart.dev//res/img/logo-v1b-small.png">
+	    <style>@import url("https://hy.purplecheshire.net/hy.css");
+@import url("https://hy.purplecheshire.net/hyacinth/fonts/ibm-plex-sans.css");
+
+.hy {
+    --main-color: #04f;
+}
+
+header.hy {
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+
+@media (prefers-color-scheme: light) {
+    .hy {
+        --sub-color: color-mix(in oklab, var(--main-color), white);
+        --theme: white;
+        --inverse: black;
+        --text: black;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .hy {
+        --sub-color: color-mix(in oklab, var(--main-color), black);
+        --theme: color-mix(in oklab, black, var(--main-color) 20%);
+        --inverse: white;
+        --text: white;
+    }
+
+    .hy.button.action:hover {
+        background-color: color-mix(
+            in oklab,
+            var(--main-color),
+            var(--inverse)
+        );
+        color: var(--theme);
+    }
+
+    .hy.button.action:active {
+        color: color-mix(in oklab, var(--main-color), var(--inverse));
+        background-color: color-mix(in oklab, var(--theme), var(--main-color));
+    }
+}
+</style>
+	</head>
+	<body class="hy" style="background-color: white">
+
+	
+<div class="hy sidebar">
+<div class="hy display">
+<h1
+    class="hy flex vertical center no-color"
+    style="box-shadow: none; margin: -0.6em 0.3em"
+>
+    <a href="https://animart.dev//breve/v1/breve.html" class="hy link" style="font-size: inherit;">
+    <h1
+        class="hy flex vertical center no-color"
+        style="box-shadow: none; margin: -0.6em 0.3em"
+    >
+        Breve
+    </h1>
+    </a>
+</h1>
+<hr class="hy" />
+<div class="hy">
+
+		
+<div class="hy">
+<strong>Basic</strong>
+
+            <ol class="hy">
+                <li class="hy"><a href="https://animart.dev//breve/v1/basic/start.html" class="hy link" style="font-size: inherit;">Start</a></li>
+                <li class="hy"><a href="https://animart.dev//breve/v1/basic/structure.html" class="hy link" style="font-size: inherit;">Structure</a></li>
+                <li class="hy"><a href="https://animart.dev//breve/v1/basic/expressions.html" class="hy link" style="font-size: inherit;">Expressions</a></li>
+                <li class="hy"><a href="https://animart.dev//breve/v1/basic/transfer-semantics.html" class="hy link" style="font-size: inherit;">Transfer Semantics</a></li>
+                <li class="hy"><a href="https://animart.dev//breve/v1/basic/variables.html" class="hy link" style="font-size: inherit;">Variables</a></li>
+                <li class="hy"><a href="https://animart.dev//breve/v1/basic/basic-types.html" class="hy link" style="font-size: inherit;">Basic Types</a></li>
+                <li class="hy"><a href="https://animart.dev//breve/v1/basic/functions.html" class="hy link" style="font-size: inherit;">Functions</a></li>
+                <li class="hy">Modules</li>
+                <li class="hy">Branches</li>
+                <li class="hy">Loops</li>
+                <li class="hy">Operators</li>
+                <li class="hy">Importing Files & Libraries</li>
+            </ol>
+		
+</div>
+
+		
+<div class="hy">
+<strong>Advanced</strong>
+
+            <ol class="hy">
+                <li class="hy">Extending Types</li>
+                <li class="hy">Anonymous Blocks</li>
+                <li class="hy">Attributes</li>
+                <li class="hy">Inline Assembly (Minima)</li>
+                <li class="hy">Signals</li>
+                <li class="hy">Shared Libraries</li>
+                <li class="hy">Internal Calls</li>
+            </ol>
+		
+</div>
+
+	
+</div>
+</div>
+</div>
+
+	
+<div class="hy app wide flex vertical center left-text" style="max-width: calc(100% - 10% * 2); margin-left: calc(10%);">
+
+
+
+	<h2 class="hy">Transfer Semantics</h2>
+	<p class="hy">
+		<em>Transfer Semantics</em> is the nature if how a given value
+		is passed around.
+	</p>
+	<p class="hy">
+		In Breve, how a value gets passed around is defined at
+		<em>assignment</em>, not declaration. Thera are three ways to
+		pass values around:
+	</p>
+	<p class="hy">
+		By <code class="hy inline"><span class="kw">copy</span></code>: This
+		creates a copy of a given value, <strong>keeping the source
+		intact</strong>.
+	</p>
+	<p class="hy">
+		By <code class="hy inline"><span class="kw">ref</span></code>: This
+		simply passes a reference to the given value. The ART uses
+		ARC (Automatic Reference Counting) for managing references,
+		so there's no need to worry about memory management.
+	</p>
+	<p class="hy">
+		By <code class="hy inline"><span class="kw">move</span></code>: The
+		default way values get passed around, when not specified.
+		This moves the value from the source to the destination,
+		and <strong>clears the source of its reference</strong>.
+	</p>
+	<p class="hy">
+		With some exceptions, all values in breve are, by default,
+		passed by <code class="hy inline"><span class="kw">move</span></code>.
+	</p>
+	
+	<div class="hy alert info soft subcard">
+	<h3 class="hy alert info loud">Note</h3>
+
+		<p class="hy">All constants are copied.</p>
+	
+    </div>
+
+	<p class="hy">
+		For example:
+	</p>
+	<code class="hy block">
+		var1 <span class="op">:=</span> <span class="str">"This is a string!"</span>
+		<br><br>
+		<span class="memo">// var1 is now empty (would read void)</span><br>
+		var2 <span class="op">:=</span> var1
+		<br><br>
+		<span class="memo">// var3 holds a copy of var2, so var2 can be modified</span><br>
+		var3 <span class="op">:=</span> <span class="kw">copy</span> var2
+		<br><br>
+		<span class="memo">// var1 holds a reference to var2, so any changes in var2 will be reflected here</span><br>
+		var1 <span class="op">=</span> <span class="kw">ref</span> var2
+		<br><br>
+	</code>
+<hr class="hy" />
+
+<div class="hy card" style="min-height: 30em">
+    <h3 class="hy">Quiz Time!</h3>
+    <iframe
+        class="hy"
+        style="height: 25em"
+        src="https://animart.dev//res/framelet/quiz.html?::ewoJInF1ZXN0aW9uIjogIklmIGFmdGVyIHRoZSBsYXN0IGxpbmUgb25lIHdlcmUgdG8gYWRkIDxjb2RlIGNsYXNzPSdoeSBpbmxpbmUnPnZhcjMgPHNwYW4gY2xhc3M9J29wJz4rPTwvc3Bhbj4gPHNwYW4gY2xhc3M9J3N0cic-JyBUaGlzIGlzIGEgbmV3IGxpbmUhJzwvc3Bhbj48L2NvZGU-LDxici8-dGhlIHZhbHVlIGluIDxjb2RlIGNsYXNzPSdoeSBpbmxpbmUnPnZhcjE8L2NvZGU-IHdvdWxkIGJlIHVuYWZmZWN0ZWQuIiwKCSJhbnN3ZXJzIjogWwoJCXsKCQkJInZhbHVlIjogIlRydWUuIiwKCQkJIm1lc3NhZ2UiOiAiQ29ycmVjdCEgPGNvZGUgY2xhc3M9J2h5IGlubGluZSc-dmFyMzwvY29kZT4gaG9sZHMgYSBjb21wbGV0ZWx5IG5ldyB2YWx1ZSwgbm90IGEgcmVmZXJlbmNlIHRvIGFub3RoZXIgb25lLiIKCQl9LAoJCXsgInZhbHVlIjogIkZhbHNlLiIsICJtZXNzYWdlIjogIldyb25nISIgfQoJXSwKCSJjb3JyZWN0IjogMAp9ChB9Cg=="
+    ></iframe>
+</div>
+
+
+	
+</div>
+
+
+	</body>
+</html>
+
+

@@ -1,0 +1,22 @@
+{
+	"question": "Which type can be casted to, and from, any type?",
+	"answers": [
+		{
+			"value": "<code class='hy inline'><span class='kw'>any</span></code>.",
+			"message": "Correct! <code class='hy inline'><span class='kw'>any</span></code> can be casted-to and casted-from <em>any</em> type."
+		},
+		{
+			"value": "<code class='hy inline'><span class='kw'>object</span></code>.",
+			"message": "Wrong! This type does not exist!"
+		},
+		{
+			"value": "<code class='hy inline'><span class='kw'>null</span></code>.",
+			"message": "Wrong!"
+		},
+		{
+			"value": "<code class='hy inline'><span class='kw'>string</span></code>.",
+			"message": "Wrong!"
+		}
+	],
+	"correct": 0
+}

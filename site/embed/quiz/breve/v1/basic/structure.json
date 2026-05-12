@@ -1,0 +1,22 @@
+{
+	"question": "If we were to compile and run this code, what would it do?",
+	"answers": [
+		{
+			"value": "It would give a compiler error.",
+			"message": "Wrong! The code does compile without errors."
+		},
+		{
+			"value": "It would compile, but it does nothing.",
+			"message": "Wrong! The code does output something."
+		},
+		{
+			"value": "It prints <code class='hy inline'>Hello, World!</code> to the console.",
+			"message": "Correct!"
+		},
+		{
+			"value": "It displays <code class='hy inline'>Hello, World!</code> in a popup.",
+			"message": "Wrong! While the code displays that, it is not in a popup window."
+		}
+	],
+	"correct": 2
+}

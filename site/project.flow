@@ -1,0 +1,10 @@
+{
+	type "doc"
+	build ["page"]
+	pack ["res"]
+	url "https://animart.dev/"
+	output "www"
+	vars {
+		makai_url "https://github.com/LasagnaCake/Makai"
+	}
+}
