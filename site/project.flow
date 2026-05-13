@@ -6,5 +6,6 @@
 	output "www"
 	vars {
 		makai_url "https://github.com/LasagnaCake/Makai"
+		download "https://github.com/LasagnaCake/Makai/releases"
 	}
 }

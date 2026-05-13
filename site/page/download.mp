@@ -28,7 +28,7 @@ html `
         </p>
         <p>
             Since it is currently in alpha, you can fetch them from the
-            <<link to="{{$$makai_url}}" text="weekly builds" />>,
+            <<link to="{{$$download}}" text="weekly builds" />>,
             done automatically every Monday morning.
         </p>
     <</card>>
