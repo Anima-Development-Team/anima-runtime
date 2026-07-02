@@ -96,8 +96,8 @@ html `
 		<<op text=") ->"/>> <<kw text="uint64"/>>
 		<<op text="{"/>><br>
 		<<tab/>> out <<op text=":="/>> <<num text="0"/>><br>
-		<<tab/>> <<kw text="for"/>>
-		i <<op text=":"/>> <<num text="0"/>> <<op text="..."/>> num <br>
+		<<tab/>> <<kw text="repeat"/>>
+		i <<op text=":"/>> <<kw text="uint64"/>> <<op text="->"/>> num <br>
 		<<tab/>> <<tab/>> out <<op text="+="/>> i <<op text="+"/>> 1 <br>
 		<<tab/>> <<kw text="return"/>> out <br>
 		<<op text="}"/>>
