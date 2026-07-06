@@ -5,7 +5,7 @@
 <html>
 	<head>
 	    <meta charset="UTF-8" />
-	    <title>Structure</title>
+	    <title>Branches</title>
 	   	<link rel="icon" href="https://animart.dev//res/img/logo-v1b-small.png">
 	    <style>@import url("https://hy.purplecheshire.net/hy.css");
 @import url("https://hy.purplecheshire.net/hyacinth/fonts/ibm-plex-sans.css");
@@ -122,63 +122,103 @@ header.hy {
 
 
 
-	<h2 class="hy">Code Structure</h2>
+	<h2 class="hy">Branches</h2>
 	<p class="hy">
-	    If you open a new project`s
-        <code class="hy inline">main.bv</code> file in your text editor,
-        you should see the following:
+        One of the main building blocks of every
+        programming language.
 	</p>
+	<p class="hy">
+        Breve contains <strong>four types</strong> of branches,
+        divided in two types and two categories, those being:
+	</p>
+	<p class="hy">
+        <strong><code class="hy inline"><span class="kw">if</span></code> branches</strong>:
+        Your standard programming language branch, which executes
+        code <strong>when the given condition is true</strong>. May optionally
+        have an <code class="hy inline"><span class="kw">else</span></code>
+        clause.
+	</p>
+	<p class="hy">
+        <strong><code class="hy inline"><span class="kw">unless</span></code> branches</strong>:
+        The opposite of <code class="hy inline"><span class="kw">if</span></code>
+        branches, that only execute
+        code <strong>when the given condition is false</strong>. May also optionally
+        have an <code class="hy inline"><span class="kw">else</span></code>
+        clause.
+	</p>
+	<p class="hy">
+        <strong><code class="hy inline"><span class="kw">when</span></code> branches</strong>:
+        Instead of a ternary operator that most programming languages have,
+        breve uses an inline if-else, in the form of
+		<code class="hy inline">
+		&lt;on-true&gt;
+		<span class="kw">when</span>
+		&lt;condition&gt;
+		<span class="kw">else</span>
+		&lt;on-false&gt;
+		</code>
+        . The condition is checked first, then the appropriate path is taken.
+        <strong>Both paths must exist</strong>.
+	</p>
+	<p class="hy">
+        <strong><code class="hy inline"><span class="kw">except</span></code> branches</strong>:
+        The inline version of
+        <code class="hy inline"><span class="kw">unless</span></code> branches.
+        Like its sibling, <strong>Both paths must exist</strong>.
+	</p>
+	
+	<div class="hy alert info soft subcard">
+	<h3 class="hy alert info loud">Note</h3>
+
+		<p class="hy">
+			You are not required to surround the condition with parens.
+		</p>
+	
+    </div>
+
+	
+	<div class="hy alert danger soft subcard">
+	<h3 class="hy alert danger loud">Caution!</h3>
+
+		<p class="hy">
+			For every single branch type, every code path must result in a value
+			<strong>of the same data type!</strong>
+		</p>
+	
+    </div>
+
 	<code class="hy block">
-		<span class="kw">using import</span> core
-		<br><br>
-		<span class="macro">@Main</span><br>
-		<span class="fn">main</span> <span class="op">:: () {</span><br>
-			&nbsp;&nbsp;&nbsp;&nbsp;<span class="memo">// Main code goes here...</span><br>
-			&nbsp;&nbsp;&nbsp;&nbsp;IO<span class="op">.</span><span class="fn">writeLine</span><span class="op">(</span><span class="str">"Hello, World!"</span><span class="op">)</span><br>
-		<span class="op">}</span>
+		<span class="memo">// Conventional if-else branches can be used</span><br>
+		<span class="memo">// In place of inline if-elses, if preferred</span><br><br>
+		<span class="fn">isEven1</span>
+		<span class="op">:: (</span>
+		num <span class="op">:</span> <span class="kw">uint64</span>
+		<span class="op">)</span>
+		<span class="op">=></span><br>
+		&nbsp;&nbsp;&nbsp;&nbsp; <span class="kw">if</span> num <span class="op">%</span> <span class="num">2</span><br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; IO<span class="op">.</span><span class="fn">writeLine</span>
+		<span class="op">(</span>
+		<span class="str">"Is odd!"</span>
+		<span class="op">)</span><br>
+		&nbsp;&nbsp;&nbsp;&nbsp; <span class="kw">else</span><br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; IO<span class="op">.</span><span class="fn">writeLine</span>
+		<span class="op">(</span>
+		<span class="str">"Is even!"</span>
+		<span class="op">)</span><br><br>
+		<span class="fn">isEven2</span>
+		<span class="op">:: (</span>
+		num <span class="op">:</span> <span class="kw">uint64</span>
+		<span class="op">)</span>
+		<span class="op">=></span><br>
+		&nbsp;&nbsp;&nbsp;&nbsp; IO<span class="op">.</span><span class="fn">writeLine</span>
+		<span class="op">(</span>
+		<span class="str">"Is odd!"</span>
+		<span class="kw">when</span> num <span class="op">%</span> <span class="num">2</span>
+		<span class="kw">else</span>
+		<span class="str">"Is even!"</span>
+		<span class="op">)</span>
 	</code>
-	<p class="hy">
-		Let`s break the code down and explore it, line-by-line.
-	</p>
-	<p class="hy">
-		<code class="hy inline"><span class="kw">using import</span> core</code>: An <em>using import</em> statement.
-		These will be discussed later, but essentially &RightArrow; this is how you import modules and
-        files.
-	</p>
-	<p class="hy">
-        <code class="hy inline"><span class="macro">@Main</span></code> An <em>attribute</em>. What these are and what they do
-        will be explained further ahead in its own section. In this case, this one designates that the given function is
-        the main entypoint for the program.
-	</p>
-	<p class="hy">
-		<code class="hy inline"><span class="fn">main</span> <span class="op">:: () {</span></code>: A <em>function</em>.
-		Where code actually gets run. Since this function has the <code class="hy inline"><span class="macro">@Main</span></code>
-        attribute, it is considered the entrypoint for the program. An entrypoint is <strong>required</strong> for programs,
-        and <strong>ignored</strong> for modules.
-	</p>
-	<p class="hy">
-		<code class="hy inline"><span class="memo">// Main code goes here...</span></code>: A line comment.
-		Does not get executed, and only serves for documentation, or little notes. Block comments can be declared
-        via <code class="hy inline"><span class="memo">/* ... */</span></code>.
-	</p>
-	<p class="hy">
-		<code class="hy inline">IO<span class="op">.</span><span class="fn">writeLine</span><span class="op">(</span><span class="str">"Hello, World!"</span><span class="op">)</span></code>:
-		An <em>expression</em>. Expressions are the building blocks of your program. In this case, this expression
-		calls the function <code class="hy inline"><span class="fn">writeLine</span></code>, that lives in the module
-		<code class="hy inline">IO</code>, with the string <code class="hy inline"><span class="str">"Hello, World!"</span></code>.
-		All of these concepts will be explained in further chapters.
-	</p>
 <hr class="hy" />
-
-<div class="hy card" style="min-height: 30em">
-    <h3 class="hy">Quiz Time!</h3>
-    <iframe
-        class="hy"
-        style="height: 25em"
-        src="https://animart.dev//res/framelet/quiz.html?::ewoJInF1ZXN0aW9uIjogIklmIHdlIHdlcmUgdG8gY29tcGlsZSBhbmQgcnVuIHRoaXMgY29kZSwgd2hhdCB3b3VsZCBpdCBkbz8iLAoJImFuc3dlcnMiOiBbCgkJewoJCQkidmFsdWUiOiAiSXQgd291bGQgZ2l2ZSBhIGNvbXBpbGVyIGVycm9yLiIsCgkJCSJtZXNzYWdlIjogIldyb25nISBUaGUgY29kZSBkb2VzIGNvbXBpbGUgd2l0aG91dCBlcnJvcnMuIgoJCX0sCgkJewoJCQkidmFsdWUiOiAiSXQgd291bGQgY29tcGlsZSwgYnV0IGl0IGRvZXMgbm90aGluZy4iLAoJCQkibWVzc2FnZSI6ICJXcm9uZyEgVGhlIGNvZGUgZG9lcyBvdXRwdXQgc29tZXRoaW5nLiIKCQl9LAoJCXsKCQkJInZhbHVlIjogIkl0IHByaW50cyA8Y29kZSBjbGFzcz0naHkgaW5saW5lJz5IZWxsbywgV29ybGQhPC9jb2RlPiB0byB0aGUgY29uc29sZS4iLAoJCQkibWVzc2FnZSI6ICJDb3JyZWN0ISIKCQl9LAoJCXsKCQkJInZhbHVlIjogIkl0IGRpc3BsYXlzIDxjb2RlIGNsYXNzPSdoeSBpbmxpbmUnPkhlbGxvLCBXb3JsZCE8L2NvZGU-IGluIGEgcG9wdXAuIiwKCQkJIm1lc3NhZ2UiOiAiV3JvbmchIFdoaWxlIHRoZSBjb2RlIGRpc3BsYXlzIHRoYXQsIGl0IGlzIG5vdCBpbiBhIHBvcHVwIHdpbmRvdy4iCgkJfQoJXSwKCSJjb3JyZWN0IjogMgp9CmMAAA=="
-    ></iframe>
-</div>
-
 
 	
 </div>

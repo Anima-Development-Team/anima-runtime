@@ -68,6 +68,8 @@ html `
 	<</p>>
 	<<note>>
 		<<p>>All constants are copied.<</p>>
+		<<p>>Prefix increment and decrement result in a reference to the operated value.<</p>>
+		<<p>>Postfix increment and decrement result in a copy to the original value.<</p>>
 	<</note>>
 	<<p>>
 		For example:

@@ -86,9 +86,9 @@ header.hy {
                 <li class="hy"><a href="https://animart.dev//breve/v1/basic/variables.html" class="hy link" style="font-size: inherit;">Variables</a></li>
                 <li class="hy"><a href="https://animart.dev//breve/v1/basic/basic-types.html" class="hy link" style="font-size: inherit;">Basic Types</a></li>
                 <li class="hy"><a href="https://animart.dev//breve/v1/basic/functions.html" class="hy link" style="font-size: inherit;">Functions</a></li>
+                <li class="hy"><a href="https://animart.dev//breve/v1/basic/branches.html" class="hy link" style="font-size: inherit;">Branches</a></li>
+                <li class="hy"><a href="https://animart.dev//breve/v1/basic/loops.html" class="hy link" style="font-size: inherit;">Loops</a></li>
                 <li class="hy">Modules</li>
-                <li class="hy">Branches</li>
-                <li class="hy">Loops</li>
                 <li class="hy">Operators</li>
                 <li class="hy">Importing Files & Libraries</li>
             </ol>
@@ -107,6 +107,7 @@ header.hy {
                 <li class="hy">Signals</li>
                 <li class="hy">Shared Libraries</li>
                 <li class="hy">Internal Calls</li>
+                <li class="hy">Tricks, Tips and Techniques</li>
             </ol>
 		
 </div>
@@ -157,6 +158,8 @@ header.hy {
 	<h3 class="hy alert info loud">Note</h3>
 
 		<p class="hy">All constants are copied.</p>
+		<p class="hy">Prefix increment and decrement result in a reference to the operated value.</p>
+		<p class="hy">Postfix increment and decrement result in a copy to the original value.</p>
 	
     </div>
 
@@ -183,7 +186,7 @@ header.hy {
     <iframe
         class="hy"
         style="height: 25em"
-        src="https://animart.dev//res/framelet/quiz.html?::ewoJInF1ZXN0aW9uIjogIklmIGFmdGVyIHRoZSBsYXN0IGxpbmUgb25lIHdlcmUgdG8gYWRkIDxjb2RlIGNsYXNzPSdoeSBpbmxpbmUnPnZhcjMgPHNwYW4gY2xhc3M9J29wJz4rPTwvc3Bhbj4gPHNwYW4gY2xhc3M9J3N0cic-JyBUaGlzIGlzIGEgbmV3IGxpbmUhJzwvc3Bhbj48L2NvZGU-LDxici8-dGhlIHZhbHVlIGluIDxjb2RlIGNsYXNzPSdoeSBpbmxpbmUnPnZhcjE8L2NvZGU-IHdvdWxkIGJlIHVuYWZmZWN0ZWQuIiwKCSJhbnN3ZXJzIjogWwoJCXsKCQkJInZhbHVlIjogIlRydWUuIiwKCQkJIm1lc3NhZ2UiOiAiQ29ycmVjdCEgPGNvZGUgY2xhc3M9J2h5IGlubGluZSc-dmFyMzwvY29kZT4gaG9sZHMgYSBjb21wbGV0ZWx5IG5ldyB2YWx1ZSwgbm90IGEgcmVmZXJlbmNlIHRvIGFub3RoZXIgb25lLiIKCQl9LAoJCXsgInZhbHVlIjogIkZhbHNlLiIsICJtZXNzYWdlIjogIldyb25nISIgfQoJXSwKCSJjb3JyZWN0IjogMAp9Ci4KCQ=="
+        src="https://animart.dev//res/framelet/quiz.html?::ewoJInF1ZXN0aW9uIjogIklmIGFmdGVyIHRoZSBsYXN0IGxpbmUgb25lIHdlcmUgdG8gYWRkIDxjb2RlIGNsYXNzPSdoeSBpbmxpbmUnPnZhcjMgPHNwYW4gY2xhc3M9J29wJz4rPTwvc3Bhbj4gPHNwYW4gY2xhc3M9J3N0cic-JyBUaGlzIGlzIGEgbmV3IGxpbmUhJzwvc3Bhbj48L2NvZGU-LDxici8-dGhlIHZhbHVlIGluIDxjb2RlIGNsYXNzPSdoeSBpbmxpbmUnPnZhcjE8L2NvZGU-IHdvdWxkIGJlIHVuYWZmZWN0ZWQuIiwKCSJhbnN3ZXJzIjogWwoJCXsKCQkJInZhbHVlIjogIlRydWUuIiwKCQkJIm1lc3NhZ2UiOiAiQ29ycmVjdCEgPGNvZGUgY2xhc3M9J2h5IGlubGluZSc-dmFyMzwvY29kZT4gaG9sZHMgYSBjb21wbGV0ZWx5IG5ldyB2YWx1ZSwgbm90IGEgcmVmZXJlbmNlIHRvIGFub3RoZXIgb25lLiIKCQl9LAoJCXsgInZhbHVlIjogIkZhbHNlLiIsICJtZXNzYWdlIjogIldyb25nISIgfQoJXSwKCSJjb3JyZWN0IjogMAp9CmkKCQ=="
     ></iframe>
 </div>
 
