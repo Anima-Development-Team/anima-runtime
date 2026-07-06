@@ -119,5 +119,28 @@ html `
 		<<op text=")"/>>
 	<</code-block>>
 <</section>>
+<<section>>
+	<<title>>
+	<<code-inline>><<kw text="likely"/>><</code-inline>>
+	and
+	<<code-inline>><<kw text="unlikely"/>><</code-inline>>
+	<</title>>
+	<<p>>
+		By default, the compiler tries to assume the likelihood a given
+		branch of code is taken, to optimize for a specific code path.
+	<</p>>
+	<<p>>
+		If a given code path is known to be more likely to happen than
+		the other, then this behaviour can be overwritten with the
+		<<code-inline>><<kw text="likely"/>><</code-inline>>
+		and
+		<<code-inline>><<kw text="unlikely"/>><</code-inline>>
+		keywords.
+	<</p>>
+	<<p>>
+		Inserting these before the condition flags to the compiler the
+		appropriate course of action to take for the given branch.
+	<</p>>
+<</section>>
 <</main>>
 `

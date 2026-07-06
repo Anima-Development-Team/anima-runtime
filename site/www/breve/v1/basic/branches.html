@@ -220,6 +220,29 @@ header.hy {
 	</code>
 <hr class="hy" />
 
+	<h2 class="hy">
+	<code class="hy inline"><span class="kw">likely</span></code>
+	and
+	<code class="hy inline"><span class="kw">unlikely</span></code>
+	</h2>
+	<p class="hy">
+		By default, the compiler tries to assume the likelihood a given
+		branch of code is taken, to optimize for a specific code path.
+	</p>
+	<p class="hy">
+		If a given code path is known to be more likely to happen than
+		the other, then this behaviour can be overwritten with the
+		<code class="hy inline"><span class="kw">likely</span></code>
+		and
+		<code class="hy inline"><span class="kw">unlikely</span></code>
+		keywords.
+	</p>
+	<p class="hy">
+		Inserting these before the condition flags to the compiler the
+		appropriate course of action to take for the given branch.
+	</p>
+<hr class="hy" />
+
 	
 </div>
 
