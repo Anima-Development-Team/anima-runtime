@@ -87,7 +87,8 @@ html `
 		<<op text=":: ("/>>
 		num <<op text=":"/>> <<kw text="float32"/>>
 		<<op text=") =>"/>>
-		num <<op text="*"/>> num
+		<<op text="("/>><<kw text="copy"/>> num<<op text=")"/>>
+		<<op text="*"/>> num
 		<br><br>
 		<<memo text="// Declaring a full-body function"/>><br>
 		<<fn text="factorial"/>>
@@ -98,7 +99,9 @@ html `
 		<<tab/>> out <<op text=":="/>> <<num text="0"/>><br>
 		<<tab/>> <<kw text="repeat"/>>
 		i <<op text=":"/>> <<kw text="uint64"/>> <<op text="->"/>> num <br>
-		<<tab/>> <<tab/>> out <<op text="+="/>> i <<op text="+"/>> 1 <br>
+		<<tab/>> <<tab/>> out <<op text="+="/>>
+		<<op text="("/>><<kw text="copy"/>> i<<op text=")"/>>
+		<<op text="+"/>> 1 <br>
 		<<tab/>> <<kw text="return"/>> out <br>
 		<<op text="}"/>>
 	<</code-block>>
