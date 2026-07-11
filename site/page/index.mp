@@ -10,6 +10,7 @@ import [
 	"bits/layout/two-thirds"
 	"bits/layout/one-third"
 	"bits/code/attr"
+	"bits/code/memo"
 	"bits/code/fn"
 	"bits/code/kw"
 	"bits/code/name"
@@ -18,6 +19,9 @@ import [
 	"bits/code/token"
 	"bits/code/tab"
 	"bits/code/str"
+	"bits/code/block"
+	"bits/text/b"
+	"bits/text/i"
 ]
 
 html `
@@ -26,17 +30,38 @@ html `
 	<<spacer height="2em"/>>
 	<<title>>A Fresh Way to Develop Your Programs<</title>>
 	<<title>>But Why Anima?<</title>>
-	<div class="hy card flex horizontal center override">
-		<div class="hy subcard">
-			<h2 class="hy" style="font-size: larger;">Designed to Easily Work With Modern C++</h2>
+	<p>Anima is designed to...</p>
+	<div class="hy card flex horizontal center override wrap">
+		<div class="hy subcard half">
+			<h2 class="hy" style="font-size: larger;">Easily Work With Modern C++</h2>
 			<p>Easily call C++ from inside the ART, and vice-versa.</p>
 			<p>Shared libraries are even easier than before.</p>
+			<p class="hy flex left-text">
+				<<code-block>>
+					<<memo text="// In breve:"/>>
+					<br><br>
+					<<memo text="// Declare [C++ -> ART] mapping call:"/>><br>
+					<<attr>>Event<</attr>><<op text="("/>>name <<op text="="/>> <<str>>"myARTFunction"<</str>><<op text=")"/>><br>
+					<<fn>>artCall<</fn>> <<op>>:: () -><</op>> <<kw>>void<</kw>> <<op>>{<</op>> <<memo text="/* ... */"/>> <<op>>}<</op>><br><br>
+					<<memo text="// Declare [ART -> C++] mapping call (RunTime-specific):"/>><br>
+					<<attr>>ARTCall<</attr>><<op text="("/>>name <<op text="="/>> <<str>>"myNativeFunction"<</str>><<op text=")"/>><br>
+					<<fn>>nativeCall<</fn>> <<op>>:: () -><</op>> <<kw>>int64<</kw>><br><br>
+					<<memo text="// Declare [ART -> C++] mapping call (ART-compatible shared library):"/>><br>
+					<<attr>>Shared<</attr>><<op text="("/>>name <<op text="="/>> <<str>>"myLibraryFunction"<</str>><<op text=","/>> lib <<op text="="/>> mylib<<op text=")"/>><br>
+					<<fn>>dynCall<</fn>> <<op>>:: () -><</op>> <<kw>>string<</kw>>
+				<</code-block>>
+			</p>
 		</div>
-		<div class="hy subcard">
+		<div class="hy subcard half">
+			<h2 class="hy" style="font-size: larger;">Be Memory-Safe and Performant</h2>
+			<p>Values are handled via <<i>>Reference Counting<</i>>, removing the need for background garbage collection.</p>
+			<p>Write more deterministic code with ease.</p>
+		</div>
+		<div class="hy subcard half">
 			<h2 class="hy" style="font-size: larger;"></h2>
 			<p>More information coming soon!</p>
 		</div>
-		<div class="hy subcard">
+		<div class="hy subcard half">
 			<h2 class="hy" style="font-size: larger;"></h2>
 			<p>More information coming soon!</p>
 		</div>
@@ -50,7 +75,9 @@ html `
 				<<attr>>Main<</attr>><br>
 				<<fn>>main<</fn>> <<op>>:: () -><</op>> <<kw>>void<</kw>> <<op>>{<</op>><br>
 				<<tab/>>IO<<op>>.<</op>><<fn>>writeLine<</fn>><<op>>(<</op>><<str>>"Hello, World!"<</str>><<op>>)<</op>><br>
-				<<op>>}<</op>>
+				<<op>>}<</op>><br><br>
+				<<memo text="// Or, in one line:"/>><br><br>
+				<<attr>>Main<</attr>> <<fn>>_<</fn>> <<op>>:: () => (<</op>><<kw text="import"/>> core<<op text=")"/>><<op text="."/>>IO<<op text="."/>><<fn>>writeLine<</fn>><<op>>(<</op>><<str>>"Hello, World!"<</str>><<op>>)<</op>>
 			<</code>>
 			<<one-third>>
 				<p class="hy center-text" style="font-weight: bold;">

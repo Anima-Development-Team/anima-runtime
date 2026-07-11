@@ -132,17 +132,38 @@ A Fresh Way to Develop Your Programs
 But Why Anima?
     </h1>
 
-	<div class="hy card flex horizontal center override">
-		<div class="hy subcard">
-			<h2 class="hy" style="font-size: larger;">Designed to Easily Work With Modern C++</h2>
+	<p>Anima is designed to...</p>
+	<div class="hy card flex horizontal center override wrap">
+		<div class="hy subcard half">
+			<h2 class="hy" style="font-size: larger;">Easily Work With Modern C++</h2>
 			<p>Easily call C++ from inside the ART, and vice-versa.</p>
 			<p>Shared libraries are even easier than before.</p>
+			<p class="hy flex left-text">
+				<code class="hy block">
+					<span class="memo">// In breve:</span>
+					<br><br>
+					<span class="memo">// Declare [C++ -> ART] mapping call:</span><br>
+					<span class="macro">@Event</span><span class="op">(</span>name <span class="op">=</span> <span class="str">"myARTFunction"</span><span class="op">)</span><br>
+					<span class="fn">artCall</span> <span class="op">:: () -></span> <span class="kw">void</span> <span class="op">{</span> <span class="memo">/* ... */</span> <span class="op">}</span><br><br>
+					<span class="memo">// Declare [ART -> C++] mapping call (RunTime-specific):</span><br>
+					<span class="macro">@ARTCall</span><span class="op">(</span>name <span class="op">=</span> <span class="str">"myNativeFunction"</span><span class="op">)</span><br>
+					<span class="fn">nativeCall</span> <span class="op">:: () -></span> <span class="kw">int64</span><br><br>
+					<span class="memo">// Declare [ART -> C++] mapping call (ART-compatible shared library):</span><br>
+					<span class="macro">@Shared</span><span class="op">(</span>name <span class="op">=</span> <span class="str">"myLibraryFunction"</span><span class="op">,</span> lib <span class="op">=</span> mylib<span class="op">)</span><br>
+					<span class="fn">dynCall</span> <span class="op">:: () -></span> <span class="kw">string</span>
+				</code>
+			</p>
 		</div>
-		<div class="hy subcard">
+		<div class="hy subcard half">
+			<h2 class="hy" style="font-size: larger;">Be Memory-Safe and Performant</h2>
+			<p>Values are handled via <em>Reference Counting</em>, removing the need for background garbage collection.</p>
+			<p>Write more deterministic code with ease.</p>
+		</div>
+		<div class="hy subcard half">
 			<h2 class="hy" style="font-size: larger;"></h2>
 			<p>More information coming soon!</p>
 		</div>
-		<div class="hy subcard">
+		<div class="hy subcard half">
 			<h2 class="hy" style="font-size: larger;"></h2>
 			<p>More information coming soon!</p>
 		</div>
@@ -167,7 +188,9 @@ Meet <a href="https://animart.dev//breve/v1/breve.html" class="hy link" style="f
 				<span class="macro">@Main</span><br>
 				<span class="fn">main</span> <span class="op">:: () -></span> <span class="kw">void</span> <span class="op">{</span><br>
 				&nbsp;&nbsp;&nbsp;&nbsp;IO<span class="op">.</span><span class="fn">writeLine</span><span class="op">(</span><span class="str">"Hello, World!"</span><span class="op">)</span><br>
-				<span class="op">}</span>
+				<span class="op">}</span><br><br>
+				<span class="memo">// Or, in one line:</span><br><br>
+				<span class="macro">@Main</span> <span class="fn">_</span> <span class="op">:: () => (</span><span class="kw">import</span> core<span class="op">)</span><span class="op">.</span>IO<span class="op">.</span><span class="fn">writeLine</span><span class="op">(</span><span class="str">"Hello, World!"</span><span class="op">)</span>
 			</code>
 			
 <div class="hy one-third">
