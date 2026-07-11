@@ -269,7 +269,7 @@ html `
 				<<expr text="rhs"/>>
 			<</code-inline>>
 		<</expr-item>>
-		<<expr-item name="Subscription" type="Binary">>
+		<<expr-item name="Array Indexing" type="Binary">>
 			<<code-inline>>
 				<<expr text="lhs"/>><<op text="["/>><<expr text="rhs"/>><<op text="]"/>>
 			<</code-inline>>
@@ -316,10 +316,44 @@ html `
 		<<expr-item name="Conditional Decay" type="Ternary">>
 			<<code-inline>>
 				<<expr text="on-true-expr"/>>
-				<<kw text="if"/>>
+				<<kw text="when"/>>
 				<<expr text="cond"/>>
 				<<kw text="else"/>>
 				<<expr text="on-false-expr"/>>
+			<</code-inline>>
+		<</expr-item>>
+		<<expr-item name="Inverted Conditional Decay" type="Ternary">>
+			<<code-inline>>
+				<<expr text="on-true-expr"/>>
+				<<kw text="except"/>>
+				<<expr text="cond"/>>
+				<<kw text="else"/>>
+				<<expr text="on-false-expr"/>>
+			<</code-inline>>
+		<</expr-item>>
+		<<expr-item name="Pass-by-Move" type="Unary">>
+			<<code-inline>>
+				<<kw text="move"/>>
+				<<expr text="expr"/>>
+			<</code-inline>>
+		<</expr-item>>
+		<<expr-item name="Pass-by-Reference" type="Unary">>
+			<<code-inline>>
+				<<kw text="ref"/>>
+				<<expr text="expr"/>>
+			<</code-inline>>
+		<</expr-item>>
+		<<expr-item name="Pass-by-Copy" type="Unary">>
+			<<code-inline>>
+				<<kw text="copy"/>>
+				<<expr text="expr"/>>
+			<</code-inline>>
+		<</expr-item>>
+		<<expr-item name="Null Decay" type="Binary">>
+			<<code-inline>>
+				<<expr text="expr"/>>
+				<<op text="??"/>>
+				<<expr text="else-expr"/>>
 			<</code-inline>>
 		<</expr-item>>
 	<</expr-table>>

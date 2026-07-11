@@ -636,7 +636,7 @@ header.hy {
 
 		
 <tr class="hy">
-	<td class="hy">Subscription</td>
+	<td class="hy">Array Indexing</td>
 	<td class="hy">Binary</td>
 	<td class="hy">
 
@@ -742,10 +742,84 @@ header.hy {
 
 			<code class="hy inline">
 				&lt;on-true-expr&gt;
-				<span class="kw">if</span>
+				<span class="kw">when</span>
 				&lt;cond&gt;
 				<span class="kw">else</span>
 				&lt;on-false-expr&gt;
+			</code>
+		
+	</td>
+</tr>
+
+		
+<tr class="hy">
+	<td class="hy">Inverted Conditional Decay</td>
+	<td class="hy">Ternary</td>
+	<td class="hy">
+
+			<code class="hy inline">
+				&lt;on-true-expr&gt;
+				<span class="kw">except</span>
+				&lt;cond&gt;
+				<span class="kw">else</span>
+				&lt;on-false-expr&gt;
+			</code>
+		
+	</td>
+</tr>
+
+		
+<tr class="hy">
+	<td class="hy">Pass-by-Move</td>
+	<td class="hy">Unary</td>
+	<td class="hy">
+
+			<code class="hy inline">
+				<span class="kw">move</span>
+				&lt;expr&gt;
+			</code>
+		
+	</td>
+</tr>
+
+		
+<tr class="hy">
+	<td class="hy">Pass-by-Reference</td>
+	<td class="hy">Unary</td>
+	<td class="hy">
+
+			<code class="hy inline">
+				<span class="kw">ref</span>
+				&lt;expr&gt;
+			</code>
+		
+	</td>
+</tr>
+
+		
+<tr class="hy">
+	<td class="hy">Pass-by-Copy</td>
+	<td class="hy">Unary</td>
+	<td class="hy">
+
+			<code class="hy inline">
+				<span class="kw">copy</span>
+				&lt;expr&gt;
+			</code>
+		
+	</td>
+</tr>
+
+		
+<tr class="hy">
+	<td class="hy">Null Decay</td>
+	<td class="hy">Binary</td>
+	<td class="hy">
+
+			<code class="hy inline">
+				&lt;expr&gt;
+				<span class="op">??</span>
+				&lt;else-expr&gt;
 			</code>
 		
 	</td>
