@@ -113,26 +113,26 @@ html `
 	<<title>>External Functions<</title>>
 	<<p>>
 		External functions are your way of calling cross-language code.
-        They come in two types: <<b>>ART Functions<</b>> and
+        They come in two types: <<b>>Native Functions<</b>> and
         <<b>>Shared Functions<</b>>.
 	<</p>>
 	<<p>>
-		<<b>>ART Functions<</b>> are one way of calling cross-language
-		code. ART functions execute code that is <<b>>defined
+		<<b>>Native Functions<</b>> are one way of calling cross-language
+		code. Native functions execute code that is <<b>>defined
 		by the ART implementation.<</b>>
 	<</p>>
 	<<p>>
 		Declared via the
 		<<code-inline>>
-			<<attr>>ARTCall<</attr>><<op text="("/>>
+			<<attr>>Native<</attr>><<op text="("/>>
 			name <<op text="="/>>
-			<<dqstr>><<expr text="art-name"/>><</dqstr>>
+			<<dqstr>><<expr text="native-name"/>><</dqstr>>
 			<<op text=")"/>>
 		<</code-inline>> attribute, followed by how
 		one would forward declare a function.
 	<</p>>
 	<<p>>
-		<<b>>Shared Functions<</b>>, much like ART functions, are
+		<<b>>Shared Functions<</b>>, much like native functions, are
 		also for calling cross-language code. Unlike their siblings,
 		however, shared functions <<b>>execute code defined in an
 		Anima-compatible shared library<</b>>.

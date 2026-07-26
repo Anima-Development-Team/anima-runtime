@@ -143,14 +143,14 @@ But Why Anima?
 					<span class="memo">// In breve:</span>
 					<br><br>
 					<span class="memo">// Declare [C++ -> ART] mapping call:</span><br>
-					<span class="macro">@Event</span><span class="op">(</span>name <span class="op">=</span> <span class="str">"myARTFunction"</span><span class="op">)</span><br>
+					<span class="macro">@Expose</span><span class="op">(</span>name <span class="op">=</span> <span class="str">"myARTFunction"</span><span class="op">)</span><br>
 					<span class="fn">artCall</span> <span class="op">:: () -></span> <span class="kw">void</span> <span class="op">{</span> <span class="memo">/* ... */</span> <span class="op">}</span><br><br>
 					<span class="memo">// Declare [ART -> C++] mapping call (RunTime-specific):</span><br>
-					<span class="macro">@ARTCall</span><span class="op">(</span>name <span class="op">=</span> <span class="str">"myNativeFunction"</span><span class="op">)</span><br>
+					<span class="macro">@Native</span><span class="op">(</span>name <span class="op">=</span> <span class="str">"myNativeFunction"</span><span class="op">)</span><br>
 					<span class="fn">nativeCall</span> <span class="op">:: () -></span> <span class="kw">int64</span><br><br>
 					<span class="memo">// Declare [ART -> C++] mapping call (ART-compatible shared library):</span><br>
 					<span class="macro">@Shared</span><span class="op">(</span>name <span class="op">=</span> <span class="str">"myLibraryFunction"</span><span class="op">,</span> lib <span class="op">=</span> mylib<span class="op">)</span><br>
-					<span class="fn">dynCall</span> <span class="op">:: () -></span> <span class="kw">string</span>
+					<span class="fn">libCall</span> <span class="op">:: () -></span> <span class="kw">string</span>
 				</code>
 			</p>
 		</div>

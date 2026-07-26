@@ -41,14 +41,14 @@ html `
 					<<memo text="// In breve:"/>>
 					<br><br>
 					<<memo text="// Declare [C++ -> ART] mapping call:"/>><br>
-					<<attr>>Event<</attr>><<op text="("/>>name <<op text="="/>> <<str>>"myARTFunction"<</str>><<op text=")"/>><br>
+					<<attr>>Expose<</attr>><<op text="("/>>name <<op text="="/>> <<str>>"myARTFunction"<</str>><<op text=")"/>><br>
 					<<fn>>artCall<</fn>> <<op>>:: () -><</op>> <<kw>>void<</kw>> <<op>>{<</op>> <<memo text="/* ... */"/>> <<op>>}<</op>><br><br>
 					<<memo text="// Declare [ART -> C++] mapping call (RunTime-specific):"/>><br>
-					<<attr>>ARTCall<</attr>><<op text="("/>>name <<op text="="/>> <<str>>"myNativeFunction"<</str>><<op text=")"/>><br>
+					<<attr>>Native<</attr>><<op text="("/>>name <<op text="="/>> <<str>>"myNativeFunction"<</str>><<op text=")"/>><br>
 					<<fn>>nativeCall<</fn>> <<op>>:: () -><</op>> <<kw>>int64<</kw>><br><br>
 					<<memo text="// Declare [ART -> C++] mapping call (ART-compatible shared library):"/>><br>
 					<<attr>>Shared<</attr>><<op text="("/>>name <<op text="="/>> <<str>>"myLibraryFunction"<</str>><<op text=","/>> lib <<op text="="/>> mylib<<op text=")"/>><br>
-					<<fn>>dynCall<</fn>> <<op>>:: () -><</op>> <<kw>>string<</kw>>
+					<<fn>>libCall<</fn>> <<op>>:: () -><</op>> <<kw>>string<</kw>>
 				<</code-block>>
 			</p>
 		</div>

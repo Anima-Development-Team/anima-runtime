@@ -203,26 +203,26 @@ header.hy {
 	<h2 class="hy">External Functions</h2>
 	<p class="hy">
 		External functions are your way of calling cross-language code.
-        They come in two types: <strong>ART Functions</strong> and
+        They come in two types: <strong>Native Functions</strong> and
         <strong>Shared Functions</strong>.
 	</p>
 	<p class="hy">
-		<strong>ART Functions</strong> are one way of calling cross-language
-		code. ART functions execute code that is <strong>defined
+		<strong>Native Functions</strong> are one way of calling cross-language
+		code. Native functions execute code that is <strong>defined
 		by the ART implementation.</strong>
 	</p>
 	<p class="hy">
 		Declared via the
 		<code class="hy inline">
-			<span class="macro">@ARTCall</span><span class="op">(</span>
+			<span class="macro">@Native</span><span class="op">(</span>
 			name <span class="op">=</span>
-			<span class="str">"&lt;art-name&gt;"</span>
+			<span class="str">"&lt;native-name&gt;"</span>
 			<span class="op">)</span>
 		</code> attribute, followed by how
 		one would forward declare a function.
 	</p>
 	<p class="hy">
-		<strong>Shared Functions</strong>, much like ART functions, are
+		<strong>Shared Functions</strong>, much like native functions, are
 		also for calling cross-language code. Unlike their siblings,
 		however, shared functions <strong>execute code defined in an
 		Anima-compatible shared library</strong>.
