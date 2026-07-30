@@ -63,8 +63,12 @@ html `
 			<<type-info>>
 				Null value. Indicates that the
 				<<b>>value does not exist<</b>>
-				All <<code-inline>><<attr text="Nullable"/>><</code-inline>>
-				types can accept it as a value.
+				All nullable types (
+				those prefixed with
+				<<code-inline>><<op text="?"/>><</code-inline>>
+				or
+				<<code-inline>><<kw text="maybe"/>><</code-inline>>
+				) can accept it as a value.
 				<<b>>Cannot be used as a type directly.<</b>>
 			<</type-info>>
 			<<type-default>>
