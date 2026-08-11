@@ -110,14 +110,20 @@ html `
 	<<card>>
 		<<subcard>>
 			<<code>>
-			<<attr text="shared"/>><<op text="["/>><<str>>"av2console"<</str>><<op text=":"/>><<str>>"av2/console/writeLine_string"<</str>><<op text="]"/>><br>
-			<<tab/>><<kw text="void"/>><<op text="("/>><<kw text="str"/>><<op text=")"/>> <<fn text="print"/>><br>
-			<<kw text="push"/>> <<str>>"Hello, "<</str>><br>
-			<<kw text="push"/>> <<str>>"World!"<</str>><br>
-			<<kw text="add"/>><br>
-			<<kw text="call"/>> <<fn text="print"/>><br>
+    			<<attr text="shared"/>><<op text="["/>><<str>>"av2console"<</str>><<op text=":"/>><<str>>"av2/console/writeLine_string"<</str>><<op text="]"/>><br>
+    			<<tab/>><<kw text="void"/>><<op text="("/>><<kw text="str"/>><<op text=")"/>> <<fn text="print"/>><br>
+    			<<kw text="push"/>> <<str>>"Hello, "<</str>><br>
+    			<<kw text="push"/>> <<str>>"World!"<</str>><br>
+    			<<kw text="add"/>><br>
+    			<<kw text="call"/>> <<fn text="print"/>><br>
 			<</code>>
 			<<one-third>>
+				<p class="hy center-text" style="font-weight: bold;">
+					Assembly made easy.
+				</p>
+				<p class="hy center-text">
+					Made with clarity and ease-of-use in mind.
+				</p>
 			<</one-third>>
 		<</subcard>>
 	<</card>>
