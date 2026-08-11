@@ -31,7 +31,7 @@ html `
 	<<spacer height="2em"/>>
 	<<title>>A Fresh Way to Develop Your Programs<</title>>
 	<div>
-	    <<p>>Designed from the ground up with interoperability in mind, with a easy to use plug-and-play interface.<</p>>
+	    <<p>>Designed from the ground up with interoperability in mind, with an easy to use plug-and-play interface.<</p>>
 	    <<p>>Anima is to C++ what Lua is to C.<</p>>
 	</div>
 	<<title>>But Why Anima?<</title>>
