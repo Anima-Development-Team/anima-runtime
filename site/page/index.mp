@@ -7,6 +7,7 @@ import [
 	"bits/spacer"
 	"bits/card"
 	"bits/subcard"
+	"bits/p"
 	"bits/layout/two-thirds"
 	"bits/layout/one-third"
 	"bits/code/attr"
@@ -29,8 +30,12 @@ html `
 	<<banner/>>
 	<<spacer height="2em"/>>
 	<<title>>A Fresh Way to Develop Your Programs<</title>>
+	<div>
+	    <<p>>Designed from the ground up with interoperability in mind, with a easy to use plug-and-play interface.<</p>>
+	    <<p>>Anima is to C++ what Lua is to C.<</p>>
+	</div>
 	<<title>>But Why Anima?<</title>>
-	<p>Anima is designed to...</p>
+	<<p>>Anima is designed to...<</p>>
 	<div class="hy card flex horizontal center override wrap">
 		<div class="hy subcard half">
 			<h2 class="hy" style="font-size: larger;">Easily Work With Modern C++</h2>
@@ -49,6 +54,18 @@ html `
 					<<memo text="// Declare [ART -> C++] mapping call (ART-compatible shared library):"/>><br>
 					<<attr>>Shared<</attr>><<op text="("/>>name <<op text="="/>> <<str>>"myLibraryFunction"<</str>><<op text=","/>> lib <<op text="="/>> mylib<<op text=")"/>><br>
 					<<fn>>libCall<</fn>> <<op>>:: () -><</op>> <<kw>>string<</kw>>
+				<</code-block>>
+			</p>
+			<p class="hy flex left-text">
+				<<code-block>>
+					<<memo text="// In c++:"/>>
+					<br><br>
+					<<memo text="// Invoke exposed function:"/>><br>
+					<<memo text="// [env] here represents your ART engine"/>><br>
+					env<<op text="."/>><<fn text="expose"/>><<op text="<"/>><<kw text="void"/>><<op text="()>"/>><<op text="("/>><<str>>"myARTFunction"<</str>><<op text=")"/>><<op text="."/>><<fn text="invoke"/>><<op text="();"/>><br>
+					<<memo text="// Register a native function:"/>><br>
+					<<memo text="// Inside your ART implementation class"/>><br>
+					context<<op text="."/>>art<<op text="."/>><<fn text="addNativeCall"/>><<op text="("/>><<str>>"myNativeFunction"<</str>><<op text=","/>> <<memo text="/* Your function here */"/>><<op text=");"/>><br>
 				<</code-block>>
 			</p>
 		</div>
@@ -93,6 +110,12 @@ html `
 	<<card>>
 		<<subcard>>
 			<<code>>
+			<<attr text="shared"/>><<op text="["/>><<str>>"av2console"<</str>><<op text=":"/>><<str>>"av2/console/writeLine_string"<</str>><<op text="]"/>><br>
+			<<tab/>><<kw text="void"/>><<op text="("/>><<kw text="str"/>><<op text=")"/>> <<fn text="print"/>><br>
+			<<kw text="push"/>> <<str>>"Hello, "<</str>><br>
+			<<kw text="push"/>> <<str>>"World!"<</str>><br>
+			<<kw text="add"/>><br>
+			<<kw text="call"/>> <<fn text="print"/>><br>
 			<</code>>
 			<<one-third>>
 			<</one-third>>

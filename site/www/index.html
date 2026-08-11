@@ -124,6 +124,10 @@ header.hy {
 A Fresh Way to Develop Your Programs
     </h1>
 
+	<div>
+	    <p class="hy">Designed from the ground up with interoperability in mind, with a easy to use plug-and-play interface.</p>
+	    <p class="hy">Anima is to C++ what Lua is to C.</p>
+	</div>
 	
     <h1
         class="hy center-text no-color"
@@ -132,7 +136,7 @@ A Fresh Way to Develop Your Programs
 But Why Anima?
     </h1>
 
-	<p>Anima is designed to...</p>
+	<p class="hy">Anima is designed to...</p>
 	<div class="hy card flex horizontal center override wrap">
 		<div class="hy subcard half">
 			<h2 class="hy" style="font-size: larger;">Easily Work With Modern C++</h2>
@@ -151,6 +155,18 @@ But Why Anima?
 					<span class="memo">// Declare [ART -> C++] mapping call (ART-compatible shared library):</span><br>
 					<span class="macro">@Shared</span><span class="op">(</span>name <span class="op">=</span> <span class="str">"myLibraryFunction"</span><span class="op">,</span> lib <span class="op">=</span> mylib<span class="op">)</span><br>
 					<span class="fn">libCall</span> <span class="op">:: () -></span> <span class="kw">string</span>
+				</code>
+			</p>
+			<p class="hy flex left-text">
+				<code class="hy block">
+					<span class="memo">// In c++:</span>
+					<br><br>
+					<span class="memo">// Invoke exposed function:</span><br>
+					<span class="memo">// [env] here represents your ART engine</span><br>
+					env<span class="op">.</span><span class="fn">expose</span><span class="op"><</span><span class="kw">void</span><span class="op">()></span><span class="op">(</span><span class="str">"myARTFunction"</span><span class="op">)</span><span class="op">.</span><span class="fn">invoke</span><span class="op">();</span><br>
+					<span class="memo">// Register a native function:</span><br>
+					<span class="memo">// Inside your ART implementation class</span><br>
+					context<span class="op">.</span>art<span class="op">.</span><span class="fn">addNativeCall</span><span class="op">(</span><span class="str">"myNativeFunction"</span><span class="op">,</span> <span class="memo">/* Your function here */</span><span class="op">);</span><br>
 				</code>
 			</p>
 		</div>
@@ -225,6 +241,12 @@ Need to go to a Lower Level? <a href="https://animart.dev//minima/v1/minima.html
 <div class="hy subcard flex horizontal center">
 
 			<code class="hy left-text two-thirds">
+			<span class="macro">@shared</span><span class="op">[</span><span class="str">"av2console"</span><span class="op">:</span><span class="str">"av2/console/writeLine_string"</span><span class="op">]</span><br>
+			&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">void</span><span class="op">(</span><span class="kw">str</span><span class="op">)</span> <span class="fn">print</span><br>
+			<span class="kw">push</span> <span class="str">"Hello, "</span><br>
+			<span class="kw">push</span> <span class="str">"World!"</span><br>
+			<span class="kw">add</span><br>
+			<span class="kw">call</span> <span class="fn">print</span><br>
 			</code>
 			
 <div class="hy one-third">
