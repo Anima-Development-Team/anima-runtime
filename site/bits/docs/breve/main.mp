@@ -24,9 +24,9 @@ html_begin `
                 <li class="hy"><<link to="{{@page:breve/v1/basic/variables}}">>Variables<</link>></li>
                 <li class="hy"><<link to="{{@page:breve/v1/basic/basic-types}}">>Basic Types<</link>></li>
                 <li class="hy"><<link to="{{@page:breve/v1/basic/functions}}">>Functions<</link>></li>
+                <li class="hy"><<link to="{{@page:breve/v1/basic/branches}}">>Branches<</link>></li>
+                <li class="hy"><<link to="{{@page:breve/v1/basic/loops}}">>Loops<</link>></li>
                 <li class="hy">Modules</li>
-                <li class="hy">Branches</li>
-                <li class="hy">Loops</li>
                 <li class="hy">Operators</li>
                 <li class="hy">Importing Files & Libraries</li>
             </ol>
@@ -37,9 +37,10 @@ html_begin `
                 <li class="hy">Anonymous Blocks</li>
                 <li class="hy">Attributes</li>
                 <li class="hy">Inline Assembly (Minima)</li>
-                <li class="hy">Signals</li>
+                <li class="hy">Events</li>
                 <li class="hy">Shared Libraries</li>
                 <li class="hy">Internal Calls</li>
+                <li class="hy">Tricks, Tips and Techniques</li>
             </ol>
 		<</nav-section>>
 	<</nav-sidebar>>

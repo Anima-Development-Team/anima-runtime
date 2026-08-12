@@ -5,7 +5,7 @@
 <html>
 	<head>
 	    <meta charset="UTF-8" />
-	    <title>Transfer Semantics</title>
+	    <title>Branches</title>
 	   	<link rel="icon" href="https://animart.dev//res/img/logo-v1b-small.png">
 	    <style>@import url("https://hy.purplecheshire.net/hy.css");
 @import url("https://hy.purplecheshire.net/hyacinth/fonts/ibm-plex-sans.css");
@@ -122,93 +122,124 @@ header.hy {
 
 
 
-	<h2 class="hy">Transfer Semantics</h2>
+	<h2 class="hy">Branches</h2>
 	<p class="hy">
-		<em>Transfer Semantics</em> is the nature if how a given value
-		is passed around.
+        One of the main building blocks of every
+        programming language.
 	</p>
 	<p class="hy">
-		In Breve, how a value gets passed around is defined at
-		<em>assignment</em>, not declaration. Thera are three ways to
-		pass values around:
+        Breve contains <strong>four types</strong> of branches,
+        divided in two types and two categories, those being:
 	</p>
 	<p class="hy">
-		By <code class="hy inline"><span class="kw">copy</span></code>: This
-		creates a copy of a given value, <strong>keeping the source
-		intact</strong>.
+        <strong><code class="hy inline"><span class="kw">if</span></code> branches</strong>:
+        Your standard programming language branch, which executes
+        code <strong>when the given condition is true</strong>. May optionally
+        have an <code class="hy inline"><span class="kw">else</span></code>
+        clause.
 	</p>
 	<p class="hy">
-		By <code class="hy inline"><span class="kw">ref</span></code>: This
-		simply passes a reference to the given value. The ART uses
-		ARC (Automatic Reference Counting) for managing references,
-		so there's no need to worry about memory management.
+        <strong><code class="hy inline"><span class="kw">unless</span></code> branches</strong>:
+        The opposite of <code class="hy inline"><span class="kw">if</span></code>
+        branches, that only execute
+        code <strong>when the given condition is false</strong>. May also optionally
+        have an <code class="hy inline"><span class="kw">else</span></code>
+        clause.
 	</p>
 	<p class="hy">
-		By <code class="hy inline"><span class="kw">move</span></code>: The
-		default way values get passed around, when not specified.
-		This moves the value from the source to the destination,
-		and <strong>clears the source of its reference</strong>.
+        <strong><code class="hy inline"><span class="kw">when</span></code> branches</strong>:
+        Instead of a ternary operator that most programming languages have,
+        breve uses an inline if-else, in the form of
+		<code class="hy inline">
+		&lt;on-true&gt;
+		<span class="kw">when</span>
+		&lt;condition&gt;
+		<span class="kw">else</span>
+		&lt;on-false&gt;
+		</code>
+        . The condition is checked first, then the appropriate path is taken.
+        <strong>Both paths must exist</strong>.
 	</p>
 	<p class="hy">
-		With some exceptions, all values in breve are, by default,
-		passed by <code class="hy inline"><span class="kw">move</span></code>.
+        <strong><code class="hy inline"><span class="kw">except</span></code> branches</strong>:
+        The inline version of
+        <code class="hy inline"><span class="kw">unless</span></code> branches.
+        Like its sibling, <strong>Both paths must exist</strong>.
 	</p>
 	
 	<div class="hy alert info soft subcard">
 	<h3 class="hy alert info loud">Note</h3>
 
-		<p class="hy">All constants are copied.</p>
-		<p class="hy">Prefix increment and decrement result in a reference to the operated value.</p>
-		<p class="hy">Postfix increment and decrement result in a copy to the original value.</p>
+		<p class="hy">
+			You are not required to surround the condition with parens.
+		</p>
 	
     </div>
 
-	<p class="hy">
-		For example:
-	</p>
+	
+	<div class="hy alert danger soft subcard">
+	<h3 class="hy alert danger loud">Caution!</h3>
+
+		<p class="hy">
+			For every single branch type, every code path must result in a value
+			<strong>of the same data type!</strong>
+		</p>
+	
+    </div>
+
 	<code class="hy block">
-		var1 <span class="op">:=</span> <span class="str">"This is a string!"</span>
-		<br><br>
-		<span class="memo">// var1 is now empty (would read void)</span><br>
-		var2 <span class="op">:=</span> var1
-		<br><br>
-		<span class="memo">// var3 holds a copy of var2, so var2 can be modified</span><br>
-		var3 <span class="op">:=</span> <span class="kw">copy</span> var2
-		<br><br>
-		<span class="memo">// var1 holds a reference to var2, so any changes in var2 will be reflected here</span><br>
-		var1 <span class="op">=</span> <span class="kw">ref</span> var2
-		<br><br>
+		<span class="memo">// Conventional if-else branches can be used</span><br>
+		<span class="memo">// In place of inline if-elses, if preferred</span><br><br>
+		<span class="fn">isEven1</span>
+		<span class="op">:: (</span>
+		num <span class="op">:</span> <span class="kw">uint64</span>
+		<span class="op">)</span>
+		<span class="op">=></span><br>
+		&nbsp;&nbsp;&nbsp;&nbsp; <span class="kw">if</span> num <span class="op">%</span> <span class="num">2</span><br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; IO<span class="op">.</span><span class="fn">writeLine</span>
+		<span class="op">(</span>
+		<span class="str">"Is odd!"</span>
+		<span class="op">)</span><br>
+		&nbsp;&nbsp;&nbsp;&nbsp; <span class="kw">else</span><br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; IO<span class="op">.</span><span class="fn">writeLine</span>
+		<span class="op">(</span>
+		<span class="str">"Is even!"</span>
+		<span class="op">)</span><br><br>
+		<span class="fn">isEven2</span>
+		<span class="op">:: (</span>
+		num <span class="op">:</span> <span class="kw">uint64</span>
+		<span class="op">)</span>
+		<span class="op">=></span><br>
+		&nbsp;&nbsp;&nbsp;&nbsp; IO<span class="op">.</span><span class="fn">writeLine</span>
+		<span class="op">(</span>
+		<span class="str">"Is odd!"</span>
+		<span class="kw">when</span> num <span class="op">%</span> <span class="num">2</span>
+		<span class="kw">else</span>
+		<span class="str">"Is even!"</span>
+		<span class="op">)</span>
 	</code>
 <hr class="hy" />
 
-<div class="hy card" style="min-height: 30em">
-    <h3 class="hy">Quiz Time!</h3>
-    <iframe
-        class="hy"
-        style="height: 25em"
-        src="https://animart.dev//res/framelet/quiz.html?::ewoJInF1ZXN0aW9uIjogIklmIGFmdGVyIHRoZSBsYXN0IGxpbmUgb25lIHdlcmUgdG8gYWRkIDxjb2RlIGNsYXNzPSdoeSBpbmxpbmUnPnZhcjMgPHNwYW4gY2xhc3M9J29wJz4rPTwvc3Bhbj4gPHNwYW4gY2xhc3M9J3N0cic-JyBUaGlzIGlzIGEgbmV3IGxpbmUhJzwvc3Bhbj48L2NvZGU-LDxici8-dGhlIHZhbHVlIGluIDxjb2RlIGNsYXNzPSdoeSBpbmxpbmUnPnZhcjE8L2NvZGU-IHdvdWxkIGJlIHVuYWZmZWN0ZWQuIiwKCSJhbnN3ZXJzIjogWwoJCXsKCQkJInZhbHVlIjogIlRydWUuIiwKCQkJIm1lc3NhZ2UiOiAiQ29ycmVjdCEgPGNvZGUgY2xhc3M9J2h5IGlubGluZSc-dmFyMzwvY29kZT4gaG9sZHMgYSBjb21wbGV0ZWx5IG5ldyB2YWx1ZSwgbm90IGEgcmVmZXJlbmNlIHRvIGFub3RoZXIgb25lLiIKCQl9LAoJCXsgInZhbHVlIjogIkZhbHNlLiIsICJtZXNzYWdlIjogIldyb25nISIgfQoJXSwKCSJjb3JyZWN0IjogMAp9ChB9AA=="
-    ></iframe>
-</div>
-
-<hr class="hy">
-
-	<h2 class="hy">Default Variable Behaviour</h2>
+	<h2 class="hy">
+	<code class="hy inline"><span class="kw">likely</span></code>
+	and
+	<code class="hy inline"><span class="kw">unlikely</span></code>
+	</h2>
 	<p class="hy">
-		For variables, its default transfer semantic can be changed.
+		By default, the compiler tries to assume the likelihood a given
+		branch of code is taken, to optimize for a specific code path.
 	</p>
 	<p class="hy">
-		By prepending the appropriate attribute at declaration (
-			<code class="hy inline"><span class="macro">@ByCopy</span></code>,
-			<code class="hy inline"><span class="macro">@ByRef</span></code>, or
-			<code class="hy inline"><span class="macro">@ByMove</span></code>
-		), you can change how the variable passes its value around.
+		If a given code path is known to be more likely to happen than
+		the other, then this behaviour can be overwritten with the
+		<code class="hy inline"><span class="kw">likely</span></code>
+		and
+		<code class="hy inline"><span class="kw">unlikely</span></code>
+		keywords.
 	</p>
 	<p class="hy">
-		This only affects <strong>how the variable sends</strong> its value,
-		not <strong>how it recieves</strong>.
-	</p>
-	<p class="hy">
-		This behaviour gets overridden by the transfer operators.
+		Inserting these before the condition flags to the compiler the
+		appropriate course of action to take for the given branch.
 	</p>
 <hr class="hy" />
 

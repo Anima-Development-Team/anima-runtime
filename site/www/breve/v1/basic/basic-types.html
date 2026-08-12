@@ -86,9 +86,9 @@ header.hy {
                 <li class="hy"><a href="https://animart.dev//breve/v1/basic/variables.html" class="hy link" style="font-size: inherit;">Variables</a></li>
                 <li class="hy"><a href="https://animart.dev//breve/v1/basic/basic-types.html" class="hy link" style="font-size: inherit;">Basic Types</a></li>
                 <li class="hy"><a href="https://animart.dev//breve/v1/basic/functions.html" class="hy link" style="font-size: inherit;">Functions</a></li>
+                <li class="hy"><a href="https://animart.dev//breve/v1/basic/branches.html" class="hy link" style="font-size: inherit;">Branches</a></li>
+                <li class="hy"><a href="https://animart.dev//breve/v1/basic/loops.html" class="hy link" style="font-size: inherit;">Loops</a></li>
                 <li class="hy">Modules</li>
-                <li class="hy">Branches</li>
-                <li class="hy">Loops</li>
                 <li class="hy">Operators</li>
                 <li class="hy">Importing Files & Libraries</li>
             </ol>
@@ -104,9 +104,10 @@ header.hy {
                 <li class="hy">Anonymous Blocks</li>
                 <li class="hy">Attributes</li>
                 <li class="hy">Inline Assembly (Minima)</li>
-                <li class="hy">Signals</li>
+                <li class="hy">Events</li>
                 <li class="hy">Shared Libraries</li>
                 <li class="hy">Internal Calls</li>
+                <li class="hy">Tricks, Tips and Techniques</li>
             </ol>
 		
 </div>
@@ -184,8 +185,12 @@ header.hy {
 
 				Null value. Indicates that the
 				<strong>value does not exist</strong>
-				All <code class="hy inline"><span class="macro">@Nullable</span></code>
-				types can accept it as a value.
+				All nullable types (
+				those prefixed with
+				<code class="hy inline"><span class="op">?</span></code>
+				or
+				<code class="hy inline"><span class="kw">maybe</span></code>
+				) can accept it as a value.
 				<strong>Cannot be used as a type directly.</strong>
 			
     </td>
@@ -900,7 +905,7 @@ header.hy {
     <iframe
         class="hy"
         style="height: 25em"
-        src="https://animart.dev//res/framelet/quiz.html?::ewoJInF1ZXN0aW9uIjogIldoaWNoIHR5cGUgY2FuIGJlIGNhc3RlZCB0bywgYW5kIGZyb20sIGFueSB0eXBlPyIsCgkiYW5zd2VycyI6IFsKCQl7CgkJCSJ2YWx1ZSI6ICI8Y29kZSBjbGFzcz0naHkgaW5saW5lJz48c3BhbiBjbGFzcz0na3cnPmFueTwvc3Bhbj48L2NvZGU-LiIsCgkJCSJtZXNzYWdlIjogIkNvcnJlY3QhIDxjb2RlIGNsYXNzPSdoeSBpbmxpbmUnPjxzcGFuIGNsYXNzPSdrdyc-YW55PC9zcGFuPjwvY29kZT4gY2FuIGJlIGNhc3RlZC10byBhbmQgY2FzdGVkLWZyb20gPGVtPmFueTwvZW0-IHR5cGUuIgoJCX0sCgkJewoJCQkidmFsdWUiOiAiPGNvZGUgY2xhc3M9J2h5IGlubGluZSc-PHNwYW4gY2xhc3M9J2t3Jz5vYmplY3Q8L3NwYW4-PC9jb2RlPi4iLAoJCQkibWVzc2FnZSI6ICJXcm9uZyEgVGhpcyB0eXBlIGRvZXMgbm90IGV4aXN0ISIKCQl9LAoJCXsKCQkJInZhbHVlIjogIjxjb2RlIGNsYXNzPSdoeSBpbmxpbmUnPjxzcGFuIGNsYXNzPSdrdyc-bnVsbDwvc3Bhbj48L2NvZGU-LiIsCgkJCSJtZXNzYWdlIjogIldyb25nISIKCQl9LAoJCXsKCQkJInZhbHVlIjogIjxjb2RlIGNsYXNzPSdoeSBpbmxpbmUnPjxzcGFuIGNsYXNzPSdrdyc-c3RyaW5nPC9zcGFuPjwvY29kZT4uIiwKCQkJIm1lc3NhZ2UiOiAiV3JvbmchIgoJCX0KCV0sCgkiY29ycmVjdCI6IDAKfQoAfQo="
+        src="https://animart.dev//res/framelet/quiz.html?::ewoJInF1ZXN0aW9uIjogIldoaWNoIHR5cGUgY2FuIGJlIGNhc3RlZCB0bywgYW5kIGZyb20sIGFueSB0eXBlPyIsCgkiYW5zd2VycyI6IFsKCQl7CgkJCSJ2YWx1ZSI6ICI8Y29kZSBjbGFzcz0naHkgaW5saW5lJz48c3BhbiBjbGFzcz0na3cnPmFueTwvc3Bhbj48L2NvZGU-LiIsCgkJCSJtZXNzYWdlIjogIkNvcnJlY3QhIDxjb2RlIGNsYXNzPSdoeSBpbmxpbmUnPjxzcGFuIGNsYXNzPSdrdyc-YW55PC9zcGFuPjwvY29kZT4gY2FuIGJlIGNhc3RlZC10byBhbmQgY2FzdGVkLWZyb20gPGVtPmFueTwvZW0-IHR5cGUuIgoJCX0sCgkJewoJCQkidmFsdWUiOiAiPGNvZGUgY2xhc3M9J2h5IGlubGluZSc-PHNwYW4gY2xhc3M9J2t3Jz5vYmplY3Q8L3NwYW4-PC9jb2RlPi4iLAoJCQkibWVzc2FnZSI6ICJXcm9uZyEgVGhpcyB0eXBlIGRvZXMgbm90IGV4aXN0ISIKCQl9LAoJCXsKCQkJInZhbHVlIjogIjxjb2RlIGNsYXNzPSdoeSBpbmxpbmUnPjxzcGFuIGNsYXNzPSdrdyc-bnVsbDwvc3Bhbj48L2NvZGU-LiIsCgkJCSJtZXNzYWdlIjogIldyb25nISIKCQl9LAoJCXsKCQkJInZhbHVlIjogIjxjb2RlIGNsYXNzPSdoeSBpbmxpbmUnPjxzcGFuIGNsYXNzPSdrdyc-c3RyaW5nPC9zcGFuPjwvY29kZT4uIiwKCQkJIm1lc3NhZ2UiOiAiV3JvbmchIgoJCX0KCV0sCgkiY29ycmVjdCI6IDAKfQoAEAA="
     ></iframe>
 </div>
 

@@ -124,6 +124,10 @@ header.hy {
 A Fresh Way to Develop Your Programs
     </h1>
 
+	<div>
+	    <p class="hy">Designed from the ground up with interoperability in mind, with an easy to use plug-and-play interface.</p>
+	    <p class="hy">Anima is to C++ what Lua is to C.</p>
+	</div>
 	
     <h1
         class="hy center-text no-color"
@@ -132,17 +136,50 @@ A Fresh Way to Develop Your Programs
 But Why Anima?
     </h1>
 
-	<div class="hy card flex horizontal center override">
-		<div class="hy subcard">
-			<h2 class="hy" style="font-size: larger;">Designed to Easily Work With Modern C++</h2>
+	<p class="hy">Anima is designed to...</p>
+	<div class="hy card flex horizontal center override wrap">
+		<div class="hy subcard half">
+			<h2 class="hy" style="font-size: larger;">Easily Work With Modern C++</h2>
 			<p>Easily call C++ from inside the ART, and vice-versa.</p>
 			<p>Shared libraries are even easier than before.</p>
+			<p class="hy flex left-text">
+				<code class="hy block">
+					<span class="memo">// In breve:</span>
+					<br><br>
+					<span class="memo">// Declare [C++ -> ART] mapping call:</span><br>
+					<span class="macro">@Expose</span><span class="op">(</span>name <span class="op">=</span> <span class="str">"myARTFunction"</span><span class="op">)</span><br>
+					<span class="fn">artCall</span> <span class="op">:: () -></span> <span class="kw">void</span> <span class="op">{</span> <span class="memo">/* ... */</span> <span class="op">}</span><br><br>
+					<span class="memo">// Declare [ART -> C++] mapping call (RunTime-specific):</span><br>
+					<span class="macro">@Native</span><span class="op">(</span>name <span class="op">=</span> <span class="str">"myNativeFunction"</span><span class="op">)</span><br>
+					<span class="fn">nativeCall</span> <span class="op">:: () -></span> <span class="kw">int64</span><br><br>
+					<span class="memo">// Declare [ART -> C++] mapping call (ART-compatible shared library):</span><br>
+					<span class="macro">@Shared</span><span class="op">(</span>name <span class="op">=</span> <span class="str">"myLibraryFunction"</span><span class="op">,</span> lib <span class="op">=</span> mylib<span class="op">)</span><br>
+					<span class="fn">libCall</span> <span class="op">:: () -></span> <span class="kw">string</span>
+				</code>
+			</p>
+			<p class="hy flex left-text">
+				<code class="hy block">
+					<span class="memo">// In c++:</span>
+					<br><br>
+					<span class="memo">// Invoke exposed function:</span><br>
+					<span class="memo">// [env] here represents your ART engine</span><br>
+					env<span class="op">.</span><span class="fn">expose</span><span class="op"><</span><span class="kw">void</span><span class="op">()></span><span class="op">(</span><span class="str">"myARTFunction"</span><span class="op">)</span><span class="op">.</span><span class="fn">invoke</span><span class="op">();</span><br>
+					<span class="memo">// Register a native function:</span><br>
+					<span class="memo">// Inside your ART implementation class</span><br>
+					context<span class="op">.</span>art<span class="op">.</span><span class="fn">addNativeCall</span><span class="op">(</span><span class="str">"myNativeFunction"</span><span class="op">,</span> <span class="memo">/* Your function here */</span><span class="op">);</span><br>
+				</code>
+			</p>
 		</div>
-		<div class="hy subcard">
+		<div class="hy subcard half">
+			<h2 class="hy" style="font-size: larger;">Be Memory-Safe and Performant</h2>
+			<p>Values are handled via <em>Reference Counting</em>, removing the need for background garbage collection.</p>
+			<p>Write more deterministic code with ease.</p>
+		</div>
+		<div class="hy subcard half">
 			<h2 class="hy" style="font-size: larger;"></h2>
 			<p>More information coming soon!</p>
 		</div>
-		<div class="hy subcard">
+		<div class="hy subcard half">
 			<h2 class="hy" style="font-size: larger;"></h2>
 			<p>More information coming soon!</p>
 		</div>
@@ -167,7 +204,9 @@ Meet <a href="https://animart.dev//breve/v1/breve.html" class="hy link" style="f
 				<span class="macro">@Main</span><br>
 				<span class="fn">main</span> <span class="op">:: () -></span> <span class="kw">void</span> <span class="op">{</span><br>
 				&nbsp;&nbsp;&nbsp;&nbsp;IO<span class="op">.</span><span class="fn">writeLine</span><span class="op">(</span><span class="str">"Hello, World!"</span><span class="op">)</span><br>
-				<span class="op">}</span>
+				<span class="op">}</span><br><br>
+				<span class="memo">// Or, in one line:</span><br><br>
+				<span class="macro">@Main</span> <span class="fn">_</span> <span class="op">:: () => (</span><span class="kw">import</span> core<span class="op">)</span><span class="op">.</span>IO<span class="op">.</span><span class="fn">writeLine</span><span class="op">(</span><span class="str">"Hello, World!"</span><span class="op">)</span>
 			</code>
 			
 <div class="hy one-third">
@@ -202,10 +241,22 @@ Need to go to a Lower Level? <a href="https://animart.dev//minima/v1/minima.html
 <div class="hy subcard flex horizontal center">
 
 			<code class="hy left-text two-thirds">
+    			<span class="macro">@shared</span><span class="op">[</span><span class="str">"av2console"</span><span class="op">:</span><span class="str">"av2/console/writeLine_string"</span><span class="op">]</span><br>
+    			&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">void</span><span class="op">(</span><span class="kw">str</span><span class="op">)</span> <span class="fn">print</span><br>
+    			<span class="kw">push</span> <span class="str">"Hello, "</span><br>
+    			<span class="kw">push</span> <span class="str">"World!"</span><br>
+    			<span class="kw">add</span><br>
+    			<span class="kw">call</span> <span class="fn">print</span><br>
 			</code>
 			
 <div class="hy one-third">
 
+				<p class="hy center-text" style="font-weight: bold;">
+					Assembly made easy.
+				</p>
+				<p class="hy center-text">
+					Made with clarity and ease-of-use in mind.
+				</p>
 			
 </div>
 

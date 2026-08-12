@@ -5,7 +5,7 @@
 <html>
 	<head>
 	    <meta charset="UTF-8" />
-	    <title>Breve</title>
+	    <title>Loops</title>
 	   	<link rel="icon" href="https://animart.dev//res/img/logo-v1b-small.png">
 	    <style>@import url("https://hy.purplecheshire.net/hy.css");
 @import url("https://hy.purplecheshire.net/hyacinth/fonts/ibm-plex-sans.css");
@@ -121,12 +121,59 @@ header.hy {
 <div class="hy app wide flex vertical center left-text" style="max-width: calc(100% - 10% * 2); margin-left: calc(10%);">
 
 
-<h2 class="hy">Welcome!</h2>
-<p class="hy">
-    Here you can find the official documentation and tutorials for
-    Breve.
-</p>
-<p class="hy">Please use the sidebar for navigation.</p>
+
+	<h2 class="hy">Loops</h2>
+	<p class="hy">
+        Another building block of a decent amount of programming languages.
+	</p>
+	<p class="hy">
+        Breve currently contains <strong>four types</strong> of loops:
+	</p>
+	<p class="hy">
+        <strong><code class="hy inline"><span class="kw">do</span></code> loops</strong>:
+        Repeats the expression indefinitely. Written in the form of
+        <code class="hy inline"><span class="kw">do</span> &lt;expr&gt;</code>.
+	</p>
+	<p class="hy">
+        <strong><code class="hy inline"><span class="kw">do</span> <span class="memo">...</span> <span class="kw">while</span></code> loops</strong>:
+        Executes the expression, then repeatedly executes it again, while the given condition is true. Written in the form of
+        <code class="hy inline"><span class="kw">do</span> &lt;expr&gt; <span class="kw">while</span> &lt;cond&gt;</code>.
+	</p>
+	<p class="hy">
+        <strong><code class="hy inline"><span class="kw">while</span></code> loops</strong>:
+        Executes the expression repeatedly while the given condition is true. Written in the form of
+        <code class="hy inline"><span class="kw">while</span> &lt;cond&gt; &lt;expr&gt;</code>.
+	</p>
+	<p class="hy">
+        <strong><code class="hy inline"><span class="kw">repeat</span></code> loops</strong>:
+        Executes the expression repeatedly while the given condition is true.
+        Can be written as:
+        <ul>
+            <li>
+                <code class="hy inline"><span class="kw">repeat</span> &lt;count&gt; &lt;expr&gt;</code>,
+                when an iterator variable is not needed. <strong>Count must be an integer.</strong>
+            </li>
+            <li>
+                <code class="hy inline"><span class="kw">repeat</span> &lt;var-decl&gt; <span class="op">-></span> &lt;count&gt; &lt;expr&gt;</code>,
+                when an iterator variable is required. <strong>Count must be an integer.</strong>
+            </li>
+        </ul>
+	</p>
+	
+	<div class="hy alert info soft subcard">
+	<h3 class="hy alert info loud">Note</h3>
+
+		<<p>
+		    For <code class="hy inline"><span class="kw">repeat</span></code> loops, the iterator variable
+		    <em>will start at the given count, and count down until zero is reached!</em>
+		</p>
+		<<p>
+		    To use it as a forward index, make sure to subtract count from it.
+		</p>
+	
+    </div>
+
+<hr class="hy" />
 
 	
 </div>

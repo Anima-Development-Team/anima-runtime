@@ -68,6 +68,8 @@ html `
 	<</p>>
 	<<note>>
 		<<p>>All constants are copied.<</p>>
+		<<p>>Prefix increment and decrement result in a reference to the operated value.<</p>>
+		<<p>>Postfix increment and decrement result in a copy to the original value.<</p>>
 	<</note>>
 	<<p>>
 		For example:
@@ -87,5 +89,26 @@ html `
 	<</code-block>>
 <</section>>
 <<quiz question="{{@base64:embed/quiz/breve/v1/basic/transfer-semantics.json}}"/>>
+<hr class="hy">
+<<section>>
+	<<title>>Default Variable Behaviour<</title>>
+	<<p>>
+		For variables, its default transfer semantic can be changed.
+	<</p>>
+	<<p>>
+		By prepending the appropriate attribute at declaration (
+			<<code-inline>><<attr text="ByCopy"/>><</code-inline>>,
+			<<code-inline>><<attr text="ByRef"/>><</code-inline>>, or
+			<<code-inline>><<attr text="ByMove"/>><</code-inline>>
+		), you can change how the variable passes its value around.
+	<</p>>
+	<<p>>
+		This only affects <<b>>how the variable sends<</b>> its value,
+		not <<b>>how it recieves<</b>>.
+	<</p>>
+	<<p>>
+		This behaviour gets overridden by the transfer operators.
+	<</p>>
+<</section>>
 <</main>>
 `

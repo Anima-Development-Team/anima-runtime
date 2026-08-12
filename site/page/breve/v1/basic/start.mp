@@ -38,7 +38,7 @@ html `
 	<</p>>
 	<<p>>Then, run the following command:<</p>>
 	<<code-block>>
-		concerto create "<<expr>>YOUR PROJECT NAME<</expr>>" --type program --lang breve
+		concerto create "<<expr>>YOUR PROJECT NAME<</expr>>" --lang breve
 	<</code-block>>
 	<<p>>
 		After that, your project should have the following folder

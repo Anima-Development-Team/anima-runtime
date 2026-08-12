@@ -86,9 +86,9 @@ header.hy {
                 <li class="hy"><a href="https://animart.dev//breve/v1/basic/variables.html" class="hy link" style="font-size: inherit;">Variables</a></li>
                 <li class="hy"><a href="https://animart.dev//breve/v1/basic/basic-types.html" class="hy link" style="font-size: inherit;">Basic Types</a></li>
                 <li class="hy"><a href="https://animart.dev//breve/v1/basic/functions.html" class="hy link" style="font-size: inherit;">Functions</a></li>
+                <li class="hy"><a href="https://animart.dev//breve/v1/basic/branches.html" class="hy link" style="font-size: inherit;">Branches</a></li>
+                <li class="hy"><a href="https://animart.dev//breve/v1/basic/loops.html" class="hy link" style="font-size: inherit;">Loops</a></li>
                 <li class="hy">Modules</li>
-                <li class="hy">Branches</li>
-                <li class="hy">Loops</li>
                 <li class="hy">Operators</li>
                 <li class="hy">Importing Files & Libraries</li>
             </ol>
@@ -104,9 +104,10 @@ header.hy {
                 <li class="hy">Anonymous Blocks</li>
                 <li class="hy">Attributes</li>
                 <li class="hy">Inline Assembly (Minima)</li>
-                <li class="hy">Signals</li>
+                <li class="hy">Events</li>
                 <li class="hy">Shared Libraries</li>
                 <li class="hy">Internal Calls</li>
+                <li class="hy">Tricks, Tips and Techniques</li>
             </ol>
 		
 </div>
@@ -153,10 +154,21 @@ header.hy {
 		<li><em><a href="https://animart.dev//breve/v1/basic/variables.html" class="hy link" style="font-size: inherit;">Variable declarations</a></em></li>
 		<li><em><a href="https://animart.dev//breve/v1/basic/functions.html" class="hy link" style="font-size: inherit;">Function declarations</a></em></li>
 		<li><em>Namespace declarations</em></li>
+		<li><em>Structure declarations</em></li>
+		<li><em>Enumeration declarations</em></li>
 		<li><em>Type extensions declarations</em></li>
+		<li><em>Property declarations</em></li>
 		<li><em>Trait declarations</em></li>
 	</ul>
 	<p class="hy">As for each class of operation:</p>
+	
+	<div class="hy alert info soft subcard">
+	<h3 class="hy alert info loud">Note</h3>
+
+        <p class="hy">Everything within <code class="hy inline"><span class="memo">[]</span></code> is optional, unless specified.</p>
+	
+    </div>
+
 	<h3 class="hy">Arithmetic</h3>
 	
 <table class="hy alternate">
@@ -609,6 +621,231 @@ header.hy {
 	
 </table>
 
+	<h3 class="hy">Declarations</h3>
+	
+<table class="hy alternate">
+<tr class="hy">
+	<th class="hy">Name</th>
+	<th class="hy">Type</th>
+	<th class="hy">Expression</th>
+</tr>
+
+		
+<tr class="hy">
+	<td class="hy">Variable</td>
+	<td class="hy">Declaration</td>
+	<td class="hy">
+
+			<code class="hy inline">
+				&lt;name&gt;
+				<span class="memo">[</span><span class="op">:</span>
+				&lt;type&gt;
+				<span class="memo">[</span>
+				<span class="op">=</span>&lt;value&gt;<span class="memo">]]</span>
+				<span class="memo">or</span>
+				<span class="memo">[</span><span class="op">:=</span>
+				&lt;value&gt;<span class="memo">]</span>
+			</code>
+		
+	</td>
+</tr>
+
+		
+<tr class="hy">
+	<td class="hy">Function</td>
+	<td class="hy">Declaration</td>
+	<td class="hy">
+
+			<code class="hy inline">
+				&lt;name&gt;
+				<span class="op">:: (</span>&lt;arg-decl&gt;<span class="memo">[</span><span class="op">,</span>
+				<span class="memo">...]</span><span class="op">)</span>
+				<span class="memo">[</span><span class="op">-&gt;</span>
+				&lt;ret-type&gt;<span class="memo">]</span>
+				<span class="memo">unless</span>
+				<span class="memo">[</span><span class="op">=&gt;</span>
+				&lt;expr&gt;<span class="memo">]</span>
+				<span class="memo">or</span>
+				<span class="memo">[</span><span class="op">{</span>
+				<span class="memo">...</span>
+				<span class="op">}</span><span class="memo">]</span>
+			</code>
+		
+	</td>
+</tr>
+
+	
+</table>
+
+	<h3 class="hy"><a href="https://animart.dev//breve/v1/basic/branches.html" class="hy link" style="font-size: inherit;">Branching</a></h3>
+	
+<table class="hy alternate">
+<tr class="hy">
+	<th class="hy">Name</th>
+	<th class="hy">Type</th>
+	<th class="hy">Expression</th>
+</tr>
+
+		
+<tr class="hy">
+	<td class="hy">Conditional</td>
+	<td class="hy">Ternary</td>
+	<td class="hy">
+
+			<code class="hy inline">
+				<span class="kw">if</span>
+				&lt;cond&gt;
+				&lt;on-true-expr&gt;
+				<span class="memo">[</span><span class="kw">else</span>
+				&lt;on-false-expr&gt;<span class="memo">]</span>
+			</code>
+		
+	</td>
+</tr>
+
+		
+<tr class="hy">
+	<td class="hy">Inverted Conditional</td>
+	<td class="hy">Ternary</td>
+	<td class="hy">
+
+			<code class="hy inline">
+				<span class="kw">unless</span>
+				&lt;cond&gt;
+				&lt;on-true-expr&gt;
+				<span class="memo">[</span><span class="kw">else</span>
+				&lt;on-false-expr&gt;<span class="memo">]</span>
+			</code>
+		
+	</td>
+</tr>
+
+		
+<tr class="hy">
+	<td class="hy">Conditional Decay</td>
+	<td class="hy">Ternary</td>
+	<td class="hy">
+
+			<code class="hy inline">
+				&lt;on-true-expr&gt;
+				<span class="kw">when</span>
+				&lt;cond&gt;
+				<span class="kw">else</span>
+				&lt;on-false-expr&gt;
+			</code>
+		
+	</td>
+</tr>
+
+		
+<tr class="hy">
+	<td class="hy">Inverted Conditional Decay</td>
+	<td class="hy">Ternary</td>
+	<td class="hy">
+
+			<code class="hy inline">
+				&lt;on-true-expr&gt;
+				<span class="kw">except</span>
+				&lt;cond&gt;
+				<span class="kw">else</span>
+				&lt;on-false-expr&gt;
+			</code>
+		
+	</td>
+</tr>
+
+	
+</table>
+
+	<h3 class="hy"><a href="https://animart.dev//breve/v1/basic/loops.html" class="hy link" style="font-size: inherit;">Looping</a></h3>
+	
+<table class="hy alternate">
+<tr class="hy">
+	<th class="hy">Name</th>
+	<th class="hy">Type</th>
+	<th class="hy">Expression</th>
+</tr>
+
+		
+<tr class="hy">
+	<td class="hy">Do (infinite) loop</td>
+	<td class="hy">Unary</td>
+	<td class="hy">
+
+			<code class="hy inline">
+				<span class="kw">do</span>
+				&lt;expr&gt;
+			</code>
+		
+	</td>
+</tr>
+
+		
+<tr class="hy">
+	<td class="hy">Do-while loop</td>
+	<td class="hy">Binary</td>
+	<td class="hy">
+
+			<code class="hy inline">
+				<span class="kw">do</span>
+				&lt;expr&gt;
+				<span class="kw">while</span>
+				&lt;cond&gt;
+			</code>
+		
+	</td>
+</tr>
+
+		
+<tr class="hy">
+	<td class="hy">While loop</td>
+	<td class="hy">Binary</td>
+	<td class="hy">
+
+			<code class="hy inline">
+				<span class="kw">while</span>
+				&lt;cond&gt;
+				&lt;expr&gt;
+			</code>
+		
+	</td>
+</tr>
+
+		
+<tr class="hy">
+	<td class="hy">Repeat loop (without iterator)</td>
+	<td class="hy">Binary</td>
+	<td class="hy">
+
+			<code class="hy inline">
+				<span class="kw">repeat</span>
+				&lt;count&gt;
+				&lt;expr&gt;
+			</code>
+		
+	</td>
+</tr>
+
+		
+<tr class="hy">
+	<td class="hy">Repeat loop (with iterator)</td>
+	<td class="hy">Ternary</td>
+	<td class="hy">
+
+			<code class="hy inline">
+				<span class="kw">repeat</span>
+				&lt;var-decl&gt;
+				<span class="op">-&gt;</span>
+				&lt;count&gt;
+				&lt;expr&gt;
+			</code>
+		
+	</td>
+</tr>
+
+	
+</table>
+
 	<h3 class="hy">Other</h3>
 	
 <table class="hy alternate">
@@ -635,7 +872,7 @@ header.hy {
 
 		
 <tr class="hy">
-	<td class="hy">Subscription</td>
+	<td class="hy">Array Indexing</td>
 	<td class="hy">Binary</td>
 	<td class="hy">
 
@@ -735,16 +972,56 @@ header.hy {
 
 		
 <tr class="hy">
-	<td class="hy">Conditional Decay</td>
-	<td class="hy">Ternary</td>
+	<td class="hy">Pass-by-Move</td>
+	<td class="hy">Unary</td>
 	<td class="hy">
 
 			<code class="hy inline">
-				&lt;on-true-expr&gt;
-				<span class="kw">if</span>
-				&lt;cond&gt;
-				<span class="kw">else</span>
-				&lt;on-false-expr&gt;
+				<span class="kw">move</span>
+				&lt;expr&gt;
+			</code>
+		
+	</td>
+</tr>
+
+		
+<tr class="hy">
+	<td class="hy">Pass-by-Reference</td>
+	<td class="hy">Unary</td>
+	<td class="hy">
+
+			<code class="hy inline">
+				<span class="kw">ref</span>
+				&lt;expr&gt;
+			</code>
+		
+	</td>
+</tr>
+
+		
+<tr class="hy">
+	<td class="hy">Pass-by-Copy</td>
+	<td class="hy">Unary</td>
+	<td class="hy">
+
+			<code class="hy inline">
+				<span class="kw">copy</span>
+				&lt;expr&gt;
+			</code>
+		
+	</td>
+</tr>
+
+		
+<tr class="hy">
+	<td class="hy">Null Decay</td>
+	<td class="hy">Binary</td>
+	<td class="hy">
+
+			<code class="hy inline">
+				&lt;expr&gt;
+				<span class="op">??</span>
+				&lt;else-expr&gt;
 			</code>
 		
 	</td>

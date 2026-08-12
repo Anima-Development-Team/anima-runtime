@@ -86,9 +86,9 @@ header.hy {
                 <li class="hy"><a href="https://animart.dev//breve/v1/basic/variables.html" class="hy link" style="font-size: inherit;">Variables</a></li>
                 <li class="hy"><a href="https://animart.dev//breve/v1/basic/basic-types.html" class="hy link" style="font-size: inherit;">Basic Types</a></li>
                 <li class="hy"><a href="https://animart.dev//breve/v1/basic/functions.html" class="hy link" style="font-size: inherit;">Functions</a></li>
+                <li class="hy"><a href="https://animart.dev//breve/v1/basic/branches.html" class="hy link" style="font-size: inherit;">Branches</a></li>
+                <li class="hy"><a href="https://animart.dev//breve/v1/basic/loops.html" class="hy link" style="font-size: inherit;">Loops</a></li>
                 <li class="hy">Modules</li>
-                <li class="hy">Branches</li>
-                <li class="hy">Loops</li>
                 <li class="hy">Operators</li>
                 <li class="hy">Importing Files & Libraries</li>
             </ol>
@@ -104,9 +104,10 @@ header.hy {
                 <li class="hy">Anonymous Blocks</li>
                 <li class="hy">Attributes</li>
                 <li class="hy">Inline Assembly (Minima)</li>
-                <li class="hy">Signals</li>
+                <li class="hy">Events</li>
                 <li class="hy">Shared Libraries</li>
                 <li class="hy">Internal Calls</li>
+                <li class="hy">Tricks, Tips and Techniques</li>
             </ol>
 		
 </div>
@@ -176,7 +177,8 @@ header.hy {
 		<span class="op">:: (</span>
 		num <span class="op">:</span> <span class="kw">float32</span>
 		<span class="op">) =></span>
-		num <span class="op">*</span> num
+		<span class="op">(</span><span class="kw">copy</span> num<span class="op">)</span>
+		<span class="op">*</span> num
 		<br><br>
 		<span class="memo">// Declaring a full-body function</span><br>
 		<span class="fn">factorial</span>
@@ -185,9 +187,11 @@ header.hy {
 		<span class="op">) -></span> <span class="kw">uint64</span>
 		<span class="op">{</span><br>
 		&nbsp;&nbsp;&nbsp;&nbsp; out <span class="op">:=</span> <span class="num">0</span><br>
-		&nbsp;&nbsp;&nbsp;&nbsp; <span class="kw">for</span>
-		i <span class="op">:</span> <span class="num">0</span> <span class="op">...</span> num <br>
-		&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; out <span class="op">+=</span> i <span class="op">+</span> 1 <br>
+		&nbsp;&nbsp;&nbsp;&nbsp; <span class="kw">repeat</span>
+		i <span class="op">:</span> <span class="kw">uint64</span> <span class="op">-></span> num <br>
+		&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; out <span class="op">+=</span>
+		<span class="op">(</span><span class="kw">copy</span> i<span class="op">)</span>
+		<span class="op">+</span> 1 <br>
 		&nbsp;&nbsp;&nbsp;&nbsp; <span class="kw">return</span> out <br>
 		<span class="op">}</span>
 	</code>
@@ -199,26 +203,26 @@ header.hy {
 	<h2 class="hy">External Functions</h2>
 	<p class="hy">
 		External functions are your way of calling cross-language code.
-        They come in two types: <strong>ART Functions</strong> and
+        They come in two types: <strong>Native Functions</strong> and
         <strong>Shared Functions</strong>.
 	</p>
 	<p class="hy">
-		<strong>ART Functions</strong> are one way of calling cross-language
-		code. ART functions execute code that is <strong>defined
+		<strong>Native Functions</strong> are one way of calling cross-language
+		code. Native functions execute code that is <strong>defined
 		by the ART implementation.</strong>
 	</p>
 	<p class="hy">
 		Declared via the
 		<code class="hy inline">
-			<span class="macro">@ARTCall</span><span class="op">(</span>
+			<span class="macro">@Native</span><span class="op">(</span>
 			name <span class="op">=</span>
-			<span class="str">"&lt;art-name&gt;"</span>
+			<span class="str">"&lt;native-name&gt;"</span>
 			<span class="op">)</span>
 		</code> attribute, followed by how
 		one would forward declare a function.
 	</p>
 	<p class="hy">
-		<strong>Shared Functions</strong>, much like ART functions, are
+		<strong>Shared Functions</strong>, much like native functions, are
 		also for calling cross-language code. Unlike their siblings,
 		however, shared functions <strong>execute code defined in an
 		Anima-compatible shared library</strong>.
