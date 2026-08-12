@@ -7,6 +7,10 @@ import [
 	"bits/text/b"
 	"bits/text/i"
 	"bits/p"
+	"bits/link"
+	"bits/docs/note"
+	"bits/docs/warn"
+	"bits/docs/caution"
 	"bits/docs/title"
 	"bits/docs/section"
 	"bits/docs/topic"
@@ -68,6 +72,9 @@ html `
 		<<eili text="Trait declarations"/>>
 	</ul>
 	<<p>>As for each class of operation:<</p>>
+	<<note>>
+        <<p>>Everything within <<code-inline>><<memo text="[]"/>><</code-inline>> is optional, unless specified.<</p>>
+	<</note>>
 	<<topic>>Arithmetic<</topic>>
 	<<expr-table>>
 		<<expr-item name="Addition" type="Binary">>
@@ -260,6 +267,116 @@ html `
 			<</code-inline>>
 		<</expr-item>>
 	<</expr-table>>
+	<<topic>>Declarations<</topic>>
+	<<expr-table>>
+		<<expr-item name="Variable" type="Declaration">>
+			<<code-inline>>
+				<<expr text="name"/>>
+				<<memo text="["/>><<op text=":"/>>
+				<<expr text="type"/>>
+				<<memo text="["/>>
+				<<op text="="/>><<expr text="value"/>><<memo text="]]"/>>
+				<<memo text="or"/>>
+				<<memo text="["/>><<op text=":="/>>
+				<<expr text="value"/>><<memo text="]"/>>
+			<</code-inline>>
+		<</expr-item>>
+		<<expr-item name="Function" type="Declaration">>
+			<<code-inline>>
+				<<expr text="name"/>>
+				<<op text=":: ("/>><<expr text="arg-decl"/>><<memo text="["/>><<op text=","/>>
+				<<memo text="...]"/>><<op text=")"/>>
+				<<memo text="["/>><<op text="-&gt;"/>>
+				<<expr text="ret-type"/>><<memo text="]"/>>
+				<<memo text="unless"/>>
+				<<memo text="["/>><<op text="=&gt;"/>>
+				<<expr text="expr"/>><<memo text="]"/>>
+				<<memo text="or"/>>
+				<<memo text="["/>><<op text="{"/>>
+				<<memo text="..."/>>
+				<<op text="}"/>><<memo text="]"/>>
+			<</code-inline>>
+		<</expr-item>>
+	<</expr-table>>
+	<<topic>><<link to="{{@page:breve/v1/basic/branches}}">>Branching<</link>><</topic>>
+	<<expr-table>>
+		<<expr-item name="Conditional" type="Ternary">>
+			<<code-inline>>
+				<<kw text="if"/>>
+				<<expr text="cond"/>>
+				<<expr text="on-true-expr"/>>
+				<<memo text="["/>><<kw text="else"/>>
+				<<expr text="on-false-expr"/>><<memo text="]"/>>
+			<</code-inline>>
+		<</expr-item>>
+		<<expr-item name="Inverted Conditional" type="Ternary">>
+			<<code-inline>>
+				<<kw text="unless"/>>
+				<<expr text="cond"/>>
+				<<expr text="on-true-expr"/>>
+				<<memo text="["/>><<kw text="else"/>>
+				<<expr text="on-false-expr"/>><<memo text="]"/>>
+			<</code-inline>>
+		<</expr-item>>
+		<<expr-item name="Conditional Decay" type="Ternary">>
+			<<code-inline>>
+				<<expr text="on-true-expr"/>>
+				<<kw text="when"/>>
+				<<expr text="cond"/>>
+				<<kw text="else"/>>
+				<<expr text="on-false-expr"/>>
+			<</code-inline>>
+		<</expr-item>>
+		<<expr-item name="Inverted Conditional Decay" type="Ternary">>
+			<<code-inline>>
+				<<expr text="on-true-expr"/>>
+				<<kw text="except"/>>
+				<<expr text="cond"/>>
+				<<kw text="else"/>>
+				<<expr text="on-false-expr"/>>
+			<</code-inline>>
+		<</expr-item>>
+	<</expr-table>>
+	<<topic>><<link to="{{@page:breve/v1/basic/loops}}">>Looping<</link>><</topic>>
+	<<expr-table>>
+		<<expr-item name="Do (infinite) loop" type="Unary">>
+			<<code-inline>>
+				<<kw text="do"/>>
+				<<expr text="expr"/>>
+			<</code-inline>>
+		<</expr-item>>
+		<<expr-item name="Do-while loop" type="Binary">>
+			<<code-inline>>
+				<<kw text="do"/>>
+				<<expr text="expr"/>>
+				<<kw text="while"/>>
+				<<expr text="cond"/>>
+			<</code-inline>>
+		<</expr-item>>
+		<<expr-item name="While loop" type="Binary">>
+			<<code-inline>>
+				<<kw text="while"/>>
+				<<expr text="cond"/>>
+				<<expr text="expr"/>>
+			<</code-inline>>
+		<</expr-item>>
+		<<expr-item name="Repeat loop (without iterator)" type="Binary">>
+			<<code-inline>>
+				<<kw text="repeat"/>>
+				<<expr text="count"/>>
+				<<expr text="expr"/>>
+			<</code-inline>>
+		<</expr-item>>
+		<<expr-item name="Repeat loop (with iterator)" type="Ternary">>
+			<<code-inline>>
+				<<kw text="repeat"/>>
+				<<expr text="var-decl"/>>
+				<<op text="-&gt;"/>>
+				<<expr text="count"/>>
+				<<expr text="expr"/>>
+			<</code-inline>>
+		<</expr-item>>
+	<</expr-table>>
 	<<topic>>Other<</topic>>
 	<<expr-table>>
 		<<expr-item name="Chain Assignment" type="Binary">>
@@ -311,24 +428,6 @@ html `
 			<<code-inline>>
 				<<kw text="typeof"/>>
 				<<expr text="expr"/>>
-			<</code-inline>>
-		<</expr-item>>
-		<<expr-item name="Conditional Decay" type="Ternary">>
-			<<code-inline>>
-				<<expr text="on-true-expr"/>>
-				<<kw text="when"/>>
-				<<expr text="cond"/>>
-				<<kw text="else"/>>
-				<<expr text="on-false-expr"/>>
-			<</code-inline>>
-		<</expr-item>>
-		<<expr-item name="Inverted Conditional Decay" type="Ternary">>
-			<<code-inline>>
-				<<expr text="on-true-expr"/>>
-				<<kw text="except"/>>
-				<<expr text="cond"/>>
-				<<kw text="else"/>>
-				<<expr text="on-false-expr"/>>
 			<</code-inline>>
 		<</expr-item>>
 		<<expr-item name="Pass-by-Move" type="Unary">>

@@ -158,6 +158,14 @@ header.hy {
 		<li><em>Trait declarations</em></li>
 	</ul>
 	<p class="hy">As for each class of operation:</p>
+	
+	<div class="hy alert info soft subcard">
+	<h3 class="hy alert info loud">Note</h3>
+
+        <p class="hy">Everything within <code class="hy inline"><span class="memo">[]</span></code> is optional, unless specified.</p>
+	
+    </div>
+
 	<h3 class="hy">Arithmetic</h3>
 	
 <table class="hy alternate">
@@ -610,6 +618,231 @@ header.hy {
 	
 </table>
 
+	<h3 class="hy">Declarations</h3>
+	
+<table class="hy alternate">
+<tr class="hy">
+	<th class="hy">Name</th>
+	<th class="hy">Type</th>
+	<th class="hy">Expression</th>
+</tr>
+
+		
+<tr class="hy">
+	<td class="hy">Variable</td>
+	<td class="hy">Declaration</td>
+	<td class="hy">
+
+			<code class="hy inline">
+				&lt;name&gt;
+				<span class="memo">[</span><span class="op">:</span>
+				&lt;type&gt;
+				<span class="memo">[</span>
+				<span class="op">=</span>&lt;value&gt;<span class="memo">]]</span>
+				<span class="memo">or</span>
+				<span class="memo">[</span><span class="op">:=</span>
+				&lt;value&gt;<span class="memo">]</span>
+			</code>
+		
+	</td>
+</tr>
+
+		
+<tr class="hy">
+	<td class="hy">Function</td>
+	<td class="hy">Declaration</td>
+	<td class="hy">
+
+			<code class="hy inline">
+				&lt;name&gt;
+				<span class="op">:: (</span>&lt;arg-decl&gt;<span class="memo">[</span><span class="op">,</span>
+				<span class="memo">...]</span><span class="op">)</span>
+				<span class="memo">[</span><span class="op">-&gt;</span>
+				&lt;ret-type&gt;<span class="memo">]</span>
+				<span class="memo">unless</span>
+				<span class="memo">[</span><span class="op">=&gt;</span>
+				&lt;expr&gt;<span class="memo">]</span>
+				<span class="memo">or</span>
+				<span class="memo">[</span><span class="op">{</span>
+				<span class="memo">...</span>
+				<span class="op">}</span><span class="memo">]</span>
+			</code>
+		
+	</td>
+</tr>
+
+	
+</table>
+
+	<h3 class="hy"><a href="https://animart.dev//breve/v1/basic/branches.html" class="hy link" style="font-size: inherit;">Branching</a></h3>
+	
+<table class="hy alternate">
+<tr class="hy">
+	<th class="hy">Name</th>
+	<th class="hy">Type</th>
+	<th class="hy">Expression</th>
+</tr>
+
+		
+<tr class="hy">
+	<td class="hy">Conditional</td>
+	<td class="hy">Ternary</td>
+	<td class="hy">
+
+			<code class="hy inline">
+				<span class="kw">if</span>
+				&lt;cond&gt;
+				&lt;on-true-expr&gt;
+				<span class="memo">[</span><span class="kw">else</span>
+				&lt;on-false-expr&gt;<span class="memo">]</span>
+			</code>
+		
+	</td>
+</tr>
+
+		
+<tr class="hy">
+	<td class="hy">Inverted Conditional</td>
+	<td class="hy">Ternary</td>
+	<td class="hy">
+
+			<code class="hy inline">
+				<span class="kw">unless</span>
+				&lt;cond&gt;
+				&lt;on-true-expr&gt;
+				<span class="memo">[</span><span class="kw">else</span>
+				&lt;on-false-expr&gt;<span class="memo">]</span>
+			</code>
+		
+	</td>
+</tr>
+
+		
+<tr class="hy">
+	<td class="hy">Conditional Decay</td>
+	<td class="hy">Ternary</td>
+	<td class="hy">
+
+			<code class="hy inline">
+				&lt;on-true-expr&gt;
+				<span class="kw">when</span>
+				&lt;cond&gt;
+				<span class="kw">else</span>
+				&lt;on-false-expr&gt;
+			</code>
+		
+	</td>
+</tr>
+
+		
+<tr class="hy">
+	<td class="hy">Inverted Conditional Decay</td>
+	<td class="hy">Ternary</td>
+	<td class="hy">
+
+			<code class="hy inline">
+				&lt;on-true-expr&gt;
+				<span class="kw">except</span>
+				&lt;cond&gt;
+				<span class="kw">else</span>
+				&lt;on-false-expr&gt;
+			</code>
+		
+	</td>
+</tr>
+
+	
+</table>
+
+	<h3 class="hy"><a href="https://animart.dev//breve/v1/basic/loops.html" class="hy link" style="font-size: inherit;">Looping</a></h3>
+	
+<table class="hy alternate">
+<tr class="hy">
+	<th class="hy">Name</th>
+	<th class="hy">Type</th>
+	<th class="hy">Expression</th>
+</tr>
+
+		
+<tr class="hy">
+	<td class="hy">Do (infinite) loop</td>
+	<td class="hy">Unary</td>
+	<td class="hy">
+
+			<code class="hy inline">
+				<span class="kw">do</span>
+				&lt;expr&gt;
+			</code>
+		
+	</td>
+</tr>
+
+		
+<tr class="hy">
+	<td class="hy">Do-while loop</td>
+	<td class="hy">Binary</td>
+	<td class="hy">
+
+			<code class="hy inline">
+				<span class="kw">do</span>
+				&lt;expr&gt;
+				<span class="kw">while</span>
+				&lt;cond&gt;
+			</code>
+		
+	</td>
+</tr>
+
+		
+<tr class="hy">
+	<td class="hy">While loop</td>
+	<td class="hy">Binary</td>
+	<td class="hy">
+
+			<code class="hy inline">
+				<span class="kw">while</span>
+				&lt;cond&gt;
+				&lt;expr&gt;
+			</code>
+		
+	</td>
+</tr>
+
+		
+<tr class="hy">
+	<td class="hy">Repeat loop (without iterator)</td>
+	<td class="hy">Binary</td>
+	<td class="hy">
+
+			<code class="hy inline">
+				<span class="kw">repeat</span>
+				&lt;count&gt;
+				&lt;expr&gt;
+			</code>
+		
+	</td>
+</tr>
+
+		
+<tr class="hy">
+	<td class="hy">Repeat loop (with iterator)</td>
+	<td class="hy">Ternary</td>
+	<td class="hy">
+
+			<code class="hy inline">
+				<span class="kw">repeat</span>
+				&lt;var-decl&gt;
+				<span class="op">-&gt;</span>
+				&lt;count&gt;
+				&lt;expr&gt;
+			</code>
+		
+	</td>
+</tr>
+
+	
+</table>
+
 	<h3 class="hy">Other</h3>
 	
 <table class="hy alternate">
@@ -729,40 +962,6 @@ header.hy {
 			<code class="hy inline">
 				<span class="kw">typeof</span>
 				&lt;expr&gt;
-			</code>
-		
-	</td>
-</tr>
-
-		
-<tr class="hy">
-	<td class="hy">Conditional Decay</td>
-	<td class="hy">Ternary</td>
-	<td class="hy">
-
-			<code class="hy inline">
-				&lt;on-true-expr&gt;
-				<span class="kw">when</span>
-				&lt;cond&gt;
-				<span class="kw">else</span>
-				&lt;on-false-expr&gt;
-			</code>
-		
-	</td>
-</tr>
-
-		
-<tr class="hy">
-	<td class="hy">Inverted Conditional Decay</td>
-	<td class="hy">Ternary</td>
-	<td class="hy">
-
-			<code class="hy inline">
-				&lt;on-true-expr&gt;
-				<span class="kw">except</span>
-				&lt;cond&gt;
-				<span class="kw">else</span>
-				&lt;on-false-expr&gt;
 			</code>
 		
 	</td>

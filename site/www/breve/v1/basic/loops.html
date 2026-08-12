@@ -1,0 +1,185 @@
+
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+	    <meta charset="UTF-8" />
+	    <title>Loops</title>
+	   	<link rel="icon" href="https://animart.dev//res/img/logo-v1b-small.png">
+	    <style>@import url("https://hy.purplecheshire.net/hy.css");
+@import url("https://hy.purplecheshire.net/hyacinth/fonts/ibm-plex-sans.css");
+
+.hy {
+    --main-color: #04f;
+}
+
+header.hy {
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+
+@media (prefers-color-scheme: light) {
+    .hy {
+        --sub-color: color-mix(in oklab, var(--main-color), white);
+        --theme: white;
+        --inverse: black;
+        --text: black;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .hy {
+        --sub-color: color-mix(in oklab, var(--main-color), black);
+        --theme: color-mix(in oklab, black, var(--main-color) 20%);
+        --inverse: white;
+        --text: white;
+    }
+
+    .hy.button.action:hover {
+        background-color: color-mix(
+            in oklab,
+            var(--main-color),
+            var(--inverse)
+        );
+        color: var(--theme);
+    }
+
+    .hy.button.action:active {
+        color: color-mix(in oklab, var(--main-color), var(--inverse));
+        background-color: color-mix(in oklab, var(--theme), var(--main-color));
+    }
+}
+</style>
+	</head>
+	<body class="hy" style="background-color: white">
+
+	
+<div class="hy sidebar">
+<div class="hy display">
+<h1
+    class="hy flex vertical center no-color"
+    style="box-shadow: none; margin: -0.6em 0.3em"
+>
+    <a href="https://animart.dev//breve/v1/breve.html" class="hy link" style="font-size: inherit;">
+    <h1
+        class="hy flex vertical center no-color"
+        style="box-shadow: none; margin: -0.6em 0.3em"
+    >
+        Breve
+    </h1>
+    </a>
+</h1>
+<hr class="hy" />
+<div class="hy">
+
+		
+<div class="hy">
+<strong>Basic</strong>
+
+            <ol class="hy">
+                <li class="hy"><a href="https://animart.dev//breve/v1/basic/start.html" class="hy link" style="font-size: inherit;">Start</a></li>
+                <li class="hy"><a href="https://animart.dev//breve/v1/basic/structure.html" class="hy link" style="font-size: inherit;">Structure</a></li>
+                <li class="hy"><a href="https://animart.dev//breve/v1/basic/expressions.html" class="hy link" style="font-size: inherit;">Expressions</a></li>
+                <li class="hy"><a href="https://animart.dev//breve/v1/basic/transfer-semantics.html" class="hy link" style="font-size: inherit;">Transfer Semantics</a></li>
+                <li class="hy"><a href="https://animart.dev//breve/v1/basic/variables.html" class="hy link" style="font-size: inherit;">Variables</a></li>
+                <li class="hy"><a href="https://animart.dev//breve/v1/basic/basic-types.html" class="hy link" style="font-size: inherit;">Basic Types</a></li>
+                <li class="hy"><a href="https://animart.dev//breve/v1/basic/functions.html" class="hy link" style="font-size: inherit;">Functions</a></li>
+                <li class="hy"><a href="https://animart.dev//breve/v1/basic/branches.html" class="hy link" style="font-size: inherit;">Branches</a></li>
+                <li class="hy"><a href="https://animart.dev//breve/v1/basic/loops.html" class="hy link" style="font-size: inherit;">Loops</a></li>
+                <li class="hy">Modules</li>
+                <li class="hy">Operators</li>
+                <li class="hy">Importing Files & Libraries</li>
+            </ol>
+		
+</div>
+
+		
+<div class="hy">
+<strong>Advanced</strong>
+
+            <ol class="hy">
+                <li class="hy">Extending Types</li>
+                <li class="hy">Anonymous Blocks</li>
+                <li class="hy">Attributes</li>
+                <li class="hy">Inline Assembly (Minima)</li>
+                <li class="hy">Events</li>
+                <li class="hy">Shared Libraries</li>
+                <li class="hy">Internal Calls</li>
+                <li class="hy">Tricks, Tips and Techniques</li>
+            </ol>
+		
+</div>
+
+	
+</div>
+</div>
+</div>
+
+	
+<div class="hy app wide flex vertical center left-text" style="max-width: calc(100% - 10% * 2); margin-left: calc(10%);">
+
+
+
+	<h2 class="hy">Loops</h2>
+	<p class="hy">
+        Another building block of a decent amount of programming languages.
+	</p>
+	<p class="hy">
+        Breve currently contains <strong>four types</strong> of loops:
+	</p>
+	<p class="hy">
+        <strong><code class="hy inline"><span class="kw">do</span></code> loops</strong>:
+        Repeats the expression indefinitely. Written in the form of
+        <code class="hy inline"><span class="kw">do</span> &lt;expr&gt;</code>.
+	</p>
+	<p class="hy">
+        <strong><code class="hy inline"><span class="kw">do</span> <span class="memo">...</span> <span class="kw">while</span></code> loops</strong>:
+        Executes the expression, then repeatedly executes it again, while the given condition is true. Written in the form of
+        <code class="hy inline"><span class="kw">do</span> &lt;expr&gt; <span class="kw">while</span> &lt;cond&gt;</code>.
+	</p>
+	<p class="hy">
+        <strong><code class="hy inline"><span class="kw">while</span></code> loops</strong>:
+        Executes the expression repeatedly while the given condition is true. Written in the form of
+        <code class="hy inline"><span class="kw">while</span> &lt;cond&gt; &lt;expr&gt;</code>.
+	</p>
+	<p class="hy">
+        <strong><code class="hy inline"><span class="kw">repeat</span></code> loops</strong>:
+        Executes the expression repeatedly while the given condition is true.
+        Can be written as:
+        <ul>
+            <li>
+                <code class="hy inline"><span class="kw">repeat</span> &lt;count&gt; &lt;expr&gt;</code>,
+                when an iterator variable is not needed. <strong>Count must be an integer.</strong>
+            </li>
+            <li>
+                <code class="hy inline"><span class="kw">repeat</span> &lt;var-decl&gt; <span class="op">-></span> &lt;count&gt; &lt;expr&gt;</code>,
+                when an iterator variable is required. <strong>Count must be an integer.</strong>
+            </li>
+        </ul>
+	</p>
+	
+	<div class="hy alert info soft subcard">
+	<h3 class="hy alert info loud">Note</h3>
+
+		<<p>
+		    For <code class="hy inline"><span class="kw">repeat</span></code> loops, the iterator variable
+		    <em>will start at the given count, and count down until zero is reached!</em>
+		</p>
+		<<p>
+		    To use it as a forward index, make sure to subtract count from it.
+		</p>
+	
+    </div>
+
+<hr class="hy" />
+
+	
+</div>
+
+
+	</body>
+</html>
+
+
