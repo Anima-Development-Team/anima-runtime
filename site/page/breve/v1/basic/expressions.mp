@@ -68,7 +68,10 @@ html `
 		<<lili to="{{@page:breve/v1/basic/variables}}" text="Variable declarations"/>>
 		<<lili to="{{@page:breve/v1/basic/functions}}" text="Function declarations"/>>
 		<<eili text="Namespace declarations"/>>
+		<<eili text="Structure declarations"/>>
+		<<eili text="Enumeration declarations"/>>
 		<<eili text="Type extensions declarations"/>>
+		<<eili text="Property declarations"/>>
 		<<eili text="Trait declarations"/>>
 	</ul>
 	<<p>>As for each class of operation:<</p>>
